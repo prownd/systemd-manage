@@ -15,34 +15,34 @@ systemd-manage是基于systemd服务管理的图形化工具，使用qt图形库
 # 屏幕截图
 ---
 ##### 系统服务管理:
-![service manage](images/service-manage-view-1.png)
+![service manage](images/zh/service-manage-view-1.png)
 
 ##### 系统服务详情:
-![service detail](images/service-detail-view-1.png)
+![service detail](images/zh/service-detail-view-1.png)
 
 ##### 用户会话管理：
-![user session](images/user-session-view-1.png)
+![user session](images/zh/user-session-view-1.png)
 
 ##### 用户会话详情：
-![user session detail](images/user-session-detail-1.png)
+![user session detail](images/zh/user-session-detail-1.png)
 
 ##### 配置文件：
-![config file](images/config-file-view-1.png)
+![config file](images/zh/config-file-view-1.png)
 
 ##### journal日志：
-![journal log](images/journal-log-view-1.png)
+![journal log](images/zh/journal-log-view-1.png)
 
 ##### systemd性能分析：
-![analysize statistics](images/analysize-statistics-view-1.png)
+![analysize statistics](images/zh/analysize-statistics-view-1.png)
 
 ##### 进程管理：
-![process manage](images/process-manage-view-1.png)
+![process manage](images/zh/process-manage-view-1.png)
 
 ##### 首选项设置：
-![perference setting](images/setting-view-1.png)
+![perference setting](images/zh/setting-view-1.png)
 
 ##### 关于程序和版本：
-![about application version](images/about-view-1.png)
+![about application version](images/zh/about-view-1.png)
 
 
 # 许可协议
