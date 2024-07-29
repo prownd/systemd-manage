@@ -21,31 +21,31 @@ Use qmake for compilation, configuration, and installation
 ![service manage](images/service-manage-view-1.png)
 
 ###### System Service Details:
-![service detail](service-detail-view-1.png)
+![service detail](images/service-detail-view-1.png)
 
 ###### User session management:
-![user session](user-session-view-1.png)
+![user session](images/user-session-view-1.png)
 
 ###### User session details:
-![user session detail](user-session-detail-1.png)
+![user session detail](images/user-session-detail-1.png)
 
 ###### Configuration file:
-![config file](config-file-view-1.png)
+![config file](images/config-file-view-1.png)
 
 ###### Journal log:
-![journal log](journal-log-view-1.png)
+![journal log](images/journal-log-view-1.png)
 
 ###### System performance analysis:
-![analysize statistics](analysize-statistics-view-1.png)
+![analysize statistics](images/analysize-statistics-view-1.png)
 
 ###### Process management:
-![process manage](process-manage-view-1.png)
+![process manage](images/process-manage-view-1.png)
 
 ###### Preferred settings:
-![perference setting](setting-view-1.png)
+![perference setting](images/setting-view-1.png)
 
 ###### Regarding the program and version:
-![about application version](about-view-1.png)
+![about application version](images/about-view-1.png)
 
 # license agreement
 ---
