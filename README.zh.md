@@ -6,45 +6,43 @@ systemd-manage是基于systemd服务管理的图形化工具，使用qt图形库
 ---
 使用qmake进行编译配置和安装
 ```bash
-qmake
-make
-make install
+1. qmake
+2. make
+3. make install
 ```
 
 
 # 屏幕截图
 ---
 ##### 系统服务管理:
-![[images/service-manage-view-1.png]]
+![service manage](images/service-manage-view-1.png)
 
 ##### 系统服务详情:
-![[service-detail-view-1.png]]
+![service detail](service-detail-view-1.png)
 
 ##### 用户会话管理：
-![[user-session-view-1.png]]
+![user session](user-session-view-1.png)
 
 ##### 用户会话详情：
-![[user-session-detail-1.png]]
+![user session detail](user-session-detail-1.png)
 
 ##### 配置文件：
-![[config-file-view-1.png]]
+![config file](config-file-view-1.png)
 
 ##### journal日志：
-![[journal-log-view-1.png]]
-
+![journal log](journal-log-view-1.png)
 
 ##### systemd性能分析：
-![[analysize-statistics-view-1.png]]
-
+![analysize statistics](analysize-statistics-view-1.png)
 
 ##### 进程管理：
-![[process-manage-view-1.png]]
+![process manage](process-manage-view-1.png)
 
 ##### 首选项设置：
-![[setting-view-1.png]]
+![perference setting](setting-view-1.png)
 
 ##### 关于程序和版本：
-![[about-view-1.png]]
+![about application version](about-view-1.png)
 
 
 # 许可协议

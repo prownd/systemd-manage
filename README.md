@@ -1,5 +1,5 @@
 
-# Systemd management tool
+# Systemd manage tool
 ---
 Systemd manage is a graphical tool based on Systemd service management, developed using the Qt graphics library, providing functions such as service management, user sessions, configuration file modification, log queries, performance analysis, and process management. Simple and convenient to manage systems and services.
 
@@ -7,7 +7,7 @@ Systemd manage is a graphical tool based on Systemd service management, develope
 ---
 Use qmake for compilation, configuration, and installation
 
-```
+```bash
 1. qmake
 2. make
 3. make install
@@ -18,35 +18,34 @@ Use qmake for compilation, configuration, and installation
 # Screenshot
 ---
 ###### System Service Management:
-![[images/service-manage-view-1.png]]
+![service manage](images/service-manage-view-1.png)
 
 ###### System Service Details:
-![[service-detail-view-1.png]]
+![service detail](service-detail-view-1.png)
 
 ###### User session management:
-![[user-session-view-1.png]]
+![user session](user-session-view-1.png)
 
 ###### User session details:
-![[user-session-detail-1.png]]
+![user session detail](user-session-detail-1.png)
 
 ###### Configuration file:
-![[config-file-view-1.png]]
+![config file](config-file-view-1.png)
 
 ###### Journal log:
-![[journal-log-view-1.png]]
+![journal log](journal-log-view-1.png)
 
 ###### System performance analysis:
-![[analysize-statistics-view-1.png]]
+![analysize statistics](analysize-statistics-view-1.png)
 
 ###### Process management:
-![[process-manage-view-1.png]]
+![process manage](process-manage-view-1.png)
 
 ###### Preferred settings:
-![[setting-view-1.png]]
+![perference setting](setting-view-1.png)
 
 ###### Regarding the program and version:
-![[about-view-1.png]]
-
+![about application version](about-view-1.png)
 
 # license agreement
 ---
