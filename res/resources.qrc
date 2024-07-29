@@ -1,0 +1,31 @@
+<RCC>
+    <qresource prefix="/">
+        <file>icons/analysize-statistics.svg</file>
+        <file>icons/config-file.svg</file>
+        <file>icons/down-arrow-16.svg</file>
+        <file>icons/emblem-default.svg</file>
+        <file>icons/emblem-error.svg</file>
+        <file>icons/emblem-pause.svg</file>
+        <file>icons/emblem-success.svg</file>
+        <file>icons/emblem-system.svg</file>
+        <file>icons/emblem-unavailable.svg</file>
+        <file>icons/emblem-unreadable.svg</file>
+        <file>icons/journal-log.svg</file>
+        <file>icons/process-manage.svg</file>
+        <file>icons/systemd-manage.png</file>
+        <file>icons/systemd-service.svg</file>
+        <file>icons/systemd-unit.svg</file>
+        <file>icons/system-setting.svg</file>
+        <file>icons/user-session.svg</file>
+        <file>icons/version-info.svg</file>
+        <file>icons/version-info-blk.svg</file>
+        <file>translators/app_de_DE.qm</file>
+        <file>translators/app_en_US.qm</file>
+        <file>translators/app_fr_FR.qm</file>
+        <file>translators/app_ja_JP.qm</file>
+        <file>translators/app_ru_RU.qm</file>
+        <file>translators/app_zh_CN.qm</file>
+        <file>translators/app_zh_TW.qm</file>
+        <file>icons/systemd-manage.ico</file>
+    </qresource>
+</RCC>

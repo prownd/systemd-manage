@@ -1,0 +1,6 @@
+systemd-manage 1.0 (2024-07-28)
+=========================
+
+first release:
+• Implement a graphical management tool for Systemd
+  manage services, user sessions, configuration files, logs, analytics, process management, and other functions

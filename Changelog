@@ -1,0 +1,9 @@
+systemd-manage version 1.0 (2024-07-28)
+=======================================
+* add systemd units manage
+* add user units manage
+* add user sessions manage
+* add config file edit
+* add analyze statistics view
+* add journal log view
+* add process manage

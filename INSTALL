@@ -1,0 +1,12 @@
+Systemd-manage Installation
+===========================
+
+Quick start
+===========
+Systemd-manage could be build with qmake for its build system,
+thus the basic install procedure can be summarized as:
+
+with autotools:
+  qmake  
+  make
+  make install
