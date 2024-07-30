@@ -18,34 +18,34 @@ Use qmake for compilation, configuration, and installation
 # Screenshot
 ---
 ###### System Service Management:
-![service manage](images/en/service-manage-view-1.png)
+![service manage](images/en/service-manage-view-1.png "systemd service unit manage")
 
 ###### System Service Details:
-![service detail](images/en/service-detail-view-1.png)
+![service detail](images/en/service-detail-view-1.png "service unit detail")
 
 ###### User session management:
-![user session](images/en/user-session-view-1.png)
+![user session](images/en/user-session-view-1.png "user session info")
 
 ###### User session details:
-![user session detail](images/en/user-session-detail-1.png)
+![user session detail](images/en/user-session-detail-1.png show user session detail")
 
 ###### Configuration file:
-![config file](images/en/config-file-view-1.png)
+![config file](images/en/config-file-view-1.png "config file info")
 
 ###### Journal log:
-![journal log](images/en/journal-log-view-1.png)
+![journal log](images/en/journal-log-view-1.png "show journal log")
 
 ###### System performance analysis:
-![analysize statistics](images/en/analysize-statistics-view-1.png)
+![analysize statistics](images/en/analysize-statistics-view-1.png "systemd performance analysize statistics")
 
 ###### Process management:
-![process manage](images/en/process-manage-view-1.png)
+![process manage](images/en/process-manage-view-1.png "process management")
 
 ###### Preferred settings:
-![perference setting](images/en/setting-view-1.png)
+![perference setting](images/en/setting-view-1.png "program perference setting")
 
 ###### Regarding the program and version:
-![about application version](images/en/about-view-1.png)
+![about application version](images/en/about-view-1.png "abuot version info")
 
 # license agreement
 ---

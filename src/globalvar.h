@@ -311,6 +311,28 @@ QHeaderView::section {
     border-radius:0px;
 }
 
+/* QMenu style sheet  */
+QMenu {
+    background-color:rgba(255,255,255,1);
+    border:none;
+}
+
+QMenu::item {
+    min-width:140px;
+    font-size: 16px;
+    color:rgba(51,51,51,1);
+    padding:11px 22px;
+    border-bottom:1px solid #DBDBDB;
+}
+
+QMenu::item:hover{
+  background-color:#409CE1;
+}
+
+QMenu::item:selected {
+    background: #409CE1;
+}
+
 )");
 
 

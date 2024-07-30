@@ -15,34 +15,34 @@ systemd-manage是基于systemd服务管理的图形化工具，使用qt图形库
 # 屏幕截图
 ---
 ##### 系统服务管理:
-![service manage](images/zh/service-manage-view-1.png)
+![service manage](images/zh/service-manage-view-1.png "systemd service unit manage")
 
 ##### 系统服务详情:
-![service detail](images/zh/service-detail-view-1.png)
+![service detail](images/zh/service-detail-view-1.png "service unit detail")
 
 ##### 用户会话管理：
-![user session](images/zh/user-session-view-1.png)
+![user session](images/zh/user-session-view-1.png "user session info")
 
 ##### 用户会话详情：
-![user session detail](images/zh/user-session-detail-1.png)
+![user session detail](images/zh/user-session-detail-1.png "show user session detail")
 
 ##### 配置文件：
-![config file](images/zh/config-file-view-1.png)
+![config file](images/zh/config-file-view-1.png "config file info")
 
 ##### journal日志：
-![journal log](images/zh/journal-log-view-1.png)
+![journal log](images/zh/journal-log-view-1.png "show journal log")
 
 ##### systemd性能分析：
-![analysize statistics](images/zh/analysize-statistics-view-1.png)
+![analysize statistics](images/zh/analysize-statistics-view-1.png "systemd performance analysize statistics")
 
 ##### 进程管理：
-![process manage](images/zh/process-manage-view-1.png)
+![process manage](images/zh/process-manage-view-1.png "process management")
 
 ##### 首选项设置：
-![perference setting](images/zh/setting-view-1.png)
+![perference setting](images/zh/setting-view-1.png "program perference setting")
 
 ##### 关于程序和版本：
-![about application version](images/zh/about-view-1.png)
+![about application version](images/zh/about-view-1.png "abuot version info")
 
 
 # 许可协议
