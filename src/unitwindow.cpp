@@ -174,7 +174,32 @@ void UnitWindow::createSystemUnitTableView()
 
     connect(m_searchSystemUnitLineEdit, &QLineEdit::textChanged, this, &UnitWindow::slotLineEditSearchSystemUnitChanged);
 
+    connect(m_systemUnitTableView, SIGNAL(doubleClicked(const QModelIndex &)), this, SLOT(slotSystemUnitTableRowDoubleClicked(const QModelIndex &)));
+
     slotCheckBoxShowSystemUnits(-1);
+}
+
+void UnitWindow::slotSystemUnitTableRowDoubleClicked(const QModelIndex index)
+{
+    QModelIndexList selectedIndexes = m_systemUnitTableView->selectionModel()->selectedRows();
+    if (selectedIndexes.count() >=1)
+    {
+        const QModelIndex& curRowIndex=selectedIndexes.at(0);
+        //int curRow=index.row();
+        int curRow=curRowIndex.row();
+        const QModelIndex& curCellIndex=m_systemUnitFilterModel->index(curRow,0);
+        QString systemUnitName=m_systemUnitFilterModel->data(curCellIndex).toString();
+
+        const QModelIndex& curCellIndex2 = m_systemUnitFilterModel->index(curRow, m_systemUnitColumnCount-1);
+        QString systemUnitFile = m_systemUnitFilterModel->data(curCellIndex2).toString();
+
+        UnitInformation * unitInformationWnd = new UnitInformation(systemUnitName, systemUnitFile, this);//only pointer ,not object instance
+        unitInformationWnd->setWindowTitle(QObject::tr("Show system unit config info"));
+        unitInformationWnd->setWindowModality(Qt::ApplicationModal);
+        unitInformationWnd->setAttribute(Qt::WA_ShowModal, true);
+        unitInformationWnd->setWindowFlags(Qt::CustomizeWindowHint | Qt::WindowCloseButtonHint | Qt::Dialog);
+        unitInformationWnd->show();
+    }
 }
 
 void UnitWindow::systemUnitCustomMenuRequested(QPoint pos)
@@ -415,7 +440,31 @@ void UnitWindow::createUserUnitTableView()
     connect(m_unloadUserUnitCheckBox, &QCheckBox::stateChanged, this, &UnitWindow::slotCheckBoxShowUserUnits);
     connect(m_searchUserUnitLineEdit, &QLineEdit::textChanged, this, &UnitWindow::slotLineEditSearchUserUnitChanged);
 
+    connect(m_userUnitTableView, SIGNAL(doubleClicked(const QModelIndex &)), this, SLOT(slotUserUnitTableRowDoubleClicked(const QModelIndex &)));
+
     slotCheckBoxShowUserUnits(-1);
+}
+
+void UnitWindow::slotUserUnitTableRowDoubleClicked(const QModelIndex index)
+{
+    QModelIndexList selectedIndexes = m_userUnitTableView->selectionModel()->selectedRows();
+    if (selectedIndexes.count() >=1)
+    {
+        const QModelIndex& curRowIndex=selectedIndexes.at(0);
+        int curRow=curRowIndex.row();
+        const QModelIndex& curCellIndex = m_userUnitFilterModel->index(curRow,0);
+        QString userUnitName = m_userUnitFilterModel->data(curCellIndex).toString();
+
+        const QModelIndex& curCellIndex2 = m_userUnitFilterModel->index(curRow, m_userUnitColumnCount-1);
+        QString userUnitFile = m_userUnitFilterModel->data(curCellIndex2).toString();
+
+        UnitInformation * unitInformationWnd = new UnitInformation(userUnitName, userUnitFile, this);
+        unitInformationWnd->setWindowTitle(QObject::tr("Show User unit information"));
+        unitInformationWnd->setWindowModality(Qt::ApplicationModal); //setting block
+        unitInformationWnd->setAttribute(Qt::WA_ShowModal, true);    //property, true:model false:non model
+        unitInformationWnd->setWindowFlags(Qt::CustomizeWindowHint | Qt::WindowCloseButtonHint | Qt::Dialog);
+        unitInformationWnd->show();
+    }
 }
 
 void UnitWindow::userUnitCustomMenuRequested(QPoint pos)
@@ -483,8 +532,6 @@ void UnitWindow::handleUserUnitStatusAction()
     {
         const QModelIndex& curRowIndex=selectedIndexes.at(0);
         int curRow=curRowIndex.row();
-        //const QModelIndex& curCellIndex = m_userUnitModel->index(curRow,0);
-        //QString userUnitName = m_userUnitModel->data(curCellIndex).toString();
         const QModelIndex& curCellIndex = m_userUnitFilterModel->index(curRow,0);
         QString userUnitName = m_userUnitFilterModel->data(curCellIndex).toString();
 
@@ -495,7 +542,6 @@ void UnitWindow::handleUserUnitStatusAction()
         unitInformationWnd->setWindowTitle(QObject::tr("Show User unit information"));
         unitInformationWnd->setWindowModality(Qt::ApplicationModal); //setting block
         unitInformationWnd->setAttribute(Qt::WA_ShowModal, true);    //property, true:model false:non model
-        //unitInformationWnd->setWindowFlags(Qt::WindowMinMaxButtonsHint | Qt::WindowCloseButtonHint | Qt::Dialog);
         unitInformationWnd->setWindowFlags(Qt::CustomizeWindowHint | Qt::WindowCloseButtonHint | Qt::Dialog);
         unitInformationWnd->show();
     }
@@ -642,9 +688,34 @@ void UnitWindow::createTimerTableView()
     timer->start(1000);
 
     connect(m_searchTimerUnitLineEdit, &QLineEdit::textChanged, this, &UnitWindow::slotLineEditSearchTimerUnitChanged);
+
+    connect(m_timerTableView, SIGNAL(doubleClicked(const QModelIndex &)), this, SLOT(slotTimerUnitTableRowDoubleClicked(const QModelIndex &)));
+
     slotRefreshTimerList();
 }
 
+
+void UnitWindow::slotTimerUnitTableRowDoubleClicked(const QModelIndex index)
+{
+    QModelIndexList selectedIndexes = m_timerTableView->selectionModel()->selectedRows();
+    if (selectedIndexes.count() >=1)
+    {
+        const QModelIndex& curRowIndex = selectedIndexes.at(0);
+        int curRow = curRowIndex.row();
+        const QModelIndex& curCellIndex = m_timerUnitFilterModel->index(curRow,0);
+        QString timerUnitName = m_timerUnitFilterModel->data(curCellIndex).toString();
+
+        const QModelIndex& curCellIndex2 = m_timerUnitFilterModel->index(curRow, m_timerColumnCount-1);
+        QString timerUnitFile = m_timerUnitFilterModel->data(curCellIndex2).toString();
+
+        UnitInformation * unitInformationWnd = new UnitInformation(timerUnitName, timerUnitFile, this);
+        unitInformationWnd->setWindowTitle(QObject::tr("Show Timer information"));
+        unitInformationWnd->setWindowModality(Qt::ApplicationModal); //setting block
+        unitInformationWnd->setAttribute(Qt::WA_ShowModal, true);    //property, true:model false:non model
+        unitInformationWnd->setWindowFlags(Qt::CustomizeWindowHint | Qt::WindowCloseButtonHint | Qt::Dialog);
+        unitInformationWnd->show();
+    }
+}
 void UnitWindow::timerUnitCustomMenuRequested(QPoint pos)
 {
     QModelIndex clickedIndex = m_timerTableView->indexAt(pos);
@@ -706,13 +777,9 @@ void UnitWindow::handleTimerUnitStatusAction()
     {
         const QModelIndex& curRowIndex = selectedIndexes.at(0);
         int curRow = curRowIndex.row();
-        //const QModelIndex& curCellIndex = m_timerStandItemModel->index(curRow,0);
-        //QString timerUnitName = m_timerStandItemModel->data(curCellIndex).toString();
         const QModelIndex& curCellIndex = m_timerUnitFilterModel->index(curRow,0);
         QString timerUnitName = m_timerUnitFilterModel->data(curCellIndex).toString();
 
-        //const QModelIndex& curCellIndex2 = m_timerStandItemModel->index(curRow, m_timerColumnCount-1);
-        //QString timerUnitFile = m_timerStandItemModel->data(curCellIndex2).toString();
         const QModelIndex& curCellIndex2 = m_timerUnitFilterModel->index(curRow, m_timerColumnCount-1);
         QString timerUnitFile = m_timerUnitFilterModel->data(curCellIndex2).toString();
 
@@ -720,7 +787,6 @@ void UnitWindow::handleTimerUnitStatusAction()
         unitInformationWnd->setWindowTitle(QObject::tr("Show Timer information"));
         unitInformationWnd->setWindowModality(Qt::ApplicationModal); //setting block
         unitInformationWnd->setAttribute(Qt::WA_ShowModal, true);    //property, true:model false:non model
-        //unitInformationWnd->setWindowFlags(Qt::WindowMinMaxButtonsHint | Qt::WindowCloseButtonHint | Qt::Dialog);
         unitInformationWnd->setWindowFlags(Qt::CustomizeWindowHint | Qt::WindowCloseButtonHint | Qt::Dialog);
         unitInformationWnd->show();
     }

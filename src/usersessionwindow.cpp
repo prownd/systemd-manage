@@ -176,8 +176,32 @@ void UserSessionWindow::createSessionTableView()
     connect(m_sessionTableView, SIGNAL(customContextMenuRequested(QPoint)),
             SLOT(sessionCustomMenuRequested(QPoint)));
 
+    connect(m_sessionTableView, SIGNAL(doubleClicked(const QModelIndex &)), this, SLOT(slotSessionTableRowDoubleClicked(const QModelIndex &)));
+
     // Add all the sessions
     slotRefreshSessionList();
+}
+
+void UserSessionWindow::slotSessionTableRowDoubleClicked(const QModelIndex index)
+{
+    QModelIndexList selectedIndexes = m_sessionTableView->selectionModel()->selectedRows();
+    if (selectedIndexes.count() >=1)
+    {
+        const QModelIndex& curRowIndex = selectedIndexes.at(0);
+        int curRow=curRowIndex.row();
+        const QModelIndex& curCellIndex = m_sessionModel->index(curRow,0);
+        QString sessionID = m_sessionModel->data(curCellIndex).toString();
+
+        const QModelIndex& curCellIndex2 = m_sessionModel->index(curRow, 1);
+        QString sessionObjectPath = m_sessionModel->data(curCellIndex2).toString();
+
+        SessionInformation * sessionInformationWnd = new SessionInformation(sessionID, sessionObjectPath, this);
+        sessionInformationWnd->setWindowTitle(QObject::tr("Session Status Information"));
+        sessionInformationWnd->setWindowModality(Qt::ApplicationModal);
+        sessionInformationWnd->setAttribute(Qt::WA_ShowModal, true); //property, true:model false:non model
+        sessionInformationWnd->setWindowFlags(Qt::WindowCloseButtonHint | Qt::Dialog);
+        sessionInformationWnd->show();
+    }
 }
 
 void UserSessionWindow::sessionCustomMenuRequested(QPoint pos)
@@ -377,9 +401,33 @@ void UserSessionWindow::createUserTableView()
     connect(m_userTableView, SIGNAL(customContextMenuRequested(QPoint)),
             SLOT(userCustomMenuRequested(QPoint)));
 
+    connect(m_userTableView, SIGNAL(doubleClicked(const QModelIndex &)), this, SLOT(slotUserTableRowDoubleClicked(const QModelIndex &)));
+
     // Add all the sessions
     slotRefreshUserList();
 
+}
+
+void UserSessionWindow::slotUserTableRowDoubleClicked(const QModelIndex index)
+{
+    QModelIndexList selectedIndexes = m_userTableView->selectionModel()->selectedRows();
+    if (selectedIndexes.count() >= 1)
+    {
+        const QModelIndex& curRowIndex = selectedIndexes.at(0);
+        int curRow = curRowIndex.row();
+        const QModelIndex& curCellIndex = m_userModel->index(curRow,0);
+        QString userID = m_userModel->data(curCellIndex).toString();
+
+        const QModelIndex& curCellIndex2 = m_userModel->index(curRow, 2);
+        QString userObjectPath = m_userModel->data(curCellIndex2).toString();
+
+        UserInformation * userInformationWnd = new UserInformation(userID, userObjectPath, this);
+        userInformationWnd->setWindowTitle(QObject::tr("Show User Information"));
+        userInformationWnd->setWindowModality(Qt::ApplicationModal);
+        userInformationWnd->setAttribute(Qt::WA_ShowModal, true); //property, true:model false:non model
+        userInformationWnd->setWindowFlags(Qt::WindowCloseButtonHint | Qt::Dialog);
+        userInformationWnd->show();
+    }
 }
 
 void UserSessionWindow::userCustomMenuRequested(QPoint pos)
@@ -426,7 +474,6 @@ void UserSessionWindow::handleUserStatusAction()
         userInformationWnd->setWindowTitle(QObject::tr("Show User Information"));
         userInformationWnd->setWindowModality(Qt::ApplicationModal);
         userInformationWnd->setAttribute(Qt::WA_ShowModal, true); //property, true:model false:non model
-        //userInformationWnd->setWindowFlags(Qt::CustomizeWindowHint | Qt::WindowCloseButtonHint | Qt::Dialog);
         userInformationWnd->setWindowFlags(Qt::WindowCloseButtonHint | Qt::Dialog);
         userInformationWnd->show();
     }

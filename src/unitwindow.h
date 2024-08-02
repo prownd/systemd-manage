@@ -184,6 +184,10 @@ private Q_SLOTS:
     void slotLineEditSearchTimerUnitChanged(QString term);
 
 public Q_SLOTS:
+    void slotSystemUnitTableRowDoubleClicked(const QModelIndex);
+    void slotUserUnitTableRowDoubleClicked(const QModelIndex);
+    void slotTimerUnitTableRowDoubleClicked(const QModelIndex);
+
     void systemUnitCustomMenuRequested(QPoint pos);
     void userUnitCustomMenuRequested(QPoint pos);
     void timerUnitCustomMenuRequested(QPoint pos);

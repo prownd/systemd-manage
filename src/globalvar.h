@@ -335,5 +335,4 @@ QMenu::item:selected {
 
 )");
 
-
 #endif // GLOBALVAR_H

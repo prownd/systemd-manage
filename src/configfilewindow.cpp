@@ -107,12 +107,34 @@ void ConfigFileWindow::createConfigFileTableView()
     connect(m_configFileTableView, SIGNAL(customContextMenuRequested(QPoint)),
             SLOT(configFileCustomMenuRequested(QPoint)));
 
+    connect(m_configFileTableView, SIGNAL(doubleClicked(const QModelIndex &)), this, SLOT(slotConfigFileTableRowDoubleClicked(const QModelIndex &)));
+
+
     slotRefreshConfFileList();
 
     QFileSystemWatcher *m_fileWatcher = new QFileSystemWatcher;
     connect(m_fileWatcher, &QFileSystemWatcher::fileChanged, this, &ConfigFileWindow::slotRefreshConfFileList);
     for (const conffile &f : m_confFileList) {
         m_fileWatcher->addPath(f.filePath);
+    }
+}
+
+void ConfigFileWindow::slotConfigFileTableRowDoubleClicked(const QModelIndex index)
+{
+    QModelIndexList selectedIndexes = m_configFileTableView->selectionModel()->selectedRows();
+    if (selectedIndexes.count() >=1)
+    {
+        const QModelIndex& curRowIndex = selectedIndexes.at(0);
+        int curRow = curRowIndex.row();
+        const QModelIndex& curCellIndex = m_confFileModel->index(curRow,0);
+        QString configFilePath = m_confFileModel->data(curCellIndex).toString();
+
+        ConfigFileInformation * configFileInformationWnd = new ConfigFileInformation(configFilePath, this);
+        configFileInformationWnd->setWindowTitle(QObject::tr("Show Config File Info"));
+        configFileInformationWnd->setWindowModality(Qt::ApplicationModal); //setting block model
+        configFileInformationWnd->setAttribute(Qt::WA_ShowModal, true);    //property, true:model false:non model
+        configFileInformationWnd->setWindowFlags(Qt::WindowCloseButtonHint | Qt::Dialog);
+        configFileInformationWnd->show();
     }
 }
 
@@ -157,7 +179,6 @@ void ConfigFileWindow::handleConfigFileStatusAction()
         configFileInformationWnd->setWindowFlags(Qt::WindowCloseButtonHint | Qt::Dialog);
         configFileInformationWnd->show();
     }
-
 }
 
 void ConfigFileWindow::handleConfigFileRefreshAction()

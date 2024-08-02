@@ -53,6 +53,7 @@ protected Q_SLOTS:
     void handleConfigFileRefreshAction();
 
     void configFileCustomMenuRequested(QPoint pos);
+    void slotConfigFileTableRowDoubleClicked(const QModelIndex);
 
 protected:
     //auto adjust window size
