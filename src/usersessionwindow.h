@@ -73,6 +73,7 @@ private:
 protected Q_SLOTS:
     void sessionCustomMenuRequested(QPoint pos);
     void slotSessionTableRowDoubleClicked(const QModelIndex);
+    void slotSessionTableRowTooltip(const QModelIndex);
 
     void handleSessionStatusAction();
     void handleSessionLockAction();
@@ -83,6 +84,7 @@ protected Q_SLOTS:
 
     void userCustomMenuRequested(QPoint pos);
     void slotUserTableRowDoubleClicked(const QModelIndex);
+    void slotUserTableRowTooltip(const QModelIndex);
 
     void handleUserStatusAction();
     void handleUserTerminateAction();

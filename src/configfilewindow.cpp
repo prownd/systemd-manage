@@ -75,6 +75,7 @@ void ConfigFileWindow::createConfigFileTableView()
     m_configFileTableView->setColumnWidth(0,400);
     m_configFileTableView->setModel(m_confFileModel);
     m_configFileTableView->sortByColumn(1, Qt::AscendingOrder);
+    m_configFileTableView->setMouseTracking(true);
 
     m_confFileList.append(conffile(QStringLiteral("/etc/systemd/coredump.conf"),
                                    QStringLiteral("coredump.conf"),
@@ -108,7 +109,7 @@ void ConfigFileWindow::createConfigFileTableView()
             SLOT(configFileCustomMenuRequested(QPoint)));
 
     connect(m_configFileTableView, SIGNAL(doubleClicked(const QModelIndex &)), this, SLOT(slotConfigFileTableRowDoubleClicked(const QModelIndex &)));
-
+    connect(m_configFileTableView, SIGNAL(entered(QModelIndex)), this, SLOT(slotConfigFileTableRowTooltip(QModelIndex)));
 
     slotRefreshConfFileList();
 
@@ -117,6 +118,33 @@ void ConfigFileWindow::createConfigFileTableView()
     for (const conffile &f : m_confFileList) {
         m_fileWatcher->addPath(f.filePath);
     }
+}
+
+void ConfigFileWindow::slotConfigFileTableRowTooltip(const QModelIndex index)
+{
+    int curRow=index.row();
+    const QModelIndex& curCellIndex1 = m_confFileModel->index(curRow,0);
+    QString configFileName = m_confFileModel->data(curCellIndex1).toString();
+
+    const QModelIndex& curCellIndex2 = m_confFileModel->index(curRow, 2);
+    QString configFileCreateTime =m_confFileModel->data(curCellIndex2).toString();
+
+    const QModelIndex& curCellIndex3 = m_confFileModel->index(curRow, 3);
+    QString configFileSize = m_confFileModel->data(curCellIndex3).toString();
+
+    const QModelIndex& curCellIndex4 = m_confFileModel->index(curRow, 4);
+    QString configFileDescription = m_confFileModel->data(curCellIndex4).toString();
+
+    QString toolTipText;
+    toolTipText.append(QStringLiteral("<FONT COLOR=DarkCyan>"));
+    toolTipText.append(QStringLiteral("<b>Config File Name: %1</b><hr>").arg(configFileName));
+    toolTipText.append(QStringLiteral("<b>Config File Create Time: %1</b><hr>").arg(configFileCreateTime));
+    toolTipText.append(QStringLiteral("<b>Config File Size: %1</b><hr>").arg(configFileSize));
+    toolTipText.append(QStringLiteral("<b>Config File Description: %1</b><hr>").arg(configFileDescription));
+    toolTipText.append(QStringLiteral("</FONT"));
+
+    m_confFileModel->itemFromIndex(index)->setToolTip(toolTipText);
+    //QToolTip::showText(QCursor::pos(), toolTipText, this, QRect(), -1);
 }
 
 void ConfigFileWindow::slotConfigFileTableRowDoubleClicked(const QModelIndex index)

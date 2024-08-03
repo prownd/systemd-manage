@@ -168,6 +168,7 @@ void UserSessionWindow::createSessionTableView()
     m_sessionTableView->setMinimumWidth(width());
     m_sessionTableView->setMinimumHeight(height());
     m_sessionTableView->adjustSize();
+    m_sessionTableView->setMouseTracking(true);
 
     m_subSessionLayout->addWidget(m_sessionTableView);
 
@@ -177,9 +178,52 @@ void UserSessionWindow::createSessionTableView()
             SLOT(sessionCustomMenuRequested(QPoint)));
 
     connect(m_sessionTableView, SIGNAL(doubleClicked(const QModelIndex &)), this, SLOT(slotSessionTableRowDoubleClicked(const QModelIndex &)));
+    connect(m_sessionTableView, SIGNAL(entered(QModelIndex)), this, SLOT(slotSessionTableRowTooltip(QModelIndex)));
 
     // Add all the sessions
     slotRefreshSessionList();
+}
+
+void UserSessionWindow::slotSessionTableRowTooltip(const QModelIndex index)
+{
+    int curRow=index.row();
+    const QModelIndex& curCellIndex = m_sessionModel->index(curRow,0);
+    QString sessionID = m_sessionModel->data(curCellIndex).toString();
+    const QModelIndex& curCellIndex2 = m_sessionModel->index(curRow, 1);
+    QString sessionObjectPathStr = m_sessionModel->data(curCellIndex2).toString();
+
+    QDBusObjectPath session_objectPath;
+    session_objectPath.setPath(sessionObjectPathStr);
+    QString sessionName=m_systemdManagerInterface->getDbusProperty(QStringLiteral("Name"), logdSession, session_objectPath).toString();
+    QString sessionActive = m_systemdManagerInterface->getDbusProperty(QStringLiteral("State"), logdSession, session_objectPath).toString();
+    QString sessionScope = m_systemdManagerInterface->getDbusProperty(QStringLiteral("Scope"), logdSession, session_objectPath).toString();
+    QString sessionService = m_systemdManagerInterface->getDbusProperty(QStringLiteral("Service"), logdSession, session_objectPath).toString();
+    QString sessionTTY = m_systemdManagerInterface->getDbusProperty(QStringLiteral("TTY"), logdSession, session_objectPath).toString();
+    QString sessionTimestamp = m_systemdManagerInterface->getDbusProperty(QStringLiteral("Timestamp"), logdSession, session_objectPath).toString();
+    QString sessionRemoteHost = m_systemdManagerInterface->getDbusProperty(QStringLiteral("RemoteHost"), logdSession, session_objectPath).toString();
+    QString sessionType = m_systemdManagerInterface->getDbusProperty(QStringLiteral("Type"), logdSession, session_objectPath).toString();
+    QString sessionLeader = m_systemdManagerInterface->getDbusProperty(QStringLiteral("Leader"), logdSession, session_objectPath).toString();
+    QString sessionAudit = m_systemdManagerInterface->getDbusProperty(QStringLiteral("Audit"), logdSession, session_objectPath).toString();
+    QString sessionVTNumber = m_systemdManagerInterface->getDbusProperty(QStringLiteral("VTNr"), logdSession, session_objectPath).toString();
+
+    QString toolTipText;
+    toolTipText.append(QStringLiteral("<FONT COLOR=DarkCyan>"));
+    toolTipText.append(QStringLiteral("<b>Session ID: %1</b><hr>").arg(sessionID));
+    toolTipText.append(QStringLiteral("<b>Session Object Path: %1</b><hr>").arg(sessionObjectPathStr));
+    toolTipText.append(QStringLiteral("<b>Session Name: %1</b><hr>").arg(sessionName));
+    toolTipText.append(QStringLiteral("<b>Session Active: %1</b><hr>").arg(sessionActive));
+    toolTipText.append(QStringLiteral("<b>Session Scope: %1</b><hr>").arg(sessionScope));
+    toolTipText.append(QStringLiteral("<b>Session Service: %1</b><hr>").arg(sessionService));
+    toolTipText.append(QStringLiteral("<b>Session TTY: %1</b><hr>").arg(sessionTTY));
+    toolTipText.append(QStringLiteral("<b>Session Timestamp: %1</b><hr>").arg(sessionTimestamp));
+    toolTipText.append(QStringLiteral("<b>Session Remote Host: %1</b><hr>").arg(sessionRemoteHost));
+    toolTipText.append(QStringLiteral("<b>Session Type: %1</b><hr>").arg(sessionType));
+    toolTipText.append(QStringLiteral("<b>Session Leader: %1</b><hr>").arg(sessionLeader));
+    toolTipText.append(QStringLiteral("<b>Session Audit: %1</b><hr>").arg(sessionAudit));
+    toolTipText.append(QStringLiteral("<b>Session VT Number: %1</b><hr>").arg(sessionVTNumber));
+    toolTipText.append(QStringLiteral("</FONT"));
+
+    m_sessionModel->itemFromIndex(index)->setToolTip(toolTipText);
 }
 
 void UserSessionWindow::slotSessionTableRowDoubleClicked(const QModelIndex index)
@@ -393,6 +437,7 @@ void UserSessionWindow::createUserTableView()
     m_userTableView->setMinimumWidth(width());
     m_userTableView->setMinimumHeight(height());
     m_userTableView->adjustSize();
+    m_userTableView->setMouseTracking(true);
 
     m_subUserLayout->addWidget(m_userTableView);
 
@@ -402,10 +447,46 @@ void UserSessionWindow::createUserTableView()
             SLOT(userCustomMenuRequested(QPoint)));
 
     connect(m_userTableView, SIGNAL(doubleClicked(const QModelIndex &)), this, SLOT(slotUserTableRowDoubleClicked(const QModelIndex &)));
+    connect(m_userTableView, SIGNAL(entered(QModelIndex)), this, SLOT(slotUserTableRowTooltip(QModelIndex)));
 
     // Add all the sessions
     slotRefreshUserList();
 
+}
+
+void UserSessionWindow::slotUserTableRowTooltip(const QModelIndex index)
+{
+    int curRow=index.row();
+    const QModelIndex& curCellIndex = m_userModel->index(curRow,0);
+    QString userID = m_userModel->data(curCellIndex).toString();
+
+    const QModelIndex& curCellIndex2 = m_userModel->index(curRow, 2);
+    QString userObjectPathStr = m_userModel->data(curCellIndex2).toString();
+
+    QDBusObjectPath user_objectPath;
+    user_objectPath.setPath(userObjectPathStr);
+
+    QString userName = m_systemdManagerInterface->getDbusProperty(QStringLiteral("Name"), logdUser, user_objectPath).toString();
+    QString userGid = m_systemdManagerInterface->getDbusProperty(QStringLiteral("GID"), logdUser, user_objectPath).toString();
+    QString userState = m_systemdManagerInterface->getDbusProperty(QStringLiteral("State"), logdUser, user_objectPath).toString();
+    QString userService = m_systemdManagerInterface->getDbusProperty(QStringLiteral("Service"), logdUser, user_objectPath).toString();
+    QString userSlice = m_systemdManagerInterface->getDbusProperty(QStringLiteral("Slice"), logdUser, user_objectPath).toString();
+    QString userRuntimePath = m_systemdManagerInterface->getDbusProperty(QStringLiteral("RuntimePath"), logdUser, user_objectPath).toString();
+    QString userTimestamp = m_systemdManagerInterface->getDbusProperty(QStringLiteral("Timestamp"), logdUser, user_objectPath).toString();
+
+    QString toolTipText;
+    toolTipText.append(QStringLiteral("<FONT COLOR=DarkCyan>"));
+    toolTipText.append(QStringLiteral("<b>User ID: %1</b><hr>").arg(userID));
+    toolTipText.append(QStringLiteral("<b>User Object Path: %1</b><hr>").arg(userObjectPathStr));
+    toolTipText.append(QStringLiteral("<b>User Name: %1</b><hr>").arg(userName));
+    toolTipText.append(QStringLiteral("<b>User Gid: %1</b><hr>").arg(userGid));
+    toolTipText.append(QStringLiteral("<b>User State: %1</b><hr>").arg(userState));
+    toolTipText.append(QStringLiteral("<b>User Service: %1</b><hr>").arg(userService));
+    toolTipText.append(QStringLiteral("<b>User Slice: %1</b><hr>").arg(userSlice));
+    toolTipText.append(QStringLiteral("<b>User RuntimePath: %1</b><hr>").arg(userRuntimePath));
+    toolTipText.append(QStringLiteral("<b>User Timestamp: %1</b><hr>").arg(userTimestamp));
+
+    m_userModel->itemFromIndex(index)->setToolTip(toolTipText);
 }
 
 void UserSessionWindow::slotUserTableRowDoubleClicked(const QModelIndex index)

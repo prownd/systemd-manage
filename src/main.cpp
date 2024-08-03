@@ -45,7 +45,6 @@ int main(int argc, char *argv[])
         QString locale = QLocale::system().name();
         translator.load(QString(":/translators/app_") + locale);
     }
-
     a.installTranslator(&translator);
 
     QApplication::setWindowIcon(QIcon(QString(":/icons/systemd-manage.png")));

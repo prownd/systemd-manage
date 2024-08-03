@@ -35,10 +35,24 @@ public:
     QVariant headerData(int section, Qt::Orientation orientation, int role) const override;
     QVariant data(const QModelIndex & index, int role = Qt::DisplayRole) const override;
 
+    QStringList getLastJrnlEntries(QString unit) const;
+
 private:
     const QVector<SystemdUnit> *m_unitList;
     int m_columnCount;
     QString m_userBus;
+
+    const QString m_connSystemd = QStringLiteral("org.freedesktop.systemd1");
+    const QString m_connLogind = QStringLiteral("org.freedesktop.login1");
+    const QString m_pathSysdMgr = QStringLiteral("/org/freedesktop/systemd1");
+    const QString m_pathLogdMgr = QStringLiteral("/org/freedesktop/login1");
+    const QString m_ifaceMgr = QStringLiteral("org.freedesktop.systemd1.Manager");
+    const QString m_ifaceLogdMgr = QStringLiteral("org.freedesktop.login1.Manager");
+    const QString m_ifaceUnit = QStringLiteral("org.freedesktop.systemd1.Unit");
+    const QString m_ifaceTimer = QStringLiteral("org.freedesktop.systemd1.Timer");
+    const QString m_ifaceSession = QStringLiteral("org.freedesktop.login1.Session");
+    const QString m_ifaceUser = QStringLiteral("org.freedesktop.login1.User");
+    const QString m_ifaceDbusProp = QStringLiteral("org.freedesktop.DBus.Properties");
 };
 
 #endif // UNITMODEL_H

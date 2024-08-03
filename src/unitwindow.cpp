@@ -27,6 +27,9 @@
 #include <QMenu>
 #include <QMessageBox>
 #include <QSortFilterProxyModel>
+#include <QDebug>
+#include <QApplication>
+#include <QToolTip>
 
 #include "unitinformation.h"
 
@@ -54,7 +57,7 @@ UnitWindow::~UnitWindow()
 
 void UnitWindow::initData()
 {
-    m_systemUnitColumnCount = 7;
+    m_systemUnitColumnCount = 8;
     m_userUnitColumnCount = 7;
     m_timerColumnCount = 7;
 }
@@ -150,10 +153,13 @@ void UnitWindow::createSystemUnitTableView()
     m_systemUnitTableView->setSelectionBehavior(QAbstractItemView::SelectRows);
     m_systemUnitTableView->setSelectionMode ( QAbstractItemView::SingleSelection);
     m_systemUnitTableView->setEditTriggers(QAbstractItemView::NoEditTriggers);
+       m_systemUnitTableView->setColumnHidden(m_systemUnitColumnCount-2, true);
     m_systemUnitTableView->setColumnHidden(m_systemUnitColumnCount-1, true);
     m_systemUnitTableView->setMinimumWidth(width());
     m_systemUnitTableView->setMinimumHeight(height());
     m_systemUnitTableView->adjustSize();
+    m_systemUnitTableView->setSelectionBehavior(QAbstractItemView::SelectRows);
+    m_systemUnitTableView->setMouseTracking(true);
 
     m_subSystemUnitLayout->addWidget(m_systemUnitTableView);
 
@@ -175,8 +181,51 @@ void UnitWindow::createSystemUnitTableView()
     connect(m_searchSystemUnitLineEdit, &QLineEdit::textChanged, this, &UnitWindow::slotLineEditSearchSystemUnitChanged);
 
     connect(m_systemUnitTableView, SIGNAL(doubleClicked(const QModelIndex &)), this, SLOT(slotSystemUnitTableRowDoubleClicked(const QModelIndex &)));
+    connect(m_systemUnitTableView, SIGNAL(entered(QModelIndex)), this, SLOT(slotSystemUnitTableRowTooltip(QModelIndex)));
 
     slotCheckBoxShowSystemUnits(-1);
+}
+
+void UnitWindow::slotSystemUnitTableRowTooltip(const QModelIndex index)
+{
+    /*
+    int curRow=index.row();
+    const QModelIndex& curCellIndex = m_systemUnitFilterModel->index(curRow,0);
+    QString systemUnitName = m_systemUnitFilterModel->data(curCellIndex).toString();
+    const QModelIndex& curCellIndex2 = m_systemUnitFilterModel->index(curRow, m_systemUnitColumnCount-2);
+    QString systemUnitFile = m_systemUnitFilterModel->data(curCellIndex2).toString();
+    const QModelIndex& curCellIndex3 = m_systemUnitFilterModel->index(curRow, m_systemUnitColumnCount-1);
+    QString systemUnitPath = m_systemUnitFilterModel->data(curCellIndex3).toString();
+
+    QDBusObjectPath unit_path(systemUnitPath);
+    QString  unitPropertyDescriptionStr =
+        m_systemdManagerInterface->getDbusProperty(QStringLiteral("Description"), sysdUnit, unit_path, sys).toString();
+    QString  unitPropertyIDStr =
+        m_systemdManagerInterface->getDbusProperty(QStringLiteral("ID"), sysdUnit, unit_path, sys).toString();
+    QString  unitPropertyActiveStateStr =
+        m_systemdManagerInterface->getDbusProperty(QStringLiteral("ActiveState"), sysdUnit, unit_path, sys).toString();
+
+    QVariant  unitPropertyRequiresStr =
+        m_systemdManagerInterface->getDbusProperty(QStringLiteral("Requires"), sysdUnit, unit_path, sys).toString();
+    qDebug()<<"unitPropertyRequiresStr:"<< unitPropertyRequiresStr;
+
+    // QVariantList list = unitPropertyRequiresStr.toList();
+    // foreach(QVariant e, list ){  qDebug()<< e.toString(); }
+
+    QString toolTipText;
+    toolTipText.append(QStringLiteral("<FONT COLOR=DarkCyan>"));
+    toolTipText.append(QStringLiteral("<b>Unit Name:%1</b><hr>").arg(systemUnitName));
+    toolTipText.append(QStringLiteral("<b>Unit File:%1</b><hr>").arg(systemUnitFile));
+    toolTipText.append(QStringLiteral("<b>Unit Description:%1</b><hr>").arg(unitPropertyDescriptionStr));
+    toolTipText.append(QStringLiteral("<b>Unit ID:%1</b><hr>").arg(unitPropertyIDStr));
+    toolTipText.append(QStringLiteral("<b>Unit ID:%1</b><hr>").arg(unitPropertyActiveStateStr));
+    toolTipText.append(QStringLiteral("</FONT"));
+    */
+
+    //m_systemUnitFilterModel->itemFromIndex(index)->setToolTip(toolTipText);
+    //QToolTip::showText(QCursor::pos(), toolTipText, this, QRect(), -1);
+
+    return;
 }
 
 void UnitWindow::slotSystemUnitTableRowDoubleClicked(const QModelIndex index)
@@ -184,13 +233,14 @@ void UnitWindow::slotSystemUnitTableRowDoubleClicked(const QModelIndex index)
     QModelIndexList selectedIndexes = m_systemUnitTableView->selectionModel()->selectedRows();
     if (selectedIndexes.count() >=1)
     {
-        const QModelIndex& curRowIndex=selectedIndexes.at(0);
-        //int curRow=index.row();
-        int curRow=curRowIndex.row();
-        const QModelIndex& curCellIndex=m_systemUnitFilterModel->index(curRow,0);
-        QString systemUnitName=m_systemUnitFilterModel->data(curCellIndex).toString();
+        const QModelIndex& curRowIndex = selectedIndexes.at(0);
+        //int curRow = index.row();
+        int curRow = curRowIndex.row();
+        const QModelIndex& curCellIndex = m_systemUnitFilterModel->index(curRow,0);
+        QString systemUnitName = m_systemUnitFilterModel->data(curCellIndex).toString();
+        //qDebug()<<"cell data 1:"<< systemUnitName;
 
-        const QModelIndex& curCellIndex2 = m_systemUnitFilterModel->index(curRow, m_systemUnitColumnCount-1);
+        const QModelIndex& curCellIndex2 = m_systemUnitFilterModel->index(curRow, m_systemUnitColumnCount-2);
         QString systemUnitFile = m_systemUnitFilterModel->data(curCellIndex2).toString();
 
         UnitInformation * unitInformationWnd = new UnitInformation(systemUnitName, systemUnitFile, this);//only pointer ,not object instance
@@ -264,17 +314,17 @@ void UnitWindow::handleSystemUnitStatusAction()
     //foreach(const QModelIndex& index, selectedIndexes)
     if (selectedIndexes.count() >=1)
     {
-        const QModelIndex& curRowIndex=selectedIndexes.at(0);
-        int curRow=curRowIndex.row();
-        //const QModelIndex& curCellIndex=m_systemUnitModel->index(curRow,0);
-        //QString systemUnitName=m_systemUnitModel->data(curCellIndex).toString();
-        const QModelIndex& curCellIndex=m_systemUnitFilterModel->index(curRow,0);
-        QString systemUnitName=m_systemUnitFilterModel->data(curCellIndex).toString();
+        const QModelIndex& curRowIndex = selectedIndexes.at(0);
+        int curRow = curRowIndex.row();
+        //const QModelIndex& curCellIndex = m_systemUnitModel->index(curRow,0);
+        //QString systemUnitName = m_systemUnitModel->data(curCellIndex).toString();
+        const QModelIndex& curCellIndex = m_systemUnitFilterModel->index(curRow,0);
+        QString systemUnitName = m_systemUnitFilterModel->data(curCellIndex).toString();
         //qDebug()<<"cell data:"<< systemUnitName;
 
-        //const QModelIndex& curCellIndex2=m_systemUnitModel->index(curRow, m_systemUnitColumnCount-1);
-        //QString systemUnitFile=m_systemUnitModel->data(curCellIndex2).toString();
-        const QModelIndex& curCellIndex2 = m_systemUnitFilterModel->index(curRow, m_systemUnitColumnCount-1);
+        //const QModelIndex& curCellIndex2 = m_systemUnitModel->index(curRow, m_systemUnitColumnCount-1);
+        //QString systemUnitFile = m_systemUnitModel->data(curCellIndex2).toString();
+        const QModelIndex& curCellIndex2 = m_systemUnitFilterModel->index(curRow, m_systemUnitColumnCount-2);
         QString systemUnitFile = m_systemUnitFilterModel->data(curCellIndex2).toString();
 
         UnitInformation * unitInformationWnd = new UnitInformation(systemUnitName, systemUnitFile, this);//only pointer ,not object instance
@@ -450,8 +500,8 @@ void UnitWindow::slotUserUnitTableRowDoubleClicked(const QModelIndex index)
     QModelIndexList selectedIndexes = m_userUnitTableView->selectionModel()->selectedRows();
     if (selectedIndexes.count() >=1)
     {
-        const QModelIndex& curRowIndex=selectedIndexes.at(0);
-        int curRow=curRowIndex.row();
+        const QModelIndex& curRowIndex = selectedIndexes.at(0);
+        int curRow = curRowIndex.row();
         const QModelIndex& curCellIndex = m_userUnitFilterModel->index(curRow,0);
         QString userUnitName = m_userUnitFilterModel->data(curCellIndex).toString();
 
@@ -530,8 +580,8 @@ void UnitWindow::handleUserUnitStatusAction()
     QModelIndexList selectedIndexes = m_userUnitTableView->selectionModel()->selectedRows();
     if (selectedIndexes.count() >=1)
     {
-        const QModelIndex& curRowIndex=selectedIndexes.at(0);
-        int curRow=curRowIndex.row();
+        const QModelIndex& curRowIndex = selectedIndexes.at(0);
+        int curRow = curRowIndex.row();
         const QModelIndex& curCellIndex = m_userUnitFilterModel->index(curRow,0);
         QString userUnitName = m_userUnitFilterModel->data(curCellIndex).toString();
 
@@ -640,9 +690,11 @@ void UnitWindow::createTimerTableView()
     m_timerStandItemModel->setHorizontalHeaderItem(3, new QStandardItem(tr("Last")));
     m_timerStandItemModel->setHorizontalHeaderItem(4, new QStandardItem(tr("Passed")));
     m_timerStandItemModel->setHorizontalHeaderItem(5, new QStandardItem(tr("Activates")));
+    m_timerStandItemModel->setHorizontalHeaderItem(6, new QStandardItem(tr("Timer File")));
     m_timerTableView->horizontalHeader()->setDefaultAlignment(Qt::AlignLeft | Qt::AlignVCenter);
     m_timerTableView->verticalHeader()->setDefaultSectionSize(40);
     m_timerTableView->resizeColumnsToContents();
+    m_timerTableView->setColumnHidden(m_timerColumnCount-1, true);
 
     m_timerTableView->setSelectionBehavior(QAbstractItemView::SelectRows);
     m_timerTableView->setSelectionMode ( QAbstractItemView::SingleSelection);
@@ -673,6 +725,7 @@ void UnitWindow::createTimerTableView()
     m_timerTableView->setMinimumWidth(this->width());
     m_timerTableView->setMinimumHeight(height());
     m_timerTableView->adjustSize();
+    m_timerTableView->setMouseTracking(true);
 
     m_subTimerLayout->addWidget(m_timerTableView);
 
@@ -692,8 +745,32 @@ void UnitWindow::createTimerTableView()
     connect(m_timerTableView, SIGNAL(doubleClicked(const QModelIndex &)), this, SLOT(slotTimerUnitTableRowDoubleClicked(const QModelIndex &)));
 
     slotRefreshTimerList();
+
+    connect(m_timerTableView, SIGNAL(entered(QModelIndex)), this, SLOT(slotTimerUnitTableRowTooltip(QModelIndex)));
 }
 
+void UnitWindow::slotTimerUnitTableRowTooltip(const QModelIndex index)
+{
+    int curRow=index.row();
+    const QModelIndex& curCellIndex1 = m_timerUnitFilterModel->index(curRow,0);
+    QString timerUnitName = m_timerUnitFilterModel->data(curCellIndex1).toString();
+
+    const QModelIndex& curCellIndex2 = m_timerUnitFilterModel->index(curRow, 4);
+    QString timerUnitPassed = m_timerUnitFilterModel->data(curCellIndex2).toString();
+
+    const QModelIndex& curCellIndex3 = m_timerUnitFilterModel->index(curRow, 5);
+    QString timerUnitActivates = m_timerUnitFilterModel->data(curCellIndex3).toString();
+
+    QString toolTipText;
+    toolTipText.append(QStringLiteral("<FONT COLOR=DarkCyan>"));
+    toolTipText.append(QStringLiteral("<b>Timer: %1</b><hr>").arg(timerUnitName));
+    toolTipText.append(QStringLiteral("<b>Timer Passed: %1</b><hr>").arg(timerUnitPassed));
+    toolTipText.append(QStringLiteral("<b>Timer Activates: %1</b><hr>").arg(timerUnitActivates));
+    toolTipText.append(QStringLiteral("</FONT"));
+
+    //m_timerStandItemModel->itemFromIndex(index)->setToolTip(toolTipText);
+    QToolTip::showText(QCursor::pos(), toolTipText, this, QRect(), -1);
+}
 
 void UnitWindow::slotTimerUnitTableRowDoubleClicked(const QModelIndex index)
 {

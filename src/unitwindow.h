@@ -185,8 +185,10 @@ private Q_SLOTS:
 
 public Q_SLOTS:
     void slotSystemUnitTableRowDoubleClicked(const QModelIndex);
+    void slotSystemUnitTableRowTooltip(const QModelIndex);
     void slotUserUnitTableRowDoubleClicked(const QModelIndex);
     void slotTimerUnitTableRowDoubleClicked(const QModelIndex);
+    void slotTimerUnitTableRowTooltip(const QModelIndex);
 
     void systemUnitCustomMenuRequested(QPoint pos);
     void userUnitCustomMenuRequested(QPoint pos);

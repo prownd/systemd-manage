@@ -20,6 +20,7 @@
 #include <QColor>
 #include <QIcon>
 #include <QtDBus/QtDBus>
+#include <systemd/sd-journal.h>
 
 
 UnitModel::UnitModel(QObject *parent)
@@ -67,7 +68,9 @@ QVariant UnitModel::headerData(int section, Qt::Orientation orientation, int rol
     } else if (orientation == Qt::Horizontal && role == Qt::DisplayRole && section == 5) {
         return tr("Description");
     } else if (orientation == Qt::Horizontal && role == Qt::DisplayRole && section == 6) {
-        return tr("Unit file");
+        return tr("Unit File");
+    } else if (orientation == Qt::Horizontal && role == Qt::DisplayRole && section == 7) {
+        return tr("Unit Path");
     }
     return QVariant();
 }
@@ -94,8 +97,9 @@ QVariant UnitModel::data(const QModelIndex & index, int role) const
             return m_unitList->at(index.row()).description;
         else if (index.column() == 6)
             return m_unitList->at(index.row()).unit_file;
+        else if (index.column() == 7)
+            return m_unitList->at(index.row()).unit_path.path();
     }
-
     else if (role == Qt::DecorationRole)
     {
         if (index.column() == 0) {
@@ -116,6 +120,207 @@ QVariant UnitModel::data(const QModelIndex & index, int role) const
             }
         }
     }
+    else if (role == Qt::ToolTipRole)
+    {
+        QString selUnit = m_unitList->at(index.row()).id;
+        QString selUnitPath = m_unitList->at(index.row()).unit_path.path();
+        QString selUnitFile = m_unitList->at(index.row()).unit_file;
 
+        QString toolTipText;
+        toolTipText.append("<FONT COLOR=DarkCyan>");
+        toolTipText.append("<b>" + selUnit + "</b><hr>");
+
+        // Create a DBus interface
+        QDBusConnection bus("");
+        if (!m_userBus.isEmpty())
+            bus = QDBusConnection::connectToBus(m_userBus, m_connSystemd);
+        else
+            bus = QDBusConnection::systemBus();
+        QDBusInterface *iface;
+
+        // Use the DBus interface to get unit properties
+        if (!selUnitPath.isEmpty())
+        {
+            // Unit has a valid path
+            iface = new QDBusInterface (m_connSystemd,
+                                       selUnitPath,
+                                       m_ifaceUnit,
+                                       bus);
+            if (iface->isValid())
+            {
+                // Unit has a valid unit DBus object
+                toolTipText.append(tr("<b>Description: </b>"));
+                toolTipText.append(iface->property("Description").toString());
+                toolTipText.append(tr("<br><b>Unit file: </b>"));
+                toolTipText.append(iface->property("FragmentPath").toString());
+                toolTipText.append(tr("<br><b>Unit file state: </b>"));
+                toolTipText.append(iface->property("UnitFileState").toString());
+
+                qulonglong ActiveEnterTimestamp = iface->property("ActiveEnterTimestamp").toULongLong();
+                toolTipText.append(tr("<br><b>Activated: </b>"));
+                if (ActiveEnterTimestamp == 0)
+                {
+                    toolTipText.append("n/a");
+                }
+                else
+                {
+                    QDateTime timeActivated;
+                    timeActivated.setMSecsSinceEpoch(ActiveEnterTimestamp/1000);
+                    toolTipText.append(timeActivated.toString());
+                }
+
+                qulonglong InactiveEnterTimestamp = iface->property("InactiveEnterTimestamp").toULongLong();
+                toolTipText.append(tr("<br><b>Deactivated: </b>"));
+                if (InactiveEnterTimestamp == 0)
+                {
+                    toolTipText.append("n/a");
+                }
+                else
+                {
+                    QDateTime timeDeactivated;
+                    timeDeactivated.setMSecsSinceEpoch(InactiveEnterTimestamp/1000);
+                    toolTipText.append(timeDeactivated.toString());
+                }
+            }
+            delete iface;
+        }
+        else
+        {
+            // Unit does not have a valid unit DBus object
+            // Retrieve UnitFileState from Manager object
+            iface = new QDBusInterface (m_connSystemd,
+                                        m_pathSysdMgr,
+                                        m_ifaceMgr,
+                                        bus);
+            QList<QVariant> args;
+            args << selUnit;
+
+            toolTipText.append(tr("<b>Unit file: </b>"));
+            if (!selUnitFile.isEmpty())
+                toolTipText.append(selUnitFile);
+
+            toolTipText.append(tr("<br><b>Unit file state: </b>"));
+            if (!selUnitFile.isEmpty())
+                toolTipText.append(iface->callWithArgumentList(QDBus::AutoDetect, "GetUnitFileState", args).arguments().at(0).toString());
+
+            delete iface;
+        }
+
+        // Journal entries for units
+        toolTipText.append(tr("<hr><b>Last log entries:</b>"));
+        QStringList log = getLastJrnlEntries(selUnit);
+        if (log.isEmpty())
+        {
+            toolTipText.append(tr("<br><i>No log entries found for this unit.</i>"));
+        }
+        else
+        {
+            for(int i = log.count()-1; i >= 0; --i)
+            {
+                if (!log.at(i).isEmpty())
+                    toolTipText.append(QString("<br>" + log.at(i)));
+            }
+        }
+
+        toolTipText.append("</FONT");
+        return toolTipText;
+    }
     return QVariant();
+}
+
+QStringList UnitModel::getLastJrnlEntries(QString unit) const
+{
+    QString match1, match2;
+    int r, jflags;
+    QStringList reply;
+    const void *data;
+    size_t length;
+    uint64_t time;
+    sd_journal *journal;
+
+    if (!m_userBus.isEmpty())
+    {
+        match1 = QString("USER_UNIT=" + unit);
+        jflags = (SD_JOURNAL_LOCAL_ONLY | SD_JOURNAL_CURRENT_USER);
+    }
+    else
+    {
+        match1 = QString("_SYSTEMD_UNIT=" + unit);
+        match2 = QString("UNIT=" + unit);
+        jflags = (SD_JOURNAL_LOCAL_ONLY | SD_JOURNAL_SYSTEM);
+    }
+
+    r = sd_journal_open(&journal, jflags);
+    if (r != 0)
+    {
+        qDebug() << "Failed to open journal";
+        return reply;
+    }
+
+    sd_journal_flush_matches(journal);
+
+    r = sd_journal_add_match(journal, match1.toUtf8(), 0);
+    if (r != 0)
+        return reply;
+
+    if (!match2.isEmpty())
+    {
+        sd_journal_add_disjunction(journal);
+        r = sd_journal_add_match(journal, match2.toUtf8(), 0);
+        if (r != 0)
+            return reply;
+    }
+
+
+    r = sd_journal_seek_tail(journal);
+    if (r != 0)
+        return reply;
+
+    // Fetch the last 5 entries
+    for (int i = 0; i < 5; ++i)
+    {
+        r = sd_journal_previous(journal);
+        if (r == 1)
+        {
+            QString line;
+
+            // Get the date and time
+            r = sd_journal_get_realtime_usec(journal, &time);
+            if (r == 0)
+            {
+                QDateTime date;
+                date.setMSecsSinceEpoch(time/1000);
+                line.append(date.toString("yyyy.MM.dd hh:mm"));
+            }
+
+            // Color messages according to priority
+            r = sd_journal_get_data(journal, "PRIORITY", &data, &length);
+            if (r == 0)
+            {
+                int prio = QString::fromUtf8((const char *)data, length).section('=',1).toInt();
+                if (prio <= 3)
+                    line.append("<span style='color:tomato;'>");
+                else if (prio == 4)
+                    line.append("<span style='color:khaki;'>");
+                else
+                    line.append("<span style='color:SeaGreen;'>");
+            }
+
+            // Get the message itself
+            r = sd_journal_get_data(journal, "MESSAGE", &data, &length);
+            if (r == 0)
+            {
+                line.append(": " + QString::fromUtf8((const char *)data, length).section('=',1) + "</span>");
+                if (line.length() > 195)
+                    line = QString(line.left(195) + "..." + "</span>");
+                reply << line;
+            }
+        }
+        else // previous failed, no more entries
+            return reply;
+    }
+
+    sd_journal_close(journal);
+
+    return reply;
 }
