@@ -763,9 +763,9 @@ void UnitWindow::slotTimerUnitTableRowTooltip(const QModelIndex index)
 
     QString toolTipText;
     toolTipText.append(QStringLiteral("<FONT COLOR=DarkCyan>"));
-    toolTipText.append(QStringLiteral("<b>Timer: %1</b><hr>").arg(timerUnitName));
-    toolTipText.append(QStringLiteral("<b>Timer Passed: %1</b><hr>").arg(timerUnitPassed));
-    toolTipText.append(QStringLiteral("<b>Timer Activates: %1</b><hr>").arg(timerUnitActivates));
+    toolTipText.append(tr("<b>Timer: %1</b><hr>").arg(timerUnitName));
+    toolTipText.append(tr("<b>Timer Passed: %1</b><hr>").arg(timerUnitPassed));
+    toolTipText.append(tr("<b>Timer Activates: %1</b><hr>").arg(timerUnitActivates));
     toolTipText.append(QStringLiteral("</FONT"));
 
     //m_timerStandItemModel->itemFromIndex(index)->setToolTip(toolTipText);

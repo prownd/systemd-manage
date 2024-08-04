@@ -208,19 +208,19 @@ void UserSessionWindow::slotSessionTableRowTooltip(const QModelIndex index)
 
     QString toolTipText;
     toolTipText.append(QStringLiteral("<FONT COLOR=DarkCyan>"));
-    toolTipText.append(QStringLiteral("<b>Session ID: %1</b><hr>").arg(sessionID));
-    toolTipText.append(QStringLiteral("<b>Session Object Path: %1</b><hr>").arg(sessionObjectPathStr));
-    toolTipText.append(QStringLiteral("<b>Session Name: %1</b><hr>").arg(sessionName));
-    toolTipText.append(QStringLiteral("<b>Session Active: %1</b><hr>").arg(sessionActive));
-    toolTipText.append(QStringLiteral("<b>Session Scope: %1</b><hr>").arg(sessionScope));
-    toolTipText.append(QStringLiteral("<b>Session Service: %1</b><hr>").arg(sessionService));
-    toolTipText.append(QStringLiteral("<b>Session TTY: %1</b><hr>").arg(sessionTTY));
-    toolTipText.append(QStringLiteral("<b>Session Timestamp: %1</b><hr>").arg(sessionTimestamp));
-    toolTipText.append(QStringLiteral("<b>Session Remote Host: %1</b><hr>").arg(sessionRemoteHost));
-    toolTipText.append(QStringLiteral("<b>Session Type: %1</b><hr>").arg(sessionType));
-    toolTipText.append(QStringLiteral("<b>Session Leader: %1</b><hr>").arg(sessionLeader));
-    toolTipText.append(QStringLiteral("<b>Session Audit: %1</b><hr>").arg(sessionAudit));
-    toolTipText.append(QStringLiteral("<b>Session VT Number: %1</b><hr>").arg(sessionVTNumber));
+    toolTipText.append(tr("<b>Session ID: %1</b><hr>").arg(sessionID));
+    toolTipText.append(tr("<b>Session Object Path: %1</b><hr>").arg(sessionObjectPathStr));
+    toolTipText.append(tr("<b>Session Name: %1</b><hr>").arg(sessionName));
+    toolTipText.append(tr("<b>Session Active: %1</b><hr>").arg(sessionActive));
+    toolTipText.append(tr("<b>Session Scope: %1</b><hr>").arg(sessionScope));
+    toolTipText.append(tr("<b>Session Service: %1</b><hr>").arg(sessionService));
+    toolTipText.append(tr("<b>Session TTY: %1</b><hr>").arg(sessionTTY));
+    toolTipText.append(tr("<b>Session Timestamp: %1</b><hr>").arg(sessionTimestamp));
+    toolTipText.append(tr("<b>Session Remote Host: %1</b><hr>").arg(sessionRemoteHost));
+    toolTipText.append(tr("<b>Session Type: %1</b><hr>").arg(sessionType));
+    toolTipText.append(tr("<b>Session Leader: %1</b><hr>").arg(sessionLeader));
+    toolTipText.append(tr("<b>Session Audit: %1</b><hr>").arg(sessionAudit));
+    toolTipText.append(tr("<b>Session VT Number: %1</b><hr>").arg(sessionVTNumber));
     toolTipText.append(QStringLiteral("</FONT"));
 
     m_sessionModel->itemFromIndex(index)->setToolTip(toolTipText);
@@ -476,15 +476,16 @@ void UserSessionWindow::slotUserTableRowTooltip(const QModelIndex index)
 
     QString toolTipText;
     toolTipText.append(QStringLiteral("<FONT COLOR=DarkCyan>"));
-    toolTipText.append(QStringLiteral("<b>User ID: %1</b><hr>").arg(userID));
-    toolTipText.append(QStringLiteral("<b>User Object Path: %1</b><hr>").arg(userObjectPathStr));
-    toolTipText.append(QStringLiteral("<b>User Name: %1</b><hr>").arg(userName));
-    toolTipText.append(QStringLiteral("<b>User Gid: %1</b><hr>").arg(userGid));
-    toolTipText.append(QStringLiteral("<b>User State: %1</b><hr>").arg(userState));
-    toolTipText.append(QStringLiteral("<b>User Service: %1</b><hr>").arg(userService));
-    toolTipText.append(QStringLiteral("<b>User Slice: %1</b><hr>").arg(userSlice));
-    toolTipText.append(QStringLiteral("<b>User RuntimePath: %1</b><hr>").arg(userRuntimePath));
-    toolTipText.append(QStringLiteral("<b>User Timestamp: %1</b><hr>").arg(userTimestamp));
+    toolTipText.append(tr("<b>User ID: %1</b><hr>").arg(userID));
+    toolTipText.append(tr("<b>User Object Path: %1</b><hr>").arg(userObjectPathStr));
+    toolTipText.append(tr("<b>User Name: %1</b><hr>").arg(userName));
+    toolTipText.append(tr("<b>User Gid: %1</b><hr>").arg(userGid));
+    toolTipText.append(tr("<b>User State: %1</b><hr>").arg(userState));
+    toolTipText.append(tr("<b>User Service: %1</b><hr>").arg(userService));
+    toolTipText.append(tr("<b>User Slice: %1</b><hr>").arg(userSlice));
+    toolTipText.append(tr("<b>User RuntimePath: %1</b><hr>").arg(userRuntimePath));
+    toolTipText.append(tr("<b>User Timestamp: %1</b><hr>").arg(userTimestamp));
+    toolTipText.append(QStringLiteral("</FONT"));
 
     m_userModel->itemFromIndex(index)->setToolTip(toolTipText);
 }

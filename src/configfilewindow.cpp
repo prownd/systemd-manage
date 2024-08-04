@@ -137,10 +137,10 @@ void ConfigFileWindow::slotConfigFileTableRowTooltip(const QModelIndex index)
 
     QString toolTipText;
     toolTipText.append(QStringLiteral("<FONT COLOR=DarkCyan>"));
-    toolTipText.append(QStringLiteral("<b>Config File Name: %1</b><hr>").arg(configFileName));
-    toolTipText.append(QStringLiteral("<b>Config File Create Time: %1</b><hr>").arg(configFileCreateTime));
-    toolTipText.append(QStringLiteral("<b>Config File Size: %1</b><hr>").arg(configFileSize));
-    toolTipText.append(QStringLiteral("<b>Config File Description: %1</b><hr>").arg(configFileDescription));
+    toolTipText.append(tr("<b>Config File Name: %1</b><hr>").arg(configFileName));
+    toolTipText.append(tr("<b>Config File Create Time: %1</b><hr>").arg(configFileCreateTime));
+    toolTipText.append(tr("<b>Config File Size: %1</b><hr>").arg(configFileSize));
+    toolTipText.append(tr("<b>Config File Description: %1</b><hr>").arg(configFileDescription));
     toolTipText.append(QStringLiteral("</FONT"));
 
     m_confFileModel->itemFromIndex(index)->setToolTip(toolTipText);

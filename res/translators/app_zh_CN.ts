@@ -138,52 +138,72 @@
         <translation>描述</translation>
     </message>
     <message>
-        <location filename="../../src/configfilewindow.cpp" line="81"/>
+        <location filename="../../src/configfilewindow.cpp" line="82"/>
         <source>Coredump generation and storage</source>
         <translation>coredump产生和存储</translation>
     </message>
     <message>
-        <location filename="../../src/configfilewindow.cpp" line="84"/>
+        <location filename="../../src/configfilewindow.cpp" line="85"/>
         <source>Network manager configuration</source>
         <translation>网络管理配置</translation>
     </message>
     <message>
-        <location filename="../../src/configfilewindow.cpp" line="87"/>
+        <location filename="../../src/configfilewindow.cpp" line="88"/>
         <source>Journal manager settings</source>
         <translation>journal日志管理设置</translation>
     </message>
     <message>
-        <location filename="../../src/configfilewindow.cpp" line="90"/>
+        <location filename="../../src/configfilewindow.cpp" line="91"/>
         <source>Login manager configuration</source>
         <translation>登陆管理配置</translation>
     </message>
     <message>
-        <location filename="../../src/configfilewindow.cpp" line="93"/>
+        <location filename="../../src/configfilewindow.cpp" line="94"/>
         <source>Network name resolution configuration</source>
         <translation>网络域名解析管理</translation>
     </message>
     <message>
-        <location filename="../../src/configfilewindow.cpp" line="96"/>
+        <location filename="../../src/configfilewindow.cpp" line="97"/>
         <source>Systemd daemon configuration</source>
         <translation>系统daemon后端配置</translation>
     </message>
     <message>
-        <location filename="../../src/configfilewindow.cpp" line="99"/>
+        <location filename="../../src/configfilewindow.cpp" line="100"/>
         <source>Time synchronization settings</source>
         <translation>时间同步设置</translation>
     </message>
     <message>
-        <location filename="../../src/configfilewindow.cpp" line="102"/>
+        <location filename="../../src/configfilewindow.cpp" line="103"/>
         <source>Systemd user daemon configuration</source>
         <translation>系统用户配置</translation>
     </message>
     <message>
-        <location filename="../../src/configfilewindow.cpp" line="127"/>
+        <location filename="../../src/configfilewindow.cpp" line="140"/>
+        <source>&lt;b&gt;Config File Name: %1&lt;/b&gt;&lt;hr&gt;</source>
+        <translation>&lt;b&gt;配置文件名：%1&lt;/b&gt;&lt;hr&gt;</translation>
+    </message>
+    <message>
+        <location filename="../../src/configfilewindow.cpp" line="141"/>
+        <source>&lt;b&gt;Config File Create Time: %1&lt;/b&gt;&lt;hr&gt;</source>
+        <translation>&lt;b&gt;配置文件创建时间：%1&lt;/b&gt;&lt;hr&gt;</translation>
+    </message>
+    <message>
+        <location filename="../../src/configfilewindow.cpp" line="142"/>
+        <source>&lt;b&gt;Config File Size: %1&lt;/b&gt;&lt;hr&gt;</source>
+        <translation>&lt;b&gt;配置文件大小：%1&lt;/b&gt;&lt;hr&gt;</translation>
+    </message>
+    <message>
+        <location filename="../../src/configfilewindow.cpp" line="143"/>
+        <source>&lt;b&gt;Config File Description: %1&lt;/b&gt;&lt;hr&gt;</source>
+        <translation>&lt;b&gt;配置文件描述：%1&lt;/b&gt;&lt;hr&gt;</translation>
+    </message>
+    <message>
+        <location filename="../../src/configfilewindow.cpp" line="177"/>
         <source>View Edit File</source>
         <translation>查看编辑文件</translation>
     </message>
     <message>
-        <location filename="../../src/configfilewindow.cpp" line="132"/>
+        <location filename="../../src/configfilewindow.cpp" line="182"/>
         <source>Refresh File List</source>
         <translation>刷新文件列表</translation>
     </message>
@@ -409,7 +429,8 @@
         <translation>模态窗口</translation>
     </message>
     <message>
-        <location filename="../../src/configfilewindow.cpp" line="153"/>
+        <location filename="../../src/configfilewindow.cpp" line="161"/>
+        <location filename="../../src/configfilewindow.cpp" line="203"/>
         <source>Show Config File Info</source>
         <translation>显示配置文件信息</translation>
     </message>
@@ -419,17 +440,20 @@
         <translation>提示模态窗口</translation>
     </message>
     <message>
-        <location filename="../../src/unitwindow.cpp" line="256"/>
+        <location filename="../../src/unitwindow.cpp" line="247"/>
+        <location filename="../../src/unitwindow.cpp" line="331"/>
         <source>Show system unit config info</source>
         <translation>显示系统单元文件信息</translation>
     </message>
     <message>
-        <location filename="../../src/unitwindow.cpp" line="495"/>
+        <location filename="../../src/unitwindow.cpp" line="512"/>
+        <location filename="../../src/unitwindow.cpp" line="592"/>
         <source>Show User unit information</source>
         <translation>显示用户单元信息</translation>
     </message>
     <message>
-        <location filename="../../src/unitwindow.cpp" line="720"/>
+        <location filename="../../src/unitwindow.cpp" line="789"/>
+        <location filename="../../src/unitwindow.cpp" line="864"/>
         <source>Show Timer information</source>
         <translation>显示定时器信息</translation>
     </message>
@@ -440,12 +464,14 @@
         <translation>提示模态窗口</translation>
     </message>
     <message>
-        <location filename="../../src/usersessionwindow.cpp" line="237"/>
+        <location filename="../../src/usersessionwindow.cpp" line="243"/>
+        <location filename="../../src/usersessionwindow.cpp" line="305"/>
         <source>Session Status Information</source>
         <translation>会话状态信息</translation>
     </message>
     <message>
-        <location filename="../../src/usersessionwindow.cpp" line="426"/>
+        <location filename="../../src/usersessionwindow.cpp" line="507"/>
+        <location filename="../../src/usersessionwindow.cpp" line="556"/>
         <source>Show User Information</source>
         <translation>显示用户信息</translation>
     </message>
@@ -808,305 +834,375 @@
 <context>
     <name>UnitModel</name>
     <message>
-        <location filename="../../src/unitmodel.cpp" line="58"/>
+        <location filename="../../src/unitmodel.cpp" line="59"/>
         <source>Unit</source>
         <translation>单元</translation>
     </message>
     <message>
-        <location filename="../../src/unitmodel.cpp" line="60"/>
+        <location filename="../../src/unitmodel.cpp" line="61"/>
         <source>Load State</source>
         <translation>加载状态</translation>
     </message>
     <message>
-        <location filename="../../src/unitmodel.cpp" line="62"/>
+        <location filename="../../src/unitmodel.cpp" line="63"/>
         <source>Active State</source>
         <translation>活跃状态</translation>
     </message>
     <message>
-        <location filename="../../src/unitmodel.cpp" line="64"/>
+        <location filename="../../src/unitmodel.cpp" line="65"/>
         <source>Unit State</source>
         <translation>单元状态</translation>
     </message>
     <message>
-        <location filename="../../src/unitmodel.cpp" line="66"/>
+        <location filename="../../src/unitmodel.cpp" line="67"/>
         <source>Job</source>
         <translation>job任务</translation>
     </message>
     <message>
-        <location filename="../../src/unitmodel.cpp" line="68"/>
+        <location filename="../../src/unitmodel.cpp" line="69"/>
         <source>Description</source>
         <translation>描述</translation>
     </message>
     <message>
-        <location filename="../../src/unitmodel.cpp" line="70"/>
-        <source>Unit file</source>
+        <location filename="../../src/unitmodel.cpp" line="71"/>
+        <source>Unit File</source>
         <translation>单元文件</translation>
+    </message>
+    <message>
+        <location filename="../../src/unitmodel.cpp" line="73"/>
+        <source>Unit Path</source>
+        <translation>单位路径</translation>
+    </message>
+    <message>
+        <location filename="../../src/unitmodel.cpp" line="152"/>
+        <source>&lt;b&gt;Description: &lt;/b&gt;</source>
+        <translation>&lt;b&gt;描述：&lt;/b&gt;</translation>
+    </message>
+    <message>
+        <location filename="../../src/unitmodel.cpp" line="154"/>
+        <source>&lt;br&gt;&lt;b&gt;Unit file: &lt;/b&gt;</source>
+        <translation>&lt;br&gt;&lt;b&gt;单元文件：&lt;/b&gt;</translation>
+    </message>
+    <message>
+        <location filename="../../src/unitmodel.cpp" line="156"/>
+        <location filename="../../src/unitmodel.cpp" line="202"/>
+        <source>&lt;br&gt;&lt;b&gt;Unit file state: &lt;/b&gt;</source>
+        <translation>&lt;br&gt;&lt;b&gt;单元文件状态：&lt;/b&gt;</translation>
+    </message>
+    <message>
+        <location filename="../../src/unitmodel.cpp" line="160"/>
+        <source>&lt;br&gt;&lt;b&gt;Activated: &lt;/b&gt;</source>
+        <translation>&lt;br&gt;&lt;b&gt;已激活：&lt;/b&gt;</translation>
+    </message>
+    <message>
+        <location filename="../../src/unitmodel.cpp" line="173"/>
+        <source>&lt;br&gt;&lt;b&gt;Deactivated: &lt;/b&gt;</source>
+        <translation>&lt;br&gt;&lt;b&gt;已停用：&lt;/b&gt;</translation>
+    </message>
+    <message>
+        <location filename="../../src/unitmodel.cpp" line="198"/>
+        <source>&lt;b&gt;Unit file: &lt;/b&gt;</source>
+        <translation>&lt;b&gt;单元文件：&lt;/b&gt;</translation>
+    </message>
+    <message>
+        <location filename="../../src/unitmodel.cpp" line="210"/>
+        <source>&lt;hr&gt;&lt;b&gt;Last log entries:&lt;/b&gt;</source>
+        <translation>&lt;hr&gt;&lt;b&gt;最后日志条目：&lt;/b&gt;</translation>
+    </message>
+    <message>
+        <location filename="../../src/unitmodel.cpp" line="214"/>
+        <source>&lt;br&gt;&lt;i&gt;No log entries found for this unit.&lt;/i&gt;</source>
+        <translation>&lt;br&gt;&lt;i&gt;未找到该单元的日志条目。&lt;/i&gt;</translation>
+    </message>
+    <message>
+        <source>Unit file</source>
+        <translation type="vanished">单元文件</translation>
     </message>
 </context>
 <context>
     <name>UnitWindow</name>
     <message>
-        <location filename="../../src/unitwindow.cpp" line="86"/>
+        <location filename="../../src/unitwindow.cpp" line="89"/>
         <source>System Unit</source>
         <translation>系统单元</translation>
     </message>
     <message>
-        <location filename="../../src/unitwindow.cpp" line="87"/>
+        <location filename="../../src/unitwindow.cpp" line="90"/>
         <source>User Unit</source>
         <translation>用户单元</translation>
     </message>
     <message>
-        <location filename="../../src/unitwindow.cpp" line="88"/>
-        <location filename="../../src/unitwindow.cpp" line="591"/>
+        <location filename="../../src/unitwindow.cpp" line="91"/>
+        <location filename="../../src/unitwindow.cpp" line="687"/>
         <source>Timer</source>
         <translation>定时器</translation>
     </message>
     <message>
-        <location filename="../../src/unitwindow.cpp" line="95"/>
-        <location filename="../../src/unitwindow.cpp" line="338"/>
+        <location filename="../../src/unitwindow.cpp" line="98"/>
+        <location filename="../../src/unitwindow.cpp" line="413"/>
         <source>All</source>
         <translation>所有</translation>
     </message>
     <message>
-        <location filename="../../src/unitwindow.cpp" line="95"/>
-        <location filename="../../src/unitwindow.cpp" line="338"/>
+        <location filename="../../src/unitwindow.cpp" line="98"/>
+        <location filename="../../src/unitwindow.cpp" line="413"/>
         <source>Services</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../src/unitwindow.cpp" line="95"/>
-        <location filename="../../src/unitwindow.cpp" line="338"/>
+        <location filename="../../src/unitwindow.cpp" line="98"/>
+        <location filename="../../src/unitwindow.cpp" line="413"/>
         <source>Devices</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../src/unitwindow.cpp" line="96"/>
-        <location filename="../../src/unitwindow.cpp" line="339"/>
+        <location filename="../../src/unitwindow.cpp" line="99"/>
+        <location filename="../../src/unitwindow.cpp" line="414"/>
         <source>Automounts</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../src/unitwindow.cpp" line="96"/>
-        <location filename="../../src/unitwindow.cpp" line="339"/>
+        <location filename="../../src/unitwindow.cpp" line="99"/>
+        <location filename="../../src/unitwindow.cpp" line="414"/>
         <source>Mounts</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../src/unitwindow.cpp" line="96"/>
-        <location filename="../../src/unitwindow.cpp" line="339"/>
+        <location filename="../../src/unitwindow.cpp" line="99"/>
+        <location filename="../../src/unitwindow.cpp" line="414"/>
         <source>Paths</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../src/unitwindow.cpp" line="97"/>
-        <location filename="../../src/unitwindow.cpp" line="340"/>
+        <location filename="../../src/unitwindow.cpp" line="100"/>
+        <location filename="../../src/unitwindow.cpp" line="415"/>
         <source>Scopes</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../src/unitwindow.cpp" line="97"/>
-        <location filename="../../src/unitwindow.cpp" line="340"/>
+        <location filename="../../src/unitwindow.cpp" line="100"/>
+        <location filename="../../src/unitwindow.cpp" line="415"/>
         <source>Slices</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../src/unitwindow.cpp" line="97"/>
-        <location filename="../../src/unitwindow.cpp" line="340"/>
+        <location filename="../../src/unitwindow.cpp" line="100"/>
+        <location filename="../../src/unitwindow.cpp" line="415"/>
         <source>Sockets</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../src/unitwindow.cpp" line="98"/>
-        <location filename="../../src/unitwindow.cpp" line="341"/>
+        <location filename="../../src/unitwindow.cpp" line="101"/>
+        <location filename="../../src/unitwindow.cpp" line="416"/>
         <source>Swaps</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../src/unitwindow.cpp" line="98"/>
-        <location filename="../../src/unitwindow.cpp" line="341"/>
+        <location filename="../../src/unitwindow.cpp" line="101"/>
+        <location filename="../../src/unitwindow.cpp" line="416"/>
         <source>Targets</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../src/unitwindow.cpp" line="98"/>
-        <location filename="../../src/unitwindow.cpp" line="341"/>
+        <location filename="../../src/unitwindow.cpp" line="101"/>
+        <location filename="../../src/unitwindow.cpp" line="416"/>
         <source>Timers</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../src/unitwindow.cpp" line="106"/>
-        <location filename="../../src/unitwindow.cpp" line="348"/>
+        <location filename="../../src/unitwindow.cpp" line="109"/>
+        <location filename="../../src/unitwindow.cpp" line="423"/>
         <source>Show inactive</source>
         <translation>显示 inactive</translation>
     </message>
     <message>
-        <location filename="../../src/unitwindow.cpp" line="112"/>
-        <location filename="../../src/unitwindow.cpp" line="353"/>
+        <location filename="../../src/unitwindow.cpp" line="115"/>
+        <location filename="../../src/unitwindow.cpp" line="428"/>
         <source>Show unload</source>
         <translation>显示 unload</translation>
     </message>
     <message>
-        <location filename="../../src/unitwindow.cpp" line="167"/>
-        <location filename="../../src/unitwindow.cpp" line="409"/>
+        <location filename="../../src/unitwindow.cpp" line="173"/>
+        <location filename="../../src/unitwindow.cpp" line="484"/>
         <source>total unit : 18, active unit:10, inactive unit:10 </source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../src/unitwindow.cpp" line="190"/>
+        <location filename="../../src/unitwindow.cpp" line="265"/>
         <source>System Unit Status</source>
         <translation>系统单元状态</translation>
     </message>
     <message>
-        <location filename="../../src/unitwindow.cpp" line="195"/>
+        <location filename="../../src/unitwindow.cpp" line="270"/>
         <source>Run System Unit</source>
         <translation>运行系统单元</translation>
     </message>
     <message>
-        <location filename="../../src/unitwindow.cpp" line="198"/>
+        <location filename="../../src/unitwindow.cpp" line="273"/>
         <source>Stop System Unit</source>
         <translation>停止系统单元</translation>
     </message>
     <message>
-        <location filename="../../src/unitwindow.cpp" line="201"/>
+        <location filename="../../src/unitwindow.cpp" line="276"/>
         <source>Restart System Unit</source>
         <translation>重启系统单元</translation>
     </message>
     <message>
-        <location filename="../../src/unitwindow.cpp" line="206"/>
+        <location filename="../../src/unitwindow.cpp" line="281"/>
         <source>Enable System Unit</source>
         <translation>启用系统单元</translation>
     </message>
     <message>
-        <location filename="../../src/unitwindow.cpp" line="209"/>
+        <location filename="../../src/unitwindow.cpp" line="284"/>
         <source>Disable System Unit</source>
         <translation>禁用系统单元</translation>
     </message>
     <message>
-        <location filename="../../src/unitwindow.cpp" line="214"/>
+        <location filename="../../src/unitwindow.cpp" line="289"/>
         <source>Refresh System Unit</source>
         <translation>刷新系统单元</translation>
     </message>
     <message>
-        <location filename="../../src/unitwindow.cpp" line="432"/>
+        <location filename="../../src/unitwindow.cpp" line="531"/>
         <source>User Unit Status</source>
         <translation>用户单元状态</translation>
     </message>
     <message>
-        <location filename="../../src/unitwindow.cpp" line="437"/>
+        <location filename="../../src/unitwindow.cpp" line="536"/>
         <source>Run User Unit</source>
         <translation>运行用户单元</translation>
     </message>
     <message>
-        <location filename="../../src/unitwindow.cpp" line="440"/>
+        <location filename="../../src/unitwindow.cpp" line="539"/>
         <source>Stop User Unit</source>
         <translation>停止用户单元</translation>
     </message>
     <message>
-        <location filename="../../src/unitwindow.cpp" line="443"/>
+        <location filename="../../src/unitwindow.cpp" line="542"/>
         <source>Restart User Unit</source>
         <translation>重启用户单元</translation>
     </message>
     <message>
-        <location filename="../../src/unitwindow.cpp" line="448"/>
+        <location filename="../../src/unitwindow.cpp" line="547"/>
         <source>Enable User Unit</source>
         <translation>启用用户单元</translation>
     </message>
     <message>
-        <location filename="../../src/unitwindow.cpp" line="451"/>
+        <location filename="../../src/unitwindow.cpp" line="550"/>
         <source>Disable User Unit</source>
         <translation>禁用用户单元</translation>
     </message>
     <message>
-        <location filename="../../src/unitwindow.cpp" line="456"/>
+        <location filename="../../src/unitwindow.cpp" line="555"/>
         <source>Refresh User Unit</source>
         <translation>刷新用户单元</translation>
     </message>
     <message>
-        <location filename="../../src/unitwindow.cpp" line="579"/>
+        <location filename="../../src/unitwindow.cpp" line="675"/>
         <source>Search Timer:</source>
         <translation>搜索定时器：</translation>
     </message>
     <message>
-        <location filename="../../src/unitwindow.cpp" line="592"/>
+        <location filename="../../src/unitwindow.cpp" line="688"/>
         <source>Next</source>
         <translation>下一个</translation>
     </message>
     <message>
-        <location filename="../../src/unitwindow.cpp" line="593"/>
+        <location filename="../../src/unitwindow.cpp" line="689"/>
         <source>Left</source>
         <translation>左边</translation>
     </message>
     <message>
-        <location filename="../../src/unitwindow.cpp" line="594"/>
+        <location filename="../../src/unitwindow.cpp" line="690"/>
         <source>Last</source>
         <translation>最后</translation>
     </message>
     <message>
-        <location filename="../../src/unitwindow.cpp" line="595"/>
+        <location filename="../../src/unitwindow.cpp" line="691"/>
         <source>Passed</source>
         <translation>通过</translation>
     </message>
     <message>
-        <location filename="../../src/unitwindow.cpp" line="596"/>
+        <location filename="../../src/unitwindow.cpp" line="692"/>
         <source>Activates</source>
         <translation>激活</translation>
     </message>
     <message>
-        <location filename="../../src/unitwindow.cpp" line="654"/>
+        <location filename="../../src/unitwindow.cpp" line="693"/>
+        <source>Timer File</source>
+        <translation>定时器文件</translation>
+    </message>
+    <message>
+        <location filename="../../src/unitwindow.cpp" line="766"/>
+        <source>&lt;b&gt;Timer: %1&lt;/b&gt;&lt;hr&gt;</source>
+        <translation>&lt;b&gt;计时器：%1&lt;/b&gt;&lt;hr&gt;</translation>
+    </message>
+    <message>
+        <location filename="../../src/unitwindow.cpp" line="767"/>
+        <source>&lt;b&gt;Timer Passed: %1&lt;/b&gt;&lt;hr&gt;</source>
+        <translation>&lt;b&gt;计时器已过：%1&lt;/b&gt;&lt;hr&gt;</translation>
+    </message>
+    <message>
+        <location filename="../../src/unitwindow.cpp" line="768"/>
+        <source>&lt;b&gt;Timer Activates: %1&lt;/b&gt;&lt;hr&gt;</source>
+        <translation>&lt;b&gt;计时器激活：%1&lt;/b&gt;&lt;hr&gt;</translation>
+    </message>
+    <message>
+        <location filename="../../src/unitwindow.cpp" line="802"/>
         <source>Timer Unit Status</source>
         <translation>定时器单元</translation>
     </message>
     <message>
-        <location filename="../../src/unitwindow.cpp" line="659"/>
+        <location filename="../../src/unitwindow.cpp" line="807"/>
         <source>Start Timer Unit</source>
         <translation>运行定时器单元</translation>
     </message>
     <message>
-        <location filename="../../src/unitwindow.cpp" line="662"/>
+        <location filename="../../src/unitwindow.cpp" line="810"/>
         <source>Stop Timer Unit</source>
         <translation>停止定时器单元</translation>
     </message>
     <message>
-        <location filename="../../src/unitwindow.cpp" line="665"/>
+        <location filename="../../src/unitwindow.cpp" line="813"/>
         <source>Restart Timer Unit</source>
         <translation>重启定时器单元</translation>
     </message>
     <message>
-        <location filename="../../src/unitwindow.cpp" line="670"/>
+        <location filename="../../src/unitwindow.cpp" line="818"/>
         <source>Enable Timer Unit</source>
         <translation>启用定时器单元</translation>
     </message>
     <message>
-        <location filename="../../src/unitwindow.cpp" line="673"/>
+        <location filename="../../src/unitwindow.cpp" line="821"/>
         <source>Disable Timer Unit</source>
         <translation>禁用定时器单元</translation>
     </message>
     <message>
-        <location filename="../../src/unitwindow.cpp" line="678"/>
+        <location filename="../../src/unitwindow.cpp" line="826"/>
         <source>Refresh Timer Unit</source>
         <translation>刷新定时器单元</translation>
     </message>
     <message>
-        <location filename="../../src/unitwindow.cpp" line="918"/>
-        <location filename="../../src/unitwindow.cpp" line="929"/>
+        <location filename="../../src/unitwindow.cpp" line="1061"/>
+        <location filename="../../src/unitwindow.cpp" line="1072"/>
         <source>Total: %1 unit,</source>
         <translation>总计: %1  unit,</translation>
     </message>
     <message>
-        <location filename="../../src/unitwindow.cpp" line="919"/>
-        <location filename="../../src/unitwindow.cpp" line="930"/>
+        <location filename="../../src/unitwindow.cpp" line="1062"/>
+        <location filename="../../src/unitwindow.cpp" line="1073"/>
         <source>%2 active unit,</source>
         <translation>%2 活动unit,</translation>
     </message>
     <message>
-        <location filename="../../src/unitwindow.cpp" line="920"/>
-        <location filename="../../src/unitwindow.cpp" line="931"/>
+        <location filename="../../src/unitwindow.cpp" line="1063"/>
+        <location filename="../../src/unitwindow.cpp" line="1074"/>
         <source>%3 display unit</source>
         <translation>%3 显示unit</translation>
     </message>
     <message>
-        <location filename="../../src/unitwindow.cpp" line="922"/>
-        <location filename="../../src/unitwindow.cpp" line="932"/>
+        <location filename="../../src/unitwindow.cpp" line="1065"/>
+        <location filename="../../src/unitwindow.cpp" line="1075"/>
         <source>%1 %2 %3</source>
         <translation></translation>
     </message>
@@ -1207,13 +1303,13 @@
     </message>
     <message>
         <location filename="../../src/usersessionwindow.cpp" line="143"/>
-        <location filename="../../src/usersessionwindow.cpp" line="342"/>
+        <location filename="../../src/usersessionwindow.cpp" line="410"/>
         <source>User ID</source>
         <translation>用户ID</translation>
     </message>
     <message>
         <location filename="../../src/usersessionwindow.cpp" line="144"/>
-        <location filename="../../src/usersessionwindow.cpp" line="343"/>
+        <location filename="../../src/usersessionwindow.cpp" line="411"/>
         <source>User Name</source>
         <translation>用户名</translation>
     </message>
@@ -1223,103 +1319,213 @@
         <translation>Seat ID</translation>
     </message>
     <message>
-        <location filename="../../src/usersessionwindow.cpp" line="189"/>
+        <location filename="../../src/usersessionwindow.cpp" line="211"/>
+        <source>&lt;b&gt;Session ID: %1&lt;/b&gt;&lt;hr&gt;</source>
+        <translation>&lt;b&gt;会话 ID：%1&lt;/b&gt;&lt;hr&gt;</translation>
+    </message>
+    <message>
+        <location filename="../../src/usersessionwindow.cpp" line="212"/>
+        <source>&lt;b&gt;Session Object Path: %1&lt;/b&gt;&lt;hr&gt;</source>
+        <translation>&lt;b&gt;会话对象路径：%1&lt;/b&gt;&lt;hr&gt;</translation>
+    </message>
+    <message>
+        <location filename="../../src/usersessionwindow.cpp" line="213"/>
+        <source>&lt;b&gt;Session Name: %1&lt;/b&gt;&lt;hr&gt;</source>
+        <translation>&lt;b&gt;会话名称：%1&lt;/b&gt;&lt;hr&gt;</translation>
+    </message>
+    <message>
+        <location filename="../../src/usersessionwindow.cpp" line="214"/>
+        <source>&lt;b&gt;Session Active: %1&lt;/b&gt;&lt;hr&gt;</source>
+        <translation>&lt;b&gt;会话活动：%1&lt;/b&gt;&lt;hr&gt;</translation>
+    </message>
+    <message>
+        <location filename="../../src/usersessionwindow.cpp" line="215"/>
+        <source>&lt;b&gt;Session Scope: %1&lt;/b&gt;&lt;hr&gt;</source>
+        <translation>&lt;b&gt;会话范围：%1&lt;/b&gt;&lt;hr&gt;</translation>
+    </message>
+    <message>
+        <location filename="../../src/usersessionwindow.cpp" line="216"/>
+        <source>&lt;b&gt;Session Service: %1&lt;/b&gt;&lt;hr&gt;</source>
+        <translation>&lt;b&gt;会话服务：%1&lt;/b&gt;&lt;hr&gt;</translation>
+    </message>
+    <message>
+        <location filename="../../src/usersessionwindow.cpp" line="217"/>
+        <source>&lt;b&gt;Session TTY: %1&lt;/b&gt;&lt;hr&gt;</source>
+        <translation>&lt;b&gt;会话 TTY：%1&lt;/b&gt;&lt;hr&gt;</translation>
+    </message>
+    <message>
+        <location filename="../../src/usersessionwindow.cpp" line="218"/>
+        <source>&lt;b&gt;Session Timestamp: %1&lt;/b&gt;&lt;hr&gt;</source>
+        <translation>&lt;b&gt;会话时间戳：%1&lt;/b&gt;&lt;hr&gt;</translation>
+    </message>
+    <message>
+        <location filename="../../src/usersessionwindow.cpp" line="219"/>
+        <source>&lt;b&gt;Session Remote Host: %1&lt;/b&gt;&lt;hr&gt;</source>
+        <translation>&lt;b&gt;会话远程主机：%1&lt;/b&gt;&lt;hr&gt;</translation>
+    </message>
+    <message>
+        <location filename="../../src/usersessionwindow.cpp" line="220"/>
+        <source>&lt;b&gt;Session Type: %1&lt;/b&gt;&lt;hr&gt;</source>
+        <translation>&lt;b&gt;会话类型：%1&lt;/b&gt;&lt;hr&gt;</translation>
+    </message>
+    <message>
+        <location filename="../../src/usersessionwindow.cpp" line="221"/>
+        <source>&lt;b&gt;Session Leader: %1&lt;/b&gt;&lt;hr&gt;</source>
+        <translation>&lt;b&gt;会议主持人：%1&lt;/b&gt;&lt;hr&gt;</translation>
+    </message>
+    <message>
+        <location filename="../../src/usersessionwindow.cpp" line="222"/>
+        <source>&lt;b&gt;Session Audit: %1&lt;/b&gt;&lt;hr&gt;</source>
+        <translation>&lt;b&gt;会话审核：%1&lt;/b&gt;&lt;hr&gt;</translation>
+    </message>
+    <message>
+        <location filename="../../src/usersessionwindow.cpp" line="223"/>
+        <source>&lt;b&gt;Session VT Number: %1&lt;/b&gt;&lt;hr&gt;</source>
+        <translation>&lt;b&gt;会话 VT 编号：%1&lt;/b&gt;&lt;hr&gt;</translation>
+    </message>
+    <message>
+        <location filename="../../src/usersessionwindow.cpp" line="257"/>
         <source>Session Status</source>
         <translation>会话状态</translation>
     </message>
     <message>
-        <location filename="../../src/usersessionwindow.cpp" line="194"/>
+        <location filename="../../src/usersessionwindow.cpp" line="262"/>
         <source>Session Lock</source>
         <translation>会话锁定</translation>
     </message>
     <message>
-        <location filename="../../src/usersessionwindow.cpp" line="197"/>
+        <location filename="../../src/usersessionwindow.cpp" line="265"/>
         <source>Session Unlock</source>
         <translation>会话解锁</translation>
     </message>
     <message>
-        <location filename="../../src/usersessionwindow.cpp" line="200"/>
+        <location filename="../../src/usersessionwindow.cpp" line="268"/>
         <source>Session Activate</source>
         <translation>会话激活</translation>
     </message>
     <message>
-        <location filename="../../src/usersessionwindow.cpp" line="205"/>
+        <location filename="../../src/usersessionwindow.cpp" line="273"/>
         <source>Session Terminate</source>
         <translation>会话终止</translation>
     </message>
     <message>
-        <location filename="../../src/usersessionwindow.cpp" line="210"/>
+        <location filename="../../src/usersessionwindow.cpp" line="278"/>
         <source>Refresh Session</source>
         <translation>刷新会话</translation>
     </message>
     <message>
-        <location filename="../../src/usersessionwindow.cpp" line="257"/>
-        <location filename="../../src/usersessionwindow.cpp" line="307"/>
-        <location filename="../../src/usersessionwindow.cpp" line="437"/>
+        <location filename="../../src/usersessionwindow.cpp" line="325"/>
+        <location filename="../../src/usersessionwindow.cpp" line="375"/>
+        <location filename="../../src/usersessionwindow.cpp" line="566"/>
         <source>Warning</source>
         <translation>告警</translation>
     </message>
     <message>
-        <location filename="../../src/usersessionwindow.cpp" line="257"/>
+        <location filename="../../src/usersessionwindow.cpp" line="325"/>
         <source>Are you sure to Lock Session?</source>
         <translation>确定要锁定会话吗？</translation>
     </message>
     <message>
-        <location filename="../../src/usersessionwindow.cpp" line="258"/>
-        <location filename="../../src/usersessionwindow.cpp" line="308"/>
-        <location filename="../../src/usersessionwindow.cpp" line="438"/>
+        <location filename="../../src/usersessionwindow.cpp" line="326"/>
+        <location filename="../../src/usersessionwindow.cpp" line="376"/>
+        <location filename="../../src/usersessionwindow.cpp" line="567"/>
         <source>Yes</source>
         <translation>是</translation>
     </message>
     <message>
-        <location filename="../../src/usersessionwindow.cpp" line="259"/>
-        <location filename="../../src/usersessionwindow.cpp" line="309"/>
-        <location filename="../../src/usersessionwindow.cpp" line="439"/>
+        <location filename="../../src/usersessionwindow.cpp" line="327"/>
+        <location filename="../../src/usersessionwindow.cpp" line="377"/>
+        <location filename="../../src/usersessionwindow.cpp" line="568"/>
         <source>No</source>
         <translation>否</translation>
     </message>
     <message>
-        <location filename="../../src/usersessionwindow.cpp" line="307"/>
+        <location filename="../../src/usersessionwindow.cpp" line="375"/>
         <source>Are you sure to Terminate Session?</source>
         <translation>确定要终止会话吗？</translation>
     </message>
     <message>
-        <location filename="../../src/usersessionwindow.cpp" line="344"/>
+        <location filename="../../src/usersessionwindow.cpp" line="412"/>
         <source>User Object Path</source>
         <translation>用户对象路径</translation>
     </message>
     <message>
-        <location filename="../../src/usersessionwindow.cpp" line="345"/>
+        <location filename="../../src/usersessionwindow.cpp" line="413"/>
         <source>User State</source>
         <translation>用户状态</translation>
     </message>
     <message>
-        <location filename="../../src/usersessionwindow.cpp" line="346"/>
+        <location filename="../../src/usersessionwindow.cpp" line="414"/>
         <source>Group ID</source>
         <translation>组ID</translation>
     </message>
     <message>
-        <location filename="../../src/usersessionwindow.cpp" line="347"/>
+        <location filename="../../src/usersessionwindow.cpp" line="415"/>
         <source>User Slice</source>
         <translation>用户Slice分片</translation>
     </message>
     <message>
-        <location filename="../../src/usersessionwindow.cpp" line="391"/>
+        <location filename="../../src/usersessionwindow.cpp" line="479"/>
+        <source>&lt;b&gt;User ID: %1&lt;/b&gt;&lt;hr&gt;</source>
+        <translation>&lt;b&gt;用户 ID：%1&lt;/b&gt;&lt;hr&gt;</translation>
+    </message>
+    <message>
+        <location filename="../../src/usersessionwindow.cpp" line="480"/>
+        <source>&lt;b&gt;User Object Path: %1&lt;/b&gt;&lt;hr&gt;</source>
+        <translation>&lt;b&gt;用户对象路径：%1&lt;/b&gt;&lt;hr&gt;</translation>
+    </message>
+    <message>
+        <location filename="../../src/usersessionwindow.cpp" line="481"/>
+        <source>&lt;b&gt;User Name: %1&lt;/b&gt;&lt;hr&gt;</source>
+        <translation>&lt;b&gt;用户名：%1&lt;/b&gt;&lt;hr&gt;</translation>
+    </message>
+    <message>
+        <location filename="../../src/usersessionwindow.cpp" line="482"/>
+        <source>&lt;b&gt;User Gid: %1&lt;/b&gt;&lt;hr&gt;</source>
+        <translation>&lt;b&gt;用户 Gid：%1&lt;/b&gt;&lt;hr&gt;</translation>
+    </message>
+    <message>
+        <location filename="../../src/usersessionwindow.cpp" line="483"/>
+        <source>&lt;b&gt;User State: %1&lt;/b&gt;&lt;hr&gt;</source>
+        <translation>&lt;b&gt;用户状态：%1&lt;/b&gt;&lt;hr&gt;</translation>
+    </message>
+    <message>
+        <location filename="../../src/usersessionwindow.cpp" line="484"/>
+        <source>&lt;b&gt;User Service: %1&lt;/b&gt;&lt;hr&gt;</source>
+        <translation>&lt;b&gt;用户服务：%1&lt;/b&gt;&lt;hr&gt;</translation>
+    </message>
+    <message>
+        <location filename="../../src/usersessionwindow.cpp" line="485"/>
+        <source>&lt;b&gt;User Slice: %1&lt;/b&gt;&lt;hr&gt;</source>
+        <translation>&lt;b&gt;用户片段：%1&lt;/b&gt;&lt;hr&gt;</translation>
+    </message>
+    <message>
+        <location filename="../../src/usersessionwindow.cpp" line="486"/>
+        <source>&lt;b&gt;User RuntimePath: %1&lt;/b&gt;&lt;hr&gt;</source>
+        <translation>&lt;b&gt;用户 RuntimePath：%1&lt;/b&gt;&lt;hr&gt;</translation>
+    </message>
+    <message>
+        <location filename="../../src/usersessionwindow.cpp" line="487"/>
+        <source>&lt;b&gt;User Timestamp: %1&lt;/b&gt;&lt;hr&gt;</source>
+        <translation>&lt;b&gt;用户时间戳：%1&lt;/b&gt;&lt;hr&gt;</translation>
+    </message>
+    <message>
+        <location filename="../../src/usersessionwindow.cpp" line="521"/>
         <source>User Status</source>
         <translation>用户状态信息</translation>
     </message>
     <message>
-        <location filename="../../src/usersessionwindow.cpp" line="396"/>
+        <location filename="../../src/usersessionwindow.cpp" line="526"/>
         <source>Terminate User</source>
         <translation>终止用户</translation>
     </message>
     <message>
-        <location filename="../../src/usersessionwindow.cpp" line="401"/>
+        <location filename="../../src/usersessionwindow.cpp" line="531"/>
         <source>Refresh User</source>
         <translation>刷新用户</translation>
     </message>
     <message>
-        <location filename="../../src/usersessionwindow.cpp" line="437"/>
+        <location filename="../../src/usersessionwindow.cpp" line="566"/>
         <source>Are you sure to Terminate User?</source>
         <translation>确定要终止用户吗？</translation>
     </message>
