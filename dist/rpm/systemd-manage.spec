@@ -1,5 +1,5 @@
 Name: systemd-manage           
-Version: 1        
+Version: 1.0       
 Release: 1%{?dist}
 Summary: A graphical manage tools of systemd   
 
@@ -8,7 +8,14 @@ URL:  https://github.com/prownd/systemd-manage
 Source0:     https://github.com/prownd/systemd-manage/releases/download/%{name}-%{version}.tar.xz
 
 BuildRequires: gcc-c++
-BuildRequires: systemd-devel
+BuildRequires: systemd-devel >= 209
+BuildRequires: qt5-qtbase-devel
+BuildRequires: qt5-qtsvg-devel
+BuildRequires: qt5-qtscript-devel
+BuildRequires: qt5-qttools-devel
+BuildRequires: qt5-qtcharts-devel
+
+Requires: qt5-qtbase
 Requires: systemd       
 
 %description
@@ -16,21 +23,55 @@ Systemd manage is a graphical tool based on Systemd service management, develope
 
 
 %prep
-%autosetup
+%autosetup -n %{name}
+#%patch -p1 1
 
 
 %build
-%configure
-%make_build
+export PATH=%{_qt5_bindir}:$PATH
+mkdir %{name}-qmake-build
+pushd %{name}-qmake-build
+%{qmake_qt5} ..
+%{make_build}
+popd
 
 
 %install
-%make_install
+pushd %{name}-qmake-build
+%{make_install} INSTALL_ROOT=%{buildroot}  prefix=/usr/
+popd
+
+# Add desktop files
+desktop-file-install \
+  --dir=%{buildroot}%{_datadir}/applications \
+  data/%{name}.desktop
+
+# Add .desktop file
+#install -d %{buildroot}%{_datadir}/applications/
+#install -m644 -p -D data/%{name}.desktop  %{buildroot}%{_datadir}/applications/%{name}.desktop
+
+# icons
+install -d %{buildroot}%{_datadir}/%{name}/icons/
+install -m644 -p -D res/icons/* %{buildroot}%{_datadir}/%{name}/icons/
+
+# translate file
+install -d %{buildroot}%{_datadir}/%{name}/translations/
+install -m644 -p -D res/translators/*.qm  %{buildroot}%{_datadir}/%{name}/translations/
+
+# license file
+#install -d %{buildroot}%{_datadir}/%{name}/license/
+#install -m644 -p -D LICENSE  %{buildroot}%{_datadir}/%{name}/license/
+
+%clean
+rm -rf $RPM_BUILD_ROOT
 
 %files
-%license add-license-file-here
-%doc add-docs-here
+%license LICENSE
+%{_bindir}/%{name}
+%{_datadir}/applications/%{name}.desktop
+%{_datadir}/%{name}/icons/*
+%{_datadir}/%{name}/translations/*
 
 %changelog
-* Thu Aug 01 2024 hanjinpeng <hanjinpeng127@gmail.com> - 1.0-1
+* Sun Aug 04 2024 hanjinpeng <hanjinpeng127@gmail.com> - 1.0-1
 - Initial spec for Package
