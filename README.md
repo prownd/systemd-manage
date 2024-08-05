@@ -18,7 +18,7 @@ Use qmake for compilation, configuration, and installation
 # Screenshot
 ---
 ###### System Service Management:
-![service manage](./images/en/service-manage-view-1.png "systemd service unit manage")
+![service manage](/images/en/service-manage-view-1.png "systemd service unit manage")
 
 ###### System Service Details:
 ![service detail](images/en/service-detail-view-1.png "service unit detail")
