@@ -82,7 +82,7 @@ MainWidget::MainWidget(QWidget *parent)
     : QWidget(parent)
 {
     setWindowTitle(tr("Systemd Manager tools"));
-    setWindowIcon(QIcon(QString(":/icons/systemd-manage.ico")));
+    //setWindowIcon(QIcon(QString(":/icons/systemd-manage.png")));
     sideBarWidget = new QWidget(this);
 
     QSize toolBtnSize(36, 36);
