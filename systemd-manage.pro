@@ -103,7 +103,6 @@ TARGET=systemd-manage
 
 VERSION = 1.0
 
-RC_ICONS = "res/icons/systemd-manage.ico"
 QMAKE_TARGET_COMPANY = "hanjinpeng <hanjinpeng127@gmail.com>"
 QMAKE_TARGET_PRODUCT = "systemd-manage"
 QMAKE_TARGET_DESCRIPTION = "Qt Creator based on Qt 5.15"
