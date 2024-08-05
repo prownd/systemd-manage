@@ -27,7 +27,7 @@ Use qmake for compilation, configuration, and installation
 ![user session](images/en/user-session-view-1.png "user session info")
 
 ###### User session details:
-![user session detail](images/en/user-session-detail-1.png show user session detail")
+![user session detail](images/en/user-session-detail-1.png "show user session detail")
 
 ###### Configuration file:
 ![config file](images/en/config-file-view-1.png "config file info")
