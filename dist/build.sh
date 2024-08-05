@@ -12,15 +12,25 @@ BUILD_DIR="$( cd "$( dirname "$0"  )" && pwd  )"
 
 function build_rpm_package()
 {
+    #clean rpmbuild dir and regenerate rpmdev tree
     [ -d $BUILD_DIR/rpmbuild ] && rm -fr $BUILD_DIR/rpmbuild
     mkdir -p $BUILD_DIR/rpmbuild/{BUILD,RPMS,SOURCES,SPECS,SRPMS}
     mkdir -p $BUILD_DIR/rpms-dir
-    tar -Jcvf $BUILD_DIR/rpmbuild/SOURCES/$PKG_NAME-$PKG_VERSION.tar.xz $BUILD_DIR/../../$PKG_NAME
+
+    #tar source file, generate xz archive 
+    #tar -Jcvf $BUILD_DIR/rpmbuild/SOURCES/$PKG_NAME-$PKG_VERSION.tar.xz  $BUILD_DIR/../../$PKG_NAME
+    tar -Jcv --exclude='.git' -f $BUILD_DIR/rpmbuild/SOURCES/$PKG_NAME-$PKG_VERSION.tar.xz  $BUILD_DIR/../../$PKG_NAME
+
+    #begin build
     rpmbuild --define "_topdir $BUILD_DIR/rpmbuild" -bb  $BUILD_DIR/rpm/$PKG_NAME.spec
+
+    #find package rpm file , and copy to rpms-dir
     rpms=`find $BUILD_DIR/rpmbuild/RPMS/ -name $PKG_NAME-\*` || exit 1
     for rpm in ${rpms[@]}; do
         /bin/cp -f $rpm $BUILD_DIR/rpms-dir/
     done
+
+    # clean rpmbuild dir
     rm -fr $BUILD_DIR/rpmbuild
 }
 
