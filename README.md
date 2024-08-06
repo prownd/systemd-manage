@@ -17,43 +17,43 @@ Use qmake for compilation, configuration, and installation
 
 # Instructions for using systemd management
 ---
-#### System Service Management:
+### System Service Management:
 Manage system units and user units, filter unit types, etc
 ![service manage](./images/en/service-manage-view-1.png "systemd service unit manage")
 
-#### System Service Details:
+### System Service Details:
 Display service unit content, logs, dependencies, etc
 ![service detail](images/en/service-detail-view-1.png "service unit detail")
 
-#### User session management:
+### User session management:
 Management system login sessions and users
 ![user session](images/en/user-session-view-1.png "user session info")
 
-#### User session details:
+### User session details:
 Display session status information, such as ID, name, path, status, TTY, etc
 ![user session detail](images/en/user-session-detail-1.png "show user session detail")
 
-#### Configuration file:
+### Configuration file:
 View and manage the configuration files of systemd, modify parameter values
 ![config file](images/en/config-file-view-1.png "config file info")
 
-#### Journal log:
+### Journal log:
 View system logs, select time period and log level
 ![journal log](images/en/journal-log-view-1.png "show journal log")
 
-#### System performance analysis:
+### System performance analysis:
 Display the time consumption during the system startup phase, as well as a more detailed flame diagram to view the specific startup time of each service
 ![analysize statistics](images/en/analysize-statistics-view-1.png "systemd performance analysize statistics")
 
-#### Process management:
+### Process management:
 Display the currently running process, filter process names, and users
 ![process manage](images/en/process-manage-view-1.png "process management")
 
-#### Preferred settings:
+### Preferred settings:
 Setting system preferences, setting display language
 ![perference setting](images/en/setting-view-1.png "program perference setting")
 
-#### Regarding the program and version:
+### Regarding the program and version:
 Display information about program version, license, etc
 ![about application version](images/en/about-view-1.png "abuot version info")
 
