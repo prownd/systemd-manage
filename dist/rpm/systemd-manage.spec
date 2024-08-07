@@ -42,13 +42,13 @@ pushd %{name}-qmake-build
 popd
 
 # Add desktop files
-desktop-file-install \
-  --dir=%{buildroot}%{_datadir}/applications \
-  data/%{name}.desktop
+# desktop-file-install \
+#  --dir=%{buildroot}%{_datadir}/applications \
+#  data/%{name}.desktop
 
 # Add .desktop file
-#install -d %{buildroot}%{_datadir}/applications/
-#install -m644 -p -D data/%{name}.desktop  %{buildroot}%{_datadir}/applications/%{name}.desktop
+install -d %{buildroot}%{_datadir}/applications/
+install -m644 -p -D data/%{name}.desktop  %{buildroot}%{_datadir}/applications/%{name}.desktop
 
 # icons
 install -d %{buildroot}%{_datadir}/%{name}/icons/
