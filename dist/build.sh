@@ -22,12 +22,18 @@ function build_rpm_package()
     tar -Jcv --exclude='.git' -f $BUILD_DIR/rpmbuild/SOURCES/$PKG_NAME-$PKG_VERSION.tar.xz  $BUILD_DIR/../../$PKG_NAME
 
     #begin build
-    rpmbuild --define "_topdir $BUILD_DIR/rpmbuild" -bb  $BUILD_DIR/rpm/$PKG_NAME.spec
+    rpmbuild --define "_topdir $BUILD_DIR/rpmbuild" -ba  $BUILD_DIR/rpm/$PKG_NAME.spec
 
     #find package rpm file , and copy to rpms-dir
     rpms=`find $BUILD_DIR/rpmbuild/RPMS/ -name $PKG_NAME-\*` || exit 1
     for rpm in ${rpms[@]}; do
         /bin/cp -f $rpm $BUILD_DIR/rpms-dir/
+    done
+
+    #find srpm package , and copy to rpms-dir
+    srpms=`find $BUILD_DIR/rpmbuild/SRPMS/ -name $PKG_NAME-\*` || exit 1
+    for srpm in ${srpms[@]}; do
+        /bin/cp -f $srpm $BUILD_DIR/rpms-dir/
     done
 
     # clean rpmbuild dir
