@@ -74,4 +74,4 @@ rm -rf $RPM_BUILD_ROOT
 
 %changelog
 * Sun Aug 04 2024 hanjinpeng <hanjinpeng127@gmail.com> - 1.0-1
-- Initial spec for Package
+- Initial systemd-manage package
