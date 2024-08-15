@@ -1,5 +1,7 @@
 # systemd-manage工具
-systemd-manage是一个基于systemd服务管理的图形化工具，使用qt图形库进行开发，提供服务管理，用户会话，配置文件修改，日志查询，性能分析，进程管理等功能。图形化，简单方便的进行系统服务的管理。
+systemd-manage是一个基于systemd服务管理的图形化工具，使用qt图形库进行开发。  
+提供服务管理，用户会话，配置文件修改，日志查询，性能分析，进程管理等功能。  
+图形化，简单方便的进行系统服务的管理。
 
 # 部署安装
 使用qmake进行编译和部署
@@ -59,9 +61,9 @@ systemd-manage is distributed in the hope that it will be useful, but WITHOUT AN
 
 
 # 反馈和联系
-如果你在使用中，发现bug问题，或者有更好的建议意见。
-还请提出issue问题，或者提交pr来进行修改优化。
-也可以发送邮件与我联系交流。
+如果你在使用中，发现bug问题，或者有更好的建议意见。  
+还请提出issue问题，或者提交pr来进行修改优化。  
+也可以发送邮件与我联系交流。  
 欢迎反馈贡献，谢谢!
 
 联系邮箱：  [hanjinpeng127@gmail.com](mailto:hanjinpeng127@gmail.com)

@@ -1,7 +1,7 @@
 
 # Systemd manage tool
-systemd-manage is a graphical systemd service management tool, developed using the Qt graphics library.
-It can be providing functions such as service management, user sessions, configuration file modification, log queries, performance analysis and process management, etc.
+systemd-manage is a graphical systemd service management tool, developed using the Qt graphics library.  
+It can be providing functions such as service management, user sessions, configuration file modification, log queries, performance analysis and process management, etc.  
 Graphic interface operation, simple and convenient service management.
 
 # Deploy and Install
@@ -61,9 +61,9 @@ systemd-manage is free software: you can redistribute it and/or modify it under 
 systemd-manage is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License at [ http://www.gnu.org/licenses/ ]( http://www.gnu.org/licenses/ ) for more details.
 
 # Feedback and Contact
-If you encounter bug issues or have better suggestions while using it.
-Please raise issue questions or submit PR for modification and optimization.
-You can also send me an email to contact and communicate with me
+If you encounter bug issues or have better suggestions while using it.  
+Please report issue questions or submit PR for modification and optimization.  
+You can also send me an email to contact and communicate with me  
 Welcome feedback and contributions, thank you!
 
 Contact email:  [hanjinpeng127@gmail.com](mailto:hanjinpeng127@gmail.com)
