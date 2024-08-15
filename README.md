@@ -1,11 +1,10 @@
 
 # Systemd manage tool
----
-systemd-manage is a graphical systemd service management tool, developed using the Qt graphics library, providing functions such as service management, user sessions, configuration file modification, log queries, performance analysis and process management, etc.
+systemd-manage is a graphical systemd service management tool, developed using the Qt graphics library.
+It can be providing functions such as service management, user sessions, configuration file modification, log queries, performance analysis and process management, etc.
 Graphic interface operation, simple and convenient service management.
 
 # Deploy and Install
----
 Use qmake for compilation, configuration, and installation
 
 ```bash
@@ -15,9 +14,7 @@ Use qmake for compilation, configuration, and installation
 ```
 
 
-
 # Instructions for using systemd management
----
 ### System Service Management:
 Manage system units and user units, filter unit types, etc
 ![service manage](./images/en/service-manage-view-1.png "systemd service unit manage")
@@ -59,16 +56,14 @@ Display information about program version, license, etc
 ![about application version](images/en/about-view-1.png "abuot version info")
 
 # license agreement
----
 systemd-manage is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
 
 systemd-manage is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License at [ http://www.gnu.org/licenses/ ]( http://www.gnu.org/licenses/ ) for more details.
 
 # Feedback and Contact
----
 If you encounter bug issues or have better suggestions while using it.
 Please raise issue questions or submit PR for modification and optimization.
 You can also send me an email to contact and communicate with me
 Welcome feedback and contributions, thank you!
 
-Contact email:  hanjinpeng127@gmail.com
+Contact email:  [hanjinpeng127@gmail.com](mailto:hanjinpeng127@gmail.com)
