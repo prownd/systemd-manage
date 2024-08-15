@@ -1,7 +1,8 @@
 
 # Systemd manage tool
 ---
-Systemd manage is a graphical tool based on Systemd service management, developed using the Qt graphics library, providing functions such as service management, user sessions, configuration file modification, log queries, performance analysis, and process management. Graphical simple and convenient to manage systems and services.
+systemd-manage is a graphical systemd service management tool, developed using the Qt graphics library, providing functions such as service management, user sessions, configuration file modification, log queries, performance analysis and process management, etc.
+Graphic interface operation, simple and convenient service management.
 
 # Deploy and Install
 ---
