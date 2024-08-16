@@ -216,6 +216,7 @@ void ConfigFileWindow::handleConfigFileRefreshAction()
 
 void ConfigFileWindow::slotRefreshConfFileList()
 {
+    int index=0;
     for (const conffile &f : m_confFileList) {
         if (!QFileInfo::exists(f.filePath)) {
             continue;
@@ -225,11 +226,22 @@ void ConfigFileWindow::slotRefreshConfFileList()
         QStandardItem *item3 = new QStandardItem(QFileInfo(f.filePath).birthTime().toString(QStringLiteral("yyyy-MM-dd HH:mm:ss")));
         QStandardItem *item4 = new QStandardItem( QString::number(QFileInfo(f.filePath).size()));
         QStandardItem *item5 = new QStandardItem(f.description);
+
+        /*
+         * if conffile not exists, row content will be null
         m_confFileModel->setItem(m_confFileList.indexOf(f), 0, item);
         m_confFileModel->setItem(m_confFileList.indexOf(f), 1, item2);
         m_confFileModel->setItem(m_confFileList.indexOf(f), 2, item3);
         m_confFileModel->setItem(m_confFileList.indexOf(f), 3, item4);
         m_confFileModel->setItem(m_confFileList.indexOf(f), 4, item5);
+        */
+
+        m_confFileModel->setItem(index, 0, item);
+        m_confFileModel->setItem(index, 1, item2);
+        m_confFileModel->setItem(index, 2, item3);
+        m_confFileModel->setItem(index, 3, item4);
+        m_confFileModel->setItem(index, 4, item5);
+        index++;
     }
 }
 

@@ -244,7 +244,7 @@ MainWidget::MainWidget(QWidget *parent)
 
     setLayout(mainLayout);
 
-    this->resize(1400,900);
+    this->resize(1200,900);
 
     connect(btnGroup, QOverload<int>::of(&QButtonGroup::buttonClicked), stackedWidget, &QStackedWidget::setCurrentIndex);
 }
