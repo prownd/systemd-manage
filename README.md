@@ -51,7 +51,7 @@ Display the currently running process, filter process names, and users
 Setting system preferences, setting display language
 ![perference setting](images/en/setting-view-1.png "program perference setting")
 
-### Regarding the program and version:
+### Application version information:
 Display information about program version, license, etc
 ![about application version](images/en/about-view-1.png "abuot version info")
 
