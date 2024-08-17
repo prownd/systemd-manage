@@ -1,5 +1,9 @@
 /********************************************************************************
- * Copyright (C) 2024 Han Jinpeng <hanjinpeng127@gmail.com>                     *
+ *                                                                              *
+ * Obtained origin from https://www.cnblogs.com/luoxiang/p/17521164.html        *
+ * My version is based on this person's code.                                   *
+ *                                                                              *
+ * This version is modify by Han Jinpeng <hanjinpeng127@gmail.com>              *
  * Website: https://github.com/prownd/systemd-manage                            *
  *                                                                              *
  * This file is part of the systemd-manage project.                             *

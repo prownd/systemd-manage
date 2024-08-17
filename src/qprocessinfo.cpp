@@ -1,12 +1,12 @@
-//
-// My version is based on this person's code.
-//
-// Copyright (c) 2016, Baldur Karlsson
-// Licensed under BSD 2-Clause License, see LICENSE file.
-// Obtained from https://github.com/baldurk/qprocessinfo
-//
-
 /********************************************************************************
+ * Obtained from https://github.com/epasveer/QProcessInfoWidget                 *
+ * My version (epasveer) is based on this person's code.                        *
+ *                                                                              *
+ * Copyright (c) 2016, Baldur Karlsson                                          *
+ * Licensed under BSD 2-Clause License, see LICENSE file.                       *
+ * Obtained from https://github.com/baldurk/qprocessinfo                        *
+ *                                                                              *
+ *                                                                              *
  * This version is modify by Han Jinpeng <hanjinpeng127@gmail.com>              *
  * Website: https://github.com/prownd/systemd-manage                            *
  *                                                                              *

@@ -142,7 +142,7 @@ QPushButton {
     border-right: 0px outset transparent;
     border-left: 0px outset transparent;
     border-radius:6px;
-    background-color: #ebebeb;
+    background-color: #dbdbdb;
     width: 120px;
     height: 40px;
     margin: 0px 0px;
@@ -159,7 +159,7 @@ QPushButton:pressed:checked {
 }
 
 QPushButton:hover:!checked{
-    background-color: #dedede;
+    background-color: #cdcdcd;
 }
 
 

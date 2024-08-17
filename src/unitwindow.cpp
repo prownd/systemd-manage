@@ -147,7 +147,7 @@ void UnitWindow::createSystemUnitTableView()
     m_systemUnitTableView->verticalHeader()->setDefaultSectionSize(40);
     m_systemUnitTableView->resizeColumnsToContents();
     m_systemUnitTableView->horizontalHeader()->setStretchLastSection(true);
-    m_systemUnitTableView->setColumnWidth(0,600);
+    m_systemUnitTableView->setColumnWidth(0,400);
     //tableView->setColumnWidth(1,200);
     m_systemUnitTableView->verticalHeader()->hide();
     m_systemUnitTableView->setSelectionBehavior(QAbstractItemView::SelectRows);

@@ -59,13 +59,6 @@ void AnalyzeWindow::createMainWidgetView()
 
     m_vBoxLayout->addWidget(m_systemdBootTimeLabelDesc);
 
-    QString systemdAnalyzeBootTimeCmdStr = QStringLiteral("/usr/bin/systemd-analyze");
-    QStringList systemdAnalyzeBootTimeArguments;
-    systemdAnalyzeBootTimeArguments.append(QStringLiteral("time"));
-    //QString bootTimeCommandOutputStr = invokeCommand(systemdAnalyzeBootTimeCmdStr, systemdAnalyzeBootTimeArguments);
-    //QStringList bootTimeCommandOutputStrList = bootTimeCommandOutputStr.split("\n");
-    //QStringList tmpbootTimeList1 = bootTimeCommandOutputStrList[0].trimmed().split("Startup finished in");
-
     // run /usr/bin/busctl  call org.freedesktop.systemd1 /org/freedesktop/systemd1 org.freedesktop.DBus.Properties  GetAll s "" --json=short
     QString systemdBusctlGetPropertiesCmdStr = QStringLiteral("/usr/bin/busctl");
     QStringList systemdBusctlGetPropertiesArguments;
@@ -79,55 +72,136 @@ void AnalyzeWindow::createMainWidgetView()
     systemdBusctlGetPropertiesArguments.append(QStringLiteral("--json=short"));
 
     QString busctlCommandOutputStr = invokeCommand(systemdBusctlGetPropertiesCmdStr, systemdBusctlGetPropertiesArguments);
-    parseBusctlCallGetPropertiesJsonData(busctlCommandOutputStr);
+    int ret = parseBusctlCallGetPropertiesJsonData(busctlCommandOutputStr);
+    if (ret != -1 ){
+        QStringList allStageList;
+        allStageList.append(QStringLiteral("firmware"));
+        allStageList.append(QStringLiteral("loader"));
+        allStageList.append(QStringLiteral("kernel"));
+        allStageList.append(QStringLiteral("initrd"));
+        allStageList.append(QStringLiteral("userspace"));
+        allStageList.append(QStringLiteral("total"));
 
-    QStringList allStageList;
-    allStageList.append(QStringLiteral("firmware"));
-    allStageList.append(QStringLiteral("loader"));
-    allStageList.append(QStringLiteral("kernel"));
-    allStageList.append(QStringLiteral("initrd"));
-    allStageList.append(QStringLiteral("userspace"));
-    allStageList.append(QStringLiteral("total"));
+        canttTimeView = new CustomCanttChartView(this);
+        canttTimeView->setAxisRange(allStageList,
+                        QDateTime::fromMSecsSinceEpoch(m_bootTime.getFirmwareTimestampMilliSecond()),
+                        QDateTime::fromMSecsSinceEpoch(m_bootTime.getFirmwareTimestampMilliSecond() + m_bootTime.getTotal_realtime()/1000)
+                        );
 
-    canttTimeView = new CustomCanttChartView(this);
-    canttTimeView->setAxisRange(allStageList,
-                    QDateTime::fromMSecsSinceEpoch(m_bootTime.getFirmwareTimestampMilliSecond()),
-                    QDateTime::fromMSecsSinceEpoch(m_bootTime.getFirmwareTimestampMilliSecond() + m_bootTime.getTotal_realtime()/1000)
-                    );
+        canttTimeView->addElapseTimeBar(allStageList[0],
+                        QDateTime::fromMSecsSinceEpoch(m_bootTime.getFirmwareTimestampMilliSecond()),
+                        QDateTime::fromMSecsSinceEpoch(m_bootTime.getFirmwareTimestampMilliSecond() + m_bootTime.getFirmware_realtime()/1000)
+                        );
+        canttTimeView->addElapseTimeBar(allStageList[1],
+                        QDateTime::fromMSecsSinceEpoch(m_bootTime.getLoaderTimestampMilliSecond()),
+                        QDateTime::fromMSecsSinceEpoch(m_bootTime.getLoaderTimestampMilliSecond() + m_bootTime.getLoader_realtime()/1000)
+                        );
 
-    canttTimeView->addElapseTimeBar(allStageList[0],
-                    QDateTime::fromMSecsSinceEpoch(m_bootTime.getFirmwareTimestampMilliSecond()),
-                    QDateTime::fromMSecsSinceEpoch(m_bootTime.getFirmwareTimestampMilliSecond() + m_bootTime.getFirmware_realtime()/1000)
-                    );
-    canttTimeView->addElapseTimeBar(allStageList[1],
-                    QDateTime::fromMSecsSinceEpoch(m_bootTime.getLoaderTimestampMilliSecond()),
-                    QDateTime::fromMSecsSinceEpoch(m_bootTime.getLoaderTimestampMilliSecond() + m_bootTime.getLoader_realtime()/1000)
-                    );
+        canttTimeView->addElapseTimeBar(allStageList[2],
+                        QDateTime::fromMSecsSinceEpoch(m_bootTime.getKernelTimestampMilliSecond()),
+                        QDateTime::fromMSecsSinceEpoch(m_bootTime.getKernelTimestampMilliSecond() + m_bootTime.getKernel_realtime()/1000)
+                        );
 
-    canttTimeView->addElapseTimeBar(allStageList[2],
-                    QDateTime::fromMSecsSinceEpoch(m_bootTime.getKernelTimestampMilliSecond()),
-                    QDateTime::fromMSecsSinceEpoch(m_bootTime.getKernelTimestampMilliSecond() + m_bootTime.getKernel_realtime()/1000)
-                    );
+        canttTimeView->addElapseTimeBar(allStageList[3],
+                        QDateTime::fromMSecsSinceEpoch(m_bootTime.getInitRDTimestampMilliSecond()),
+                        QDateTime::fromMSecsSinceEpoch(m_bootTime.getInitRDTimestampMilliSecond() + m_bootTime.getInitrd_realtime()/1000)
+                        );
 
-    canttTimeView->addElapseTimeBar(allStageList[3],
-                    QDateTime::fromMSecsSinceEpoch(m_bootTime.getInitRDTimestampMilliSecond()),
-                    QDateTime::fromMSecsSinceEpoch(m_bootTime.getInitRDTimestampMilliSecond() + m_bootTime.getInitrd_realtime()/1000)
-                    );
+        canttTimeView->addElapseTimeBar(allStageList[4],
+                        QDateTime::fromMSecsSinceEpoch(m_bootTime.getUserspaceTimestampMilliSecond()),
+                        QDateTime::fromMSecsSinceEpoch(m_bootTime.getUserspaceTimestampMilliSecond() + m_bootTime.getUserspace_realtime()/1000)
+                        );
 
-    canttTimeView->addElapseTimeBar(allStageList[4],
-                    QDateTime::fromMSecsSinceEpoch(m_bootTime.getUserspaceTimestampMilliSecond()),
-                    QDateTime::fromMSecsSinceEpoch(m_bootTime.getUserspaceTimestampMilliSecond() + m_bootTime.getUserspace_realtime()/1000)
-                    );
+        canttTimeView->addElapseTimeBar(allStageList[5],
+                        QDateTime::fromMSecsSinceEpoch(m_bootTime.getFirmwareTimestampMilliSecond()),
+                        QDateTime::fromMSecsSinceEpoch(m_bootTime.getFirmwareTimestampMilliSecond() + m_bootTime.getTotal_realtime()/1000)
+                        );
+        m_vBoxLayout->addWidget(canttTimeView);
+        m_vBoxLayout->addStretch(0);
+    }else{
+        QString systemdAnalyzeBootTimeCmdStr = QStringLiteral("/usr/bin/systemd-analyze");
+        QStringList systemdAnalyzeBootTimeArguments;
+        systemdAnalyzeBootTimeArguments.append(QStringLiteral("time"));
+        QString bootTimeCommandOutputStr = invokeCommand(systemdAnalyzeBootTimeCmdStr, systemdAnalyzeBootTimeArguments);
+        //qDebug() << "bootTimeCommandOutputStr:" << bootTimeCommandOutputStr;
 
-    canttTimeView->addElapseTimeBar(allStageList[5],
-                    QDateTime::fromMSecsSinceEpoch(m_bootTime.getFirmwareTimestampMilliSecond()),
-                    QDateTime::fromMSecsSinceEpoch(m_bootTime.getFirmwareTimestampMilliSecond() + m_bootTime.getTotal_realtime()/1000)
-                    );
+        QStringList bootTimeCommandOutputStrList = bootTimeCommandOutputStr.split("\n");
+        QStringList tmpbootTimeList1 = bootTimeCommandOutputStrList[0].trimmed().split("Startup finished in");
+        QStringList tmpbootTimeListSplit1 = tmpbootTimeList1[1].trimmed().split("=");
 
-    //canttTimeView->setFixedSize(800,600);
-    m_vBoxLayout->addWidget(canttTimeView);
-    m_vBoxLayout->addStretch(0);
+        QString tmpbootTimeTotalStr=tmpbootTimeListSplit1[1].trimmed().remove('s');
+        QStringList tmpbootTimeAllStageList = tmpbootTimeListSplit1[0].trimmed().split("+");
+        if (tmpbootTimeAllStageList.length() >=3 ){
+            QString tmpbootTimeKernelStr = (tmpbootTimeAllStageList[0].trimmed().split(" "))[0].remove('s');
+            QString tmpbootTimeInitrdStr = (tmpbootTimeAllStageList[1].trimmed().split(" "))[0].remove('s');;
+            QString tmpbootTimeUserspaceStr = (tmpbootTimeAllStageList[2].trimmed().split(" "))[0].remove('s');
 
+            /*
+            qDebug() << "tmpbootTimeTotalStr:" << tmpbootTimeTotalStr;
+            qDebug() << "tmpbootTimeKernelStr:" <<   tmpbootTimeKernelStr;
+            qDebug() << "tmpbootTimeInitrdStr:" <<   tmpbootTimeInitrdStr;
+            qDebug() <<"tmpbootTimeUserspaceStr" << tmpbootTimeUserspaceStr;
+            */
+
+            qint64 tmpbootTimeTotalMilli = static_cast<qint64>(tmpbootTimeTotalStr.toDouble()*1000);
+            qint64 tmpbootTimeKernelMilli = static_cast<qint64>(tmpbootTimeKernelStr.toDouble()*1000);
+            qint64 tmpbootTimeInitrdMilli = static_cast<qint64>(tmpbootTimeInitrdStr.toDouble()*1000);
+            qint64 tmpbootTimeUserspaceMilli = static_cast<qint64>(tmpbootTimeUserspaceStr.toDouble()*1000);
+
+            qint64 dtcurrentMSecsSinceEpoch = QDateTime::currentMSecsSinceEpoch();
+
+            QTime current_time = QTime::currentTime();
+            int curhour = current_time.hour();        // current hour
+            int curminute = current_time.minute();    // current min
+            int cursecond = current_time.second();    // current sec
+            int curmsec = current_time.msec();       //  current msec
+            qint64 tmpcurrentMSecsSinceEpoch = dtcurrentMSecsSinceEpoch - curhour*3600*1000 - curminute*60*1000 - cursecond*1000 - curmsec;
+
+            /*
+            qDebug() << "tmpbootTimeTotalMilli:" << tmpbootTimeTotalMilli;
+            qDebug() << "tmpbootTimeKernelMilli:" <<   tmpbootTimeKernelMilli;
+            qDebug() << "tmpbootTimeInitrdMilli:" <<   tmpbootTimeInitrdMilli;
+            qDebug() <<"tmpbootTimeUserspaceMilli" << tmpbootTimeUserspaceMilli;
+            qDebug() << "curhour:" << curhour;
+            qDebug() << "curminute:" <<   curminute;
+            qDebug() << "cursecond:" <<   cursecond;
+            qDebug() <<"curmsec" << curmsec;
+            qDebug() <<"tmpcurrentMSecsSinceEpoch" << tmpcurrentMSecsSinceEpoch;
+            */
+
+            if ( tmpcurrentMSecsSinceEpoch > 0 ) {
+                QStringList allStageList;
+                allStageList.append(QStringLiteral("kernel"));
+                allStageList.append(QStringLiteral("initrd"));
+                allStageList.append(QStringLiteral("userspace"));
+                allStageList.append(QStringLiteral("total"));
+
+                canttTimeView = new CustomCanttChartView(this);
+                canttTimeView->setAxisRange(allStageList,
+                                            QDateTime::fromMSecsSinceEpoch(tmpcurrentMSecsSinceEpoch ),
+                                            QDateTime::fromMSecsSinceEpoch(tmpcurrentMSecsSinceEpoch + tmpbootTimeTotalMilli)
+                                            );
+
+                canttTimeView->addElapseTimeBar(allStageList[0],
+                                                QDateTime::fromMSecsSinceEpoch(tmpcurrentMSecsSinceEpoch  ),
+                                                QDateTime::fromMSecsSinceEpoch(tmpcurrentMSecsSinceEpoch + tmpbootTimeKernelMilli)
+                                                );
+
+                canttTimeView->addElapseTimeBar(allStageList[1],
+                                                QDateTime::fromMSecsSinceEpoch(tmpcurrentMSecsSinceEpoch + tmpbootTimeKernelMilli ),
+                                                QDateTime::fromMSecsSinceEpoch(tmpcurrentMSecsSinceEpoch + tmpbootTimeKernelMilli + tmpbootTimeInitrdMilli)
+                                                );
+
+                canttTimeView->addElapseTimeBar(allStageList[2],
+                                                QDateTime::fromMSecsSinceEpoch(tmpcurrentMSecsSinceEpoch + tmpbootTimeKernelMilli + tmpbootTimeInitrdMilli ),
+                                                QDateTime::fromMSecsSinceEpoch(tmpcurrentMSecsSinceEpoch + tmpbootTimeKernelMilli + tmpbootTimeInitrdMilli + tmpbootTimeUserspaceMilli)
+                                                );
+
+                m_vBoxLayout->addWidget(canttTimeView);
+                m_vBoxLayout->addStretch(0);
+            }
+        }
+    }
 
     m_systemdAnalyzePlotLabelDesc = new QLabel(this);
     m_systemdAnalyzePlotLabelDesc->setText(tr("systemd boot flow plot chart is:"));
