@@ -19,28 +19,46 @@
  * with this program. If not, see <https://www.gnu.org/licenses/gpl-3.0.html>.  *
  ********************************************************************************/
 
-#ifndef VERSION_H
-#define VERSION_H
+#ifndef QPROCESSDETAIL_H
+#define QPROCESSDETAIL_H
 
-#include <QString>
-#include <QStringList>
-#include <QObject>
+#include <QHBoxLayout>
+#include <QStandardItemModel>
+#include <QTableView>
+#include <QHeaderView>
+#include <QWidget>
+#include <QLabel>
+#include <QListWidget>
+#include "qprocessinfo.h"
 
-QString APPLICATION_NAME = QObject::tr("Systemd Manage");
+class QProcessDetail : public QWidget
+{
+    Q_OBJECT
 
-QString APPLICATION_VERSION = QObject::tr("1.1");
+public:
+    explicit QProcessDetail(QWidget *parent = nullptr);
+    explicit QProcessDetail(quint64 pid = 1, QWidget *parent = nullptr);
+    ~QProcessDetail();
+    void init();
+    void createQProcessWidgetView();
+    void createQProcessDetailListWidgetViewData();
 
-QString EMAIL = QObject::tr("hanjinpeng127@gmail.com");
-QString AUTHOR = QObject::tr("Han Jinpeng");
-QStringList CREDITS={(QObject::tr("Han Jinpeng"))};
+private:
+    quint64 m_pid;
 
-QString LICENSE = QObject::tr("GPLv3");
-QString DATE = QObject::tr("2024-07-28");
+    QHBoxLayout *  m_processDetaiLayout;
+    QWidget * m_processDetailWidget;
 
-QString WEBSITE = QObject::tr("<a href=https://github.com/prownd/systemd-manage>https://github.com/prownd/systemd-manage</a>");
-QString LEGAL= QObject::tr("© 2024–2024 Han Jinpeng "
-                      "This application comes with absolutely no warranty.<br/>"
-                      "See the <a href=https://www.gnu.org/licenses/gpl-3.0.html>GNU General Public License, version 3 or later</a> for details."
-                      );
+    QListWidget * m_processDetailListWidget;
 
-#endif // VERSION_H
+    QLabel * m_processDetaiFieldName1;
+    QLabel * m_processDetaiFieldValue1;
+    QLabel * m_processDetaiFieldName2;
+    QLabel * m_processDetaiFieldValue2;
+
+protected:
+    //auto adjust window size
+    virtual void resizeEvent(QResizeEvent *event) override;
+};
+
+#endif // QPROCESSDETAIL_H

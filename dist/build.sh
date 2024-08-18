@@ -7,7 +7,7 @@
 #########################################################################
 
 PKG_NAME=systemd-manage
-PKG_VERSION=1.0
+PKG_VERSION=1.1
 BUILD_DIR="$( cd "$( dirname "$0"  )" && pwd  )"
 
 function build_rpm_package()

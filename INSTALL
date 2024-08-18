@@ -10,3 +10,14 @@ build with qmake:
   qmake  
   make
   make install
+  
+run:
+  systemd-manage
+
+
+generate package format
+===========
+it can also be compiled into distribution software packages, such as rpm package format
+  cd dist
+  ./build.sh
+

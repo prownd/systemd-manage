@@ -52,12 +52,12 @@
         <translation>systemd启动系统时间:</translation>
     </message>
     <message>
-        <location filename="../../src/analyzewindow.cpp" line="133"/>
+        <location filename="../../src/analyzewindow.cpp" line="207"/>
         <source>systemd boot flow plot chart is:</source>
         <translation>systemd启动系统流程绘制:</translation>
     </message>
     <message>
-        <location filename="../../src/analyzewindow.cpp" line="161"/>
+        <location filename="../../src/analyzewindow.cpp" line="235"/>
         <source>SVG Viewer with Zoom</source>
         <translation>SVG视图缩放</translation>
     </message>
@@ -458,6 +458,7 @@
         <translation>显示定时器信息</translation>
     </message>
     <message>
+        <location filename="../../src/qprocessdetail.cpp" line="50"/>
         <location filename="../../src/usersessioninformation.cpp" line="63"/>
         <location filename="../../src/usersessioninformation.cpp" line="343"/>
         <source>Hint Model Window</source>
@@ -489,9 +490,13 @@
         <translation type="vanished">0.99</translation>
     </message>
     <message>
-        <location filename="../../src/version.h" line="31"/>
         <source>1.0</source>
-        <translation>1.0</translation>
+        <translation type="vanished">1.0</translation>
+    </message>
+    <message>
+        <location filename="../../src/version.h" line="31"/>
+        <source>1.1</source>
+        <translation>1.1</translation>
     </message>
     <message>
         <location filename="../../src/version.h" line="33"/>
@@ -526,61 +531,331 @@
         <oldsource>&lt;p&gt;© 2024–2024 Han JinpengThis application comes with absolutely no warranty.&lt;/br&gt;See the &lt;a href = https://www.gnu.org/licenses/gpl-3.0.html &gt;GNU General Public License, version 3 or later&lt;/a&gt; for details.&lt;/p&gt;</oldsource>
         <translation></translation>
     </message>
+    <message>
+        <location filename="../../src/qprocessinfo.cpp" line="179"/>
+        <source>Running</source>
+        <translation>运行</translation>
+    </message>
+    <message>
+        <location filename="../../src/qprocessinfo.cpp" line="182"/>
+        <source>Stopped</source>
+        <translation>停止</translation>
+    </message>
+    <message>
+        <location filename="../../src/qprocessinfo.cpp" line="185"/>
+        <source>Zombie</source>
+        <translation>僵尸</translation>
+    </message>
+    <message>
+        <location filename="../../src/qprocessinfo.cpp" line="188"/>
+        <source>Uninterruptible</source>
+        <translation>不可中断</translation>
+    </message>
+    <message>
+        <location filename="../../src/qprocessinfo.cpp" line="191"/>
+        <source>Sleeping</source>
+        <translation>休眠中</translation>
+    </message>
+    <message>
+        <location filename="../../src/qprocessinfo.cpp" line="200"/>
+        <source>Very High</source>
+        <translation>非常高</translation>
+    </message>
+    <message>
+        <location filename="../../src/qprocessinfo.cpp" line="202"/>
+        <source>High</source>
+        <translation>高</translation>
+    </message>
+    <message>
+        <location filename="../../src/qprocessinfo.cpp" line="204"/>
+        <source>Normal</source>
+        <translation>正常</translation>
+    </message>
+    <message>
+        <location filename="../../src/qprocessinfo.cpp" line="206"/>
+        <source>Low</source>
+        <translation>低</translation>
+    </message>
+    <message>
+        <location filename="../../src/qprocessinfo.cpp" line="208"/>
+        <source>Very Low</source>
+        <translation>非常低</translation>
+    </message>
+    <message>
+        <location filename="../../src/qprocessinfo.cpp" line="214"/>
+        <source>Very High Priority</source>
+        <translation>非常高优先级</translation>
+    </message>
+    <message>
+        <location filename="../../src/qprocessinfo.cpp" line="216"/>
+        <source>High Priority</source>
+        <translation>高优先级</translation>
+    </message>
+    <message>
+        <location filename="../../src/qprocessinfo.cpp" line="218"/>
+        <source>Normal Priority</source>
+        <translation>正常优先级</translation>
+    </message>
+    <message>
+        <location filename="../../src/qprocessinfo.cpp" line="220"/>
+        <source>Low Priority</source>
+        <translation>低优先级</translation>
+    </message>
+    <message>
+        <location filename="../../src/qprocessinfo.cpp" line="222"/>
+        <source>Very Low Priority</source>
+        <translation>非常低优先级</translation>
+    </message>
+    <message>
+        <location filename="../../src/qprocessinfo.cpp" line="235"/>
+        <source>N/A</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../../src/qprocessinfowindow.cpp" line="169"/>
+        <location filename="../../src/qprocessinfowindow.cpp" line="217"/>
+        <source>Process Properties Information</source>
+        <translation>进程属性信息</translation>
+    </message>
+</context>
+<context>
+    <name>QProcessDetail</name>
+    <message>
+        <location filename="../../src/qprocessdetail.cpp" line="85"/>
+        <source>Process Name:</source>
+        <translation>进程名:</translation>
+    </message>
+    <message>
+        <location filename="../../src/qprocessdetail.cpp" line="93"/>
+        <source>Process ID:</source>
+        <translation>进程ID:</translation>
+    </message>
+    <message>
+        <location filename="../../src/qprocessdetail.cpp" line="101"/>
+        <source>User:</source>
+        <translation>用户:</translation>
+    </message>
+    <message>
+        <location filename="../../src/qprocessdetail.cpp" line="109"/>
+        <source>Status:</source>
+        <translation>状态:</translation>
+    </message>
+    <message>
+        <location filename="../../src/qprocessdetail.cpp" line="117"/>
+        <source>Memory:</source>
+        <translation>内存:</translation>
+    </message>
+    <message>
+        <location filename="../../src/qprocessdetail.cpp" line="125"/>
+        <source>Virtual Memory:</source>
+        <translation>虚拟内存:</translation>
+    </message>
+    <message>
+        <location filename="../../src/qprocessdetail.cpp" line="133"/>
+        <source>Resident Memory:</source>
+        <translation>常驻内存:</translation>
+    </message>
+    <message>
+        <location filename="../../src/qprocessdetail.cpp" line="141"/>
+        <source>Writable Memory:</source>
+        <translation>可写内存:</translation>
+    </message>
+    <message>
+        <location filename="../../src/qprocessdetail.cpp" line="149"/>
+        <source>Shared Memory:</source>
+        <translation>共享内存:</translation>
+    </message>
+    <message>
+        <location filename="../../src/qprocessdetail.cpp" line="157"/>
+        <source>CPU:</source>
+        <translation>CPU:</translation>
+    </message>
+    <message>
+        <location filename="../../src/qprocessdetail.cpp" line="165"/>
+        <source>Priority:</source>
+        <translation>优先级:</translation>
+    </message>
+    <message>
+        <location filename="../../src/qprocessdetail.cpp" line="173"/>
+        <source>Command Line:</source>
+        <translation>命令行:</translation>
+    </message>
 </context>
 <context>
     <name>QProcessInfoWidget</name>
     <message>
-        <location filename="../../src/qprocessinfowindow.cpp" line="87"/>
+        <location filename="../../src/qprocessinfowindow.cpp" line="88"/>
         <source>Program Name:</source>
         <translation>程序名：</translation>
     </message>
     <message>
-        <location filename="../../src/qprocessinfowindow.cpp" line="90"/>
+        <location filename="../../src/qprocessinfowindow.cpp" line="91"/>
         <source>Search Program</source>
         <translation>搜索程序</translation>
     </message>
     <message>
-        <location filename="../../src/qprocessinfowindow.cpp" line="93"/>
+        <location filename="../../src/qprocessinfowindow.cpp" line="94"/>
         <source>User Name:</source>
         <translation>用户名：</translation>
     </message>
     <message>
-        <location filename="../../src/qprocessinfowindow.cpp" line="96"/>
+        <location filename="../../src/qprocessinfowindow.cpp" line="97"/>
         <source>Search User</source>
         <translation>搜索用户</translation>
     </message>
     <message>
-        <location filename="../../src/qprocessinfowindow.cpp" line="99"/>
+        <location filename="../../src/qprocessinfowindow.cpp" line="100"/>
         <source>Refresh</source>
         <translation>刷新</translation>
     </message>
     <message>
-        <location filename="../../src/qprocessinfowindow.cpp" line="119"/>
+        <location filename="../../src/qprocessinfowindow.cpp" line="120"/>
         <source>PID</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../src/qprocessinfowindow.cpp" line="120"/>
+        <location filename="../../src/qprocessinfowindow.cpp" line="121"/>
         <source>PPID</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../src/qprocessinfowindow.cpp" line="121"/>
+        <location filename="../../src/qprocessinfowindow.cpp" line="122"/>
         <source>User Name</source>
         <translation>用户名</translation>
     </message>
     <message>
-        <location filename="../../src/qprocessinfowindow.cpp" line="122"/>
+        <location filename="../../src/qprocessinfowindow.cpp" line="123"/>
         <source>Program Name</source>
         <translation>程序名</translation>
     </message>
     <message>
-        <location filename="../../src/qprocessinfowindow.cpp" line="123"/>
-        <source>Time</source>
-        <translation>时间</translation>
+        <location filename="../../src/qprocessinfowindow.cpp" line="124"/>
+        <source>% CPU</source>
+        <translation></translation>
     </message>
     <message>
-        <location filename="../../src/qprocessinfowindow.cpp" line="124"/>
+        <location filename="../../src/qprocessinfowindow.cpp" line="125"/>
+        <source>Memory</source>
+        <translation>内存</translation>
+    </message>
+    <message>
+        <location filename="../../src/qprocessinfowindow.cpp" line="126"/>
+        <source>State</source>
+        <translation>状态</translation>
+    </message>
+    <message>
+        <location filename="../../src/qprocessinfowindow.cpp" line="127"/>
+        <source>Nice</source>
+        <translation>优先级</translation>
+    </message>
+    <message>
+        <location filename="../../src/qprocessinfowindow.cpp" line="189"/>
+        <source>Process Detail Properties</source>
+        <translation>进程详细属性信息</translation>
+    </message>
+    <message>
+        <location filename="../../src/qprocessinfowindow.cpp" line="197"/>
+        <source>Kill Process</source>
+        <translation>杀死进程</translation>
+    </message>
+    <message>
+        <location filename="../../src/qprocessinfowindow.cpp" line="226"/>
+        <source>Warning</source>
+        <translation>警告</translation>
+    </message>
+    <message>
+        <location filename="../../src/qprocessinfowindow.cpp" line="226"/>
+        <source>Are you sure to Kill Process?</source>
+        <translation>你想要kill掉进程吗</translation>
+    </message>
+    <message>
+        <location filename="../../src/qprocessinfowindow.cpp" line="227"/>
+        <source>Yes</source>
+        <translation>是</translation>
+    </message>
+    <message>
+        <location filename="../../src/qprocessinfowindow.cpp" line="228"/>
+        <source>No</source>
+        <translation>否</translation>
+    </message>
+    <message>
+        <location filename="../../src/qprocessinfowindow.cpp" line="346"/>
+        <source>&lt;b&gt;Process Name: %1&lt;/b&gt;&lt;hr&gt;</source>
+        <translation>&lt;b&gt;进程名: %1&lt;/b&gt;&lt;hr&gt;</translation>
+    </message>
+    <message>
+        <location filename="../../src/qprocessinfowindow.cpp" line="349"/>
+        <source>&lt;b&gt;Status: %1&lt;/b&gt;&lt;hr&gt;</source>
+        <translation>&lt;b&gt;状态: %1&lt;/b&gt;&lt;hr&gt;</translation>
+    </message>
+    <message>
+        <location filename="../../src/qprocessinfowindow.cpp" line="350"/>
+        <source>&lt;b&gt;Memory: %1&lt;/b&gt;&lt;hr&gt;</source>
+        <translation>&lt;b&gt;内存: %1&lt;/b&gt;&lt;hr&gt;</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Process Name:: %1&lt;/b&gt;&lt;hr&gt;</source>
+        <translation type="obsolete">&lt;b&gt;Process Name: %1&lt;/b&gt;&lt;hr&gt;</translation>
+    </message>
+    <message>
+        <location filename="../../src/qprocessinfowindow.cpp" line="347"/>
+        <source>&lt;b&gt;Process ID: %1&lt;/b&gt;&lt;hr&gt;</source>
+        <translation>&lt;b&gt;进程ID: %1&lt;/b&gt;&lt;hr&gt;</translation>
+    </message>
+    <message>
+        <location filename="../../src/qprocessinfowindow.cpp" line="348"/>
+        <source>&lt;b&gt;User: %1&lt;/b&gt;&lt;hr&gt;</source>
+        <translation>&lt;b&gt;用户: %1&lt;/b&gt;&lt;hr&gt;</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Status:: %1&lt;/b&gt;&lt;hr&gt;</source>
+        <translation type="obsolete">&lt;b&gt;Status:: %1&lt;/b&gt;&lt;hr&gt;</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Memory:: %1&lt;/b&gt;&lt;hr&gt;</source>
+        <translation type="obsolete">&lt;b&gt;Memory:: %1&lt;/b&gt;&lt;hr&gt;</translation>
+    </message>
+    <message>
+        <location filename="../../src/qprocessinfowindow.cpp" line="351"/>
+        <source>&lt;b&gt;Virtual Memory: %1&lt;/b&gt;&lt;hr&gt;</source>
+        <translation>&lt;b&gt;虚拟内存: %1&lt;/b&gt;&lt;hr&gt;</translation>
+    </message>
+    <message>
+        <location filename="../../src/qprocessinfowindow.cpp" line="352"/>
+        <source>&lt;b&gt;Resident Memory: %1&lt;/b&gt;&lt;hr&gt;</source>
+        <translation>&lt;b&gt;常驻内存: %1&lt;/b&gt;&lt;hr&gt;</translation>
+    </message>
+    <message>
+        <location filename="../../src/qprocessinfowindow.cpp" line="353"/>
+        <source>&lt;b&gt;Writable Memory: %1&lt;/b&gt;&lt;hr&gt;</source>
+        <translation>&lt;b&gt;可写内存: %1&lt;/b&gt;&lt;hr&gt;</translation>
+    </message>
+    <message>
+        <location filename="../../src/qprocessinfowindow.cpp" line="354"/>
+        <source>&lt;b&gt;Shared Memory: %1&lt;/b&gt;&lt;hr&gt;</source>
+        <translation>&lt;b&gt;共享内存: %1&lt;/b&gt;&lt;hr&gt;</translation>
+    </message>
+    <message>
+        <location filename="../../src/qprocessinfowindow.cpp" line="355"/>
+        <source>&lt;b&gt;CPU: %1&lt;/b&gt;&lt;hr&gt;</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../../src/qprocessinfowindow.cpp" line="356"/>
+        <source>&lt;b&gt;Priority: %1&lt;/b&gt;&lt;hr&gt;</source>
+        <translation>&lt;b&gt;优先级: %1&lt;/b&gt;&lt;hr&gt;</translation>
+    </message>
+    <message>
+        <location filename="../../src/qprocessinfowindow.cpp" line="357"/>
+        <source>&lt;b&gt;Command Line: %1&lt;/b&gt;&lt;hr&gt;</source>
+        <translation>&lt;b&gt;命令行: %1&lt;/b&gt;&lt;hr&gt;</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation type="vanished">时间</translation>
+    </message>
+    <message>
+        <location filename="../../src/qprocessinfowindow.cpp" line="128"/>
         <source>Command Line</source>
         <translation>命令名</translation>
     </message>

@@ -13,6 +13,11 @@ Use qmake for compilation, configuration, and installation
 3. make install
 ```
 
+In addition, it can also be compiled into distribution software packages, such as rpm package format
+```bash
+cd dist
+./build.sh
+```
 
 # Instructions for using systemd management
 ### System Service Management:
@@ -46,6 +51,10 @@ Display the time consumption during the system startup phase, as well as a more 
 ### Process management:
 Display the currently running process, filter process names, and users
 ![process manage](images/en/process-manage-view-1.png "process management")
+
+### Process Details Information:
+Display process detail information, eg: name, id, state, memory, etc
+![process detail](images/en/process-detail-view-1.png "process detail information")
 
 ### Preferred settings:
 Setting system preferences, setting display language

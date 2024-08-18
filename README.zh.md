@@ -11,6 +11,11 @@ systemd-manage是一个基于systemd服务管理的图形化工具，使用qt图
 3. make install
 ```
 
+也可以编译成发行版格式的二进制软件包，比如编译生成rpm包
+```bash
+cd dist
+./build.sh
+```
 
 # systemd-manage使用
 ### 系统服务管理:
@@ -44,6 +49,10 @@ systemd-manage是一个基于systemd服务管理的图形化工具，使用qt图
 ### 进程管理：
 显示当前运行的进程，可以过滤筛选进程名，用户
 ![process manage](images/zh/process-manage-view-1.png "process management")
+
+### 进程详细信息:
+显示进程详细信息，例如:进程名，id，状态，内存等
+![process detail](images/zh/process-detail-view-1.png "process detail information")
 
 ### 首选项设置：
 系统首选项的设置，设置显示语言

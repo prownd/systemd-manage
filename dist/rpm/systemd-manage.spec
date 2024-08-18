@@ -1,10 +1,10 @@
 Name: systemd-manage           
-Version: 1.0       
+Version: 1.1       
 Release: 1%{?dist}
 Summary: A graphical manage tools of systemd   
 
 License: LGPLv2
-URL:  https://github.com/prownd/systemd-manage           
+URL:  https://github.com/prownd/systemd-manage 
 Source0:     https://github.com/prownd/systemd-manage/releases/download/%{name}-%{version}.tar.xz
 
 BuildRequires: gcc-c++
@@ -14,9 +14,13 @@ BuildRequires: qt5-qtsvg-devel
 BuildRequires: qt5-qtscript-devel
 BuildRequires: qt5-qttools-devel
 BuildRequires: qt5-qtcharts-devel
+BuildRequires: libgtop2-devel
+BuildRequires: glib2-devel
 
 Requires: qt5-qtbase
-Requires: systemd       
+Requires: systemd
+Requires: libgtop2
+Requires: glib2
 
 %description
 Systemd manage is a graphical tool based on Systemd service management, developed using the Qt graphics library, providing functions such as service management, user sessions, configuration file modification, log queries, performance analysis, and process management. Simple and convenient to manage systems and services.
@@ -73,5 +77,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/%{name}/translations/*
 
 %changelog
+* Sun Aug 18 2024 hanjinpeng <hanjinpeng127@gmail.com> - 1.1-1
+- Fix display error in centos dist
+  Feature enhancement and optimization
+
 * Sun Aug 04 2024 hanjinpeng <hanjinpeng127@gmail.com> - 1.0-1
 - Initial systemd-manage package

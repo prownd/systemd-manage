@@ -17,6 +17,9 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 INCLUDEPATH += src/
+INCLUDEPATH += /usr/include/libgtop-2.0
+INCLUDEPATH += /usr/include/glib-2.0
+INCLUDEPATH += /usr/lib64/glib-2.0/include
 
 SOURCES += \
     src/aboutwindow.cpp \
@@ -34,6 +37,7 @@ SOURCES += \
     src/main.cpp \
     src/mainwidget.cpp \
     src/mystyleditemdelegate.cpp \
+    src/qprocessdetail.cpp \
     src/qprocessinfo.cpp \
     src/qprocessinfowindow.cpp \
     src/settingswindow.cpp \
@@ -64,6 +68,7 @@ HEADERS += \
     src/journalwindow.h \
     src/mainwidget.h \
     src/mystyleditemdelegate.h \
+    src/qprocessdetail.h \
     src/qprocessinfo.h \
     src/qprocessinfowindow.h \
     src/settingswindow.h \
@@ -96,12 +101,14 @@ TRANSLATIONS += \
     res/translators/app_zh_TW.ts
 
 LIBS += -lsystemd
+LIBS += -lglib-2.0
+LIBS += -lgtop-2.0
 
 DISTFILES +=
 
 TARGET=systemd-manage
 
-VERSION = 1.0
+VERSION = 1.1
 
 QMAKE_TARGET_COMPANY = "hanjinpeng <hanjinpeng127@gmail.com>"
 QMAKE_TARGET_PRODUCT = "systemd-manage"

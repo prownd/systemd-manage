@@ -53,7 +53,10 @@ class QProcessInfoWidget : public QWidget
         int selectedPPid() const;
         QString selectedUsername() const;
         QString selectedName() const;
-        QString selectedTime() const;
+        QString selectedCPUTime() const;
+        quint64 selectedMemory() const;
+        QString selectedNice() const;
+        QString selectedState() const;
         QString selectedCommandLine() const;
         void createProcessInfoView();
         QString addTextSpaceMargin(const QString);
@@ -66,6 +69,11 @@ class QProcessInfoWidget : public QWidget
         void refreshList();
         void refreshView();
         void handleDoubleClicked();
+        //void QTreeWidgetitemPressedSlot(QTreeWidgetItem * pressedItem, int column);
+        void QTreeWidgetitemPressedSlot(const QPoint& pos);
+        void handleQProcessDetailAction();
+        void handleQProcessKillAction();
+        void slotTreeWidgetItemDoubleClicked(QTreeWidgetItem* item, int column);
 
     protected:
     private:

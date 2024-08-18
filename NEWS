@@ -1,6 +1,13 @@
+systemd-manage 1.1 (2024-08-18)
+=========================
+release note:
+• Fix display error in centos dist
+• Add right button context menu, and show information
+• Add double click event handle
+• Bug fix and optimization
+
 systemd-manage 1.0 (2024-07-28)
 =========================
-
-first release:
+first release note:
 • Implement a graphical management tool for Systemd
   manage services, user sessions, configuration files, logs, analytics, process management, and other functions

@@ -52,12 +52,12 @@
         <translation>Le temps de démarrage de systemd est:</translation>
     </message>
     <message>
-        <location filename="../../src/analyzewindow.cpp" line="133"/>
+        <location filename="../../src/analyzewindow.cpp" line="207"/>
         <source>systemd boot flow plot chart is:</source>
         <translation>Le diagramme de démarrage de systemd est:</translation>
     </message>
     <message>
-        <location filename="../../src/analyzewindow.cpp" line="161"/>
+        <location filename="../../src/analyzewindow.cpp" line="235"/>
         <source>SVG Viewer with Zoom</source>
         <translation>Visionneuse SVG avec fonction de zoom</translation>
     </message>
@@ -407,6 +407,7 @@
         <translation> Afficher les informations sur la minuterie</translation>
     </message>
     <message>
+        <location filename="../../src/qprocessdetail.cpp" line="50"/>
         <location filename="../../src/usersessioninformation.cpp" line="63"/>
         <location filename="../../src/usersessioninformation.cpp" line="343"/>
         <source>Hint Model Window</source>
@@ -431,8 +432,8 @@
     </message>
     <message>
         <location filename="../../src/version.h" line="31"/>
-        <source>1.0</source>
-        <translation></translation>
+        <source>1.1</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/version.h" line="33"/>
@@ -465,61 +466,319 @@
         <source>© 2024–2024 Han Jinpeng This application comes with absolutely no warranty.&lt;br/&gt;See the &lt;a href=https://www.gnu.org/licenses/gpl-3.0.html&gt;GNU General Public License, version 3 or later&lt;/a&gt; for details.</source>
         <translation></translation>
     </message>
+    <message>
+        <location filename="../../src/qprocessinfo.cpp" line="179"/>
+        <source>Running</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/qprocessinfo.cpp" line="182"/>
+        <source>Stopped</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/qprocessinfo.cpp" line="185"/>
+        <source>Zombie</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/qprocessinfo.cpp" line="188"/>
+        <source>Uninterruptible</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/qprocessinfo.cpp" line="191"/>
+        <source>Sleeping</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/qprocessinfo.cpp" line="200"/>
+        <source>Very High</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/qprocessinfo.cpp" line="202"/>
+        <source>High</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/qprocessinfo.cpp" line="204"/>
+        <source>Normal</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/qprocessinfo.cpp" line="206"/>
+        <source>Low</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/qprocessinfo.cpp" line="208"/>
+        <source>Very Low</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/qprocessinfo.cpp" line="214"/>
+        <source>Very High Priority</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/qprocessinfo.cpp" line="216"/>
+        <source>High Priority</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/qprocessinfo.cpp" line="218"/>
+        <source>Normal Priority</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/qprocessinfo.cpp" line="220"/>
+        <source>Low Priority</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/qprocessinfo.cpp" line="222"/>
+        <source>Very Low Priority</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/qprocessinfo.cpp" line="235"/>
+        <source>N/A</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/qprocessinfowindow.cpp" line="169"/>
+        <location filename="../../src/qprocessinfowindow.cpp" line="217"/>
+        <source>Process Properties Information</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>QProcessDetail</name>
+    <message>
+        <location filename="../../src/qprocessdetail.cpp" line="85"/>
+        <source>Process Name:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/qprocessdetail.cpp" line="93"/>
+        <source>Process ID:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/qprocessdetail.cpp" line="101"/>
+        <source>User:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/qprocessdetail.cpp" line="109"/>
+        <source>Status:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/qprocessdetail.cpp" line="117"/>
+        <source>Memory:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/qprocessdetail.cpp" line="125"/>
+        <source>Virtual Memory:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/qprocessdetail.cpp" line="133"/>
+        <source>Resident Memory:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/qprocessdetail.cpp" line="141"/>
+        <source>Writable Memory:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/qprocessdetail.cpp" line="149"/>
+        <source>Shared Memory:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/qprocessdetail.cpp" line="157"/>
+        <source>CPU:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/qprocessdetail.cpp" line="165"/>
+        <source>Priority:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/qprocessdetail.cpp" line="173"/>
+        <source>Command Line:</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>QProcessInfoWidget</name>
     <message>
-        <location filename="../../src/qprocessinfowindow.cpp" line="87"/>
+        <location filename="../../src/qprocessinfowindow.cpp" line="88"/>
         <source>Program Name:</source>
         <translation> Nom du programme:</translation>
     </message>
     <message>
-        <location filename="../../src/qprocessinfowindow.cpp" line="90"/>
+        <location filename="../../src/qprocessinfowindow.cpp" line="91"/>
         <source>Search Program</source>
         <translation> Programme de recherche</translation>
     </message>
     <message>
-        <location filename="../../src/qprocessinfowindow.cpp" line="93"/>
+        <location filename="../../src/qprocessinfowindow.cpp" line="94"/>
         <source>User Name:</source>
         <translation> Nom d&apos;utilisateur:</translation>
     </message>
     <message>
-        <location filename="../../src/qprocessinfowindow.cpp" line="96"/>
+        <location filename="../../src/qprocessinfowindow.cpp" line="97"/>
         <source>Search User</source>
         <translation> Rechercher un utilisateur</translation>
     </message>
     <message>
-        <location filename="../../src/qprocessinfowindow.cpp" line="99"/>
+        <location filename="../../src/qprocessinfowindow.cpp" line="100"/>
         <source>Refresh</source>
         <translation> Rafraîchir</translation>
     </message>
     <message>
-        <location filename="../../src/qprocessinfowindow.cpp" line="119"/>
+        <location filename="../../src/qprocessinfowindow.cpp" line="120"/>
         <source>PID</source>
         <translation>PID</translation>
     </message>
     <message>
-        <location filename="../../src/qprocessinfowindow.cpp" line="120"/>
+        <location filename="../../src/qprocessinfowindow.cpp" line="121"/>
         <source>PPID</source>
         <translation>PPID</translation>
     </message>
     <message>
-        <location filename="../../src/qprocessinfowindow.cpp" line="121"/>
+        <location filename="../../src/qprocessinfowindow.cpp" line="122"/>
         <source>User Name</source>
         <translation> Nom d&apos;utilisateur</translation>
     </message>
     <message>
-        <location filename="../../src/qprocessinfowindow.cpp" line="122"/>
+        <location filename="../../src/qprocessinfowindow.cpp" line="123"/>
         <source>Program Name</source>
         <translation> Nom du programme</translation>
     </message>
     <message>
-        <location filename="../../src/qprocessinfowindow.cpp" line="123"/>
-        <source>Time</source>
-        <translation> Temps</translation>
+        <location filename="../../src/qprocessinfowindow.cpp" line="124"/>
+        <source>% CPU</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/qprocessinfowindow.cpp" line="124"/>
+        <location filename="../../src/qprocessinfowindow.cpp" line="125"/>
+        <source>Memory</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/qprocessinfowindow.cpp" line="126"/>
+        <source>State</source>
+        <translation type="unfinished"> État</translation>
+    </message>
+    <message>
+        <location filename="../../src/qprocessinfowindow.cpp" line="127"/>
+        <source>Nice</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/qprocessinfowindow.cpp" line="189"/>
+        <source>Process Detail Properties</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/qprocessinfowindow.cpp" line="197"/>
+        <source>Kill Process</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/qprocessinfowindow.cpp" line="226"/>
+        <source>Warning</source>
+        <translation type="unfinished"> Avertissement</translation>
+    </message>
+    <message>
+        <location filename="../../src/qprocessinfowindow.cpp" line="226"/>
+        <source>Are you sure to Kill Process?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/qprocessinfowindow.cpp" line="227"/>
+        <source>Yes</source>
+        <translation type="unfinished"> Oui</translation>
+    </message>
+    <message>
+        <location filename="../../src/qprocessinfowindow.cpp" line="228"/>
+        <source>No</source>
+        <translation type="unfinished"> Non</translation>
+    </message>
+    <message>
+        <location filename="../../src/qprocessinfowindow.cpp" line="346"/>
+        <source>&lt;b&gt;Process Name: %1&lt;/b&gt;&lt;hr&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/qprocessinfowindow.cpp" line="349"/>
+        <source>&lt;b&gt;Status: %1&lt;/b&gt;&lt;hr&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/qprocessinfowindow.cpp" line="350"/>
+        <source>&lt;b&gt;Memory: %1&lt;/b&gt;&lt;hr&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/qprocessinfowindow.cpp" line="347"/>
+        <source>&lt;b&gt;Process ID: %1&lt;/b&gt;&lt;hr&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/qprocessinfowindow.cpp" line="348"/>
+        <source>&lt;b&gt;User: %1&lt;/b&gt;&lt;hr&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/qprocessinfowindow.cpp" line="351"/>
+        <source>&lt;b&gt;Virtual Memory: %1&lt;/b&gt;&lt;hr&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/qprocessinfowindow.cpp" line="352"/>
+        <source>&lt;b&gt;Resident Memory: %1&lt;/b&gt;&lt;hr&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/qprocessinfowindow.cpp" line="353"/>
+        <source>&lt;b&gt;Writable Memory: %1&lt;/b&gt;&lt;hr&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/qprocessinfowindow.cpp" line="354"/>
+        <source>&lt;b&gt;Shared Memory: %1&lt;/b&gt;&lt;hr&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/qprocessinfowindow.cpp" line="355"/>
+        <source>&lt;b&gt;CPU: %1&lt;/b&gt;&lt;hr&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/qprocessinfowindow.cpp" line="356"/>
+        <source>&lt;b&gt;Priority: %1&lt;/b&gt;&lt;hr&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/qprocessinfowindow.cpp" line="357"/>
+        <source>&lt;b&gt;Command Line: %1&lt;/b&gt;&lt;hr&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation type="vanished"> Temps</translation>
+    </message>
+    <message>
+        <location filename="../../src/qprocessinfowindow.cpp" line="128"/>
         <source>Command Line</source>
         <translation> Ligne de commande</translation>
     </message>
