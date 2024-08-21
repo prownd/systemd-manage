@@ -1,8 +1,19 @@
 [Desktop Entry]
 Version=1.0
-Name=Systemd Manage Tool
+Name=System Service Manage Tool
+Name[de]=Tool zur Systemdienstverwaltung
+Name[fr]=Outil de gestion des services système
+Name[ja]=システムサービス管理ツール
+Name[ru]=Инструмент управления системными службами
 Name[zh_CN]=系统服务管理工具
+Name[zh_TW]=系統服務管理工具
 Comment=System Service Manage GUI Tool
+Comment[de]=GUI-Tool zur Verwaltung von Systemdiensten
+Comment[fr]=Outil GUI de gestion des services système
+Comment[ja]=システムサービス管理 GUI ツール
+Comment[ru]=Инструмент управления системной службой с графическим интерфейсом
+Comment[zh_CN]=系统服务管理图形工具
+Comment[zh_TW]=系統服務管理圖形工具
 Exec=/usr/bin/systemd-manage
 Icon=/usr/share/systemd-manage/icons/systemd-manage.png
 Terminal=false
