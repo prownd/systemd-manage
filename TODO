@@ -1,3 +1,4 @@
 Future feature
 * Add udev management 
+* Add polkit to gain permissions for non root user
 * Optimize the GUI interface
