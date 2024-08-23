@@ -4,8 +4,8 @@ systemd-manage is a graphical systemd service management tool, developed using t
 It can be providing functions such as service management, user sessions, configuration file modification, log queries, performance analysis and process management, etc.  
 Graphic interface operation, simple and convenient service management.
 
-# Deploy and Install
-Use qmake for compilation, configuration, and installation
+# Build Deploy and Install
+Use qmake for compile build, configuration, and installation
 
 ```bash
 1. qmake

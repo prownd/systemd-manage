@@ -1301,15 +1301,4 @@ void UnitWindow::resizeEvent(QResizeEvent *event)
        m_pTabWidget->resize(width(), height());
         update();
     }
-    if (nullptr != m_pSystemUnitWidget)
-    {
-        m_pSystemUnitWidget->resize(width(), height()-m_systemUnitCountLabel->height()-60);
-        update();
-    }
-
-    if (nullptr != m_pUserUnitWidget)
-    {
-        m_pUserUnitWidget->resize(width(), height()-80);
-        update();
-    }
 }
