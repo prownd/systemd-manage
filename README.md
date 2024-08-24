@@ -1,3 +1,6 @@
+![GitHub License](https://img.shields.io/github/license/prownd/systemd-manage)
+![GitHub Release](https://img.shields.io/github/v/release/prownd/systemd-manage)
+![Static Badge](https://img.shields.io/badge/qt-%3E%3D5-green)
 
 # Systemd manage tool
 systemd-manage is a graphical systemd service management tool, developed using the Qt graphics library.  
