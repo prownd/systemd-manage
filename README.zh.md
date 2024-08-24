@@ -1,3 +1,7 @@
+![GitHub License](https://img.shields.io/github/license/prownd/systemd-manage)
+![GitHub Release](https://img.shields.io/github/v/release/prownd/systemd-manage)
+![Static Badge](https://img.shields.io/badge/qt-%3E%3D5-green)
+
 # systemd-manage工具
 systemd-manage是一个基于systemd服务管理的图形化工具，使用qt图形库进行开发。  
 提供服务管理，用户会话，配置文件修改，日志查询，性能分析，进程管理等功能。  
