@@ -1,0 +1,12 @@
+Package: systemd-manage
+Version: 1.1.0
+Section: utils
+Priority: optional
+Depends: libc6, libstdc++6, libglib2.0-0t64, libgtop-2.0-11, systemd, libsystemd0, libsystemd-shared
+Suggests: libsystemd
+Architecture: amd64
+Maintainer: Han Jinpeng hanjinpeng127@gmail.com
+Provides: systemd-manage
+Description: A graphical manage tools of systemd
+ Systemd manage is a graphical tool based on Systemd service management, developed using the Qt graphics library, providing functions such as service management, user sessions, configuration file modification, log queries, performance analysis, and process management. Simple and convenient to manage systems and services.
+
