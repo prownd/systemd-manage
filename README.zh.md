@@ -1,7 +1,7 @@
-![GitHub License](https://img.shields.io/github/license/prownd/systemd-manage)
-![GitHub Release](https://img.shields.io/github/v/release/prownd/systemd-manage)
-![Static Badge](https://img.shields.io/badge/qt-%3E%3D5-green)
 [![build](https://github.com/prownd/systemd-manage/actions/workflows/main.yml/badge.svg)](https://github.com/prownd/systemd-manage/actions/workflows/main.yml)
+![GitHub License](https://img.shields.io/github/license/prownd/systemd-manage)
+![Static Badge](https://img.shields.io/badge/qt-%3E%3D5-green)
+![GitHub Release](https://img.shields.io/github/v/release/prownd/systemd-manage)
 
 # systemd-manage工具
 systemd-manage是一个基于systemd服务管理的图形化工具，使用qt图形库进行开发。  
