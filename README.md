@@ -17,10 +17,17 @@ Use qmake for compile build, configuration, and installation
 3. make install
 ```
 
-In addition, it can also be compiled into distribution software packages, such as rpm package format
+In addition, it can also be compiled into distribution software packages, such as rpm or deb package format
+build rpm package
 ```bash
 cd dist
-./build.sh
+./build.sh rpm
+```
+
+build deb package
+```bash
+cd dist
+./build.sh deb
 ```
 
 # Instructions for using systemd management

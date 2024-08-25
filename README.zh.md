@@ -16,10 +16,17 @@ systemd-manage是一个基于systemd服务管理的图形化工具，使用qt图
 3. make install
 ```
 
-也可以编译成发行版格式的二进制软件包，比如编译生成rpm包
+也可以编译成发行版格式的二进制软件包，比如编译生成rpm包, 或者deb包
+编译生成rpm包
 ```bash
 cd dist
-./build.sh
+./build.sh rpm
+```
+
+编译生成deb包
+```bash
+cd dist
+./build.sh deb
 ```
 
 # systemd-manage使用
