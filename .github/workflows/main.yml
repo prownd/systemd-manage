@@ -1,0 +1,26 @@
+name: build
+
+on: [push, pull_request]
+
+env:
+  SOURCE_DIR:   ${{ github.workspace }}
+  QT_VERSION:   5.15.2
+  BUILD_CONFIGURATION: Release
+jobs:
+  build-linux:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+      - name: Install Qt dependencies
+        run: >
+          apt-get -y update 
+          apt-get -y install  qtbase5-dev qtchooser qt5-qmake qtbase5-dev-tools g++  libqt5svg5-dev libqt5charts5 
+          apt-get -y install  make  libglib2.0-dev  libgtop2-dev   pkg-config libsystemd-dev
+      - name: Create build directory
+        run:  mkdir ${{ env.SOURCE_DIR }}/build
+      - name: Configure Qmake
+        run: qmake
+      - name: make
+        run: make -j
