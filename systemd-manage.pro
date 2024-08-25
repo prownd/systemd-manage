@@ -16,10 +16,19 @@ DEFINES += QT_DEPRECATED_WARNINGS
 # You can also select to disable deprecated APIs only up to a certain version of Qt.
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
+CONFIG += link_pkgconfig
+PKGCONFIG += glib-2.0
+PKGCONFIG += libgtop-2.0
+PKGCONFIG += libsystemd
+
+#INCLUDEPATH += /usr/include/libgtop-2.0
+#INCLUDEPATH += /usr/include/glib-2.0
+#INCLUDEPATH += /usr/lib64/glib-2.0/include
+#LIBS += -lglib-2.0
+#LIBS += -lgtop-2.0
+#LIBS += -lsystemd
+
 INCLUDEPATH += src/
-INCLUDEPATH += /usr/include/libgtop-2.0
-INCLUDEPATH += /usr/include/glib-2.0
-INCLUDEPATH += /usr/lib64/glib-2.0/include
 
 SOURCES += \
     src/aboutwindow.cpp \
@@ -99,10 +108,6 @@ TRANSLATIONS += \
     res/translators/app_fr_FR.ts \
     res/translators/app_ja_JP.ts \
     res/translators/app_zh_TW.ts
-
-LIBS += -lsystemd
-LIBS += -lglib-2.0
-LIBS += -lgtop-2.0
 
 DISTFILES +=
 
