@@ -18,13 +18,14 @@ Use qmake for compile build, configuration, and installation
 ```
 
 In addition, it can also be compiled into distribution software packages, such as rpm or deb package format
-build rpm package
+
+- build rpm package
 ```bash
 cd dist
 ./build.sh rpm
 ```
 
-build deb package
+- build deb package
 ```bash
 cd dist
 ./build.sh deb
