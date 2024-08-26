@@ -195,6 +195,7 @@ void QProcessInfoWidget::QTreeWidgetitemPressedSlot(const QPoint& pos)
         qprocessMenu->addSeparator();
 
         QAction* qprocessKillAction = new QAction(tr("Kill Process"));
+        qprocessKillAction->setData(QVariant::fromValue(pid));
         qprocessMenu->addAction(qprocessKillAction);
 
         connect(qprocessDetailAction, &QAction::triggered, this, &QProcessInfoWidget::handleQProcessDetailAction);
@@ -223,13 +224,27 @@ void QProcessInfoWidget::handleQProcessDetailAction()
 
 void QProcessInfoWidget::handleQProcessKillAction()
 {
+    QAction* pSendAction= qobject_cast<QAction*>(sender());
+    quint64 pSendPid = pSendAction->data().value<quint64>();
+
     QMessageBox *msgBox = new QMessageBox(QMessageBox::Warning, tr("Warning"), tr("Are you sure to Kill Process?"), QMessageBox::Yes|QMessageBox::No);
     msgBox->button(QMessageBox::Yes)->setText(tr("Yes"));
     msgBox->button(QMessageBox::No)->setText(tr("No"));
     msgBox->setDefaultButton(QMessageBox::No);
     int res = msgBox->exec();
     if(QMessageBox::Yes == res) {
-        qDebug()<<"Kill Process";
+        qDebug()<<"Kill Process " << pSendPid;
+        int kl_ret = kill(pSendPid, SIGINT);
+        if ( kl_ret != 0 ){
+            //QMessageBox::warning(this, tr("Warning"), tr("Kill process failed"), QMessageBox::Ok);
+            QMessageBox messageBox;
+            messageBox.setWindowTitle(tr("Warning"));
+            messageBox.setText(tr("Kill process failed"));
+            messageBox.setIcon(QMessageBox::Warning);
+            messageBox.setStandardButtons(QMessageBox::Ok);
+            messageBox.button(QMessageBox::Ok)->setText(tr("Ok"));
+            messageBox.exec();
+        }
     }else if(QMessageBox::No == res) {
         return;
     }

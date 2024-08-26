@@ -548,7 +548,7 @@
     </message>
     <message>
         <location filename="../../src/qprocessinfowindow.cpp" line="169"/>
-        <location filename="../../src/qprocessinfowindow.cpp" line="217"/>
+        <location filename="../../src/qprocessinfowindow.cpp" line="218"/>
         <source>Process Properties Information</source>
         <translation>Informations sur les propriétés du processus</translation>
     </message>
@@ -694,82 +694,93 @@
         <translation>Processus de mise à mort</translation>
     </message>
     <message>
-        <location filename="../../src/qprocessinfowindow.cpp" line="226"/>
+        <location filename="../../src/qprocessinfowindow.cpp" line="230"/>
+        <location filename="../../src/qprocessinfowindow.cpp" line="241"/>
         <source>Warning</source>
         <translation> Avertissement</translation>
     </message>
     <message>
-        <location filename="../../src/qprocessinfowindow.cpp" line="226"/>
+        <location filename="../../src/qprocessinfowindow.cpp" line="230"/>
         <source>Are you sure to Kill Process?</source>
         <translation>Êtes-vous sûr de tuer le processus&#xa0;?</translation>
     </message>
     <message>
-        <location filename="../../src/qprocessinfowindow.cpp" line="227"/>
+        <location filename="../../src/qprocessinfowindow.cpp" line="231"/>
         <source>Yes</source>
         <translation> Oui</translation>
     </message>
     <message>
-        <location filename="../../src/qprocessinfowindow.cpp" line="228"/>
+        <location filename="../../src/qprocessinfowindow.cpp" line="232"/>
         <source>No</source>
         <translation> Non</translation>
     </message>
     <message>
-        <location filename="../../src/qprocessinfowindow.cpp" line="346"/>
+        <location filename="../../src/qprocessinfowindow.cpp" line="242"/>
+        <source>Kill process failed</source>
+        <translation>Le processus de suppression a échoué</translation>
+    </message>
+    <message>
+        <location filename="../../src/qprocessinfowindow.cpp" line="245"/>
+        <source>Ok</source>
+        <translation>Ok</translation>
+    </message>
+    <message>
+        <location filename="../../src/qprocessinfowindow.cpp" line="361"/>
         <source>&lt;b&gt;Process Name: %1&lt;/b&gt;&lt;hr&gt;</source>
         <translation>&lt;b&gt;Nom du processus&#xa0;: %1&lt;/b&gt;&lt;hr&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/qprocessinfowindow.cpp" line="349"/>
+        <location filename="../../src/qprocessinfowindow.cpp" line="364"/>
         <source>&lt;b&gt;Status: %1&lt;/b&gt;&lt;hr&gt;</source>
         <translation>&lt;b&gt;Statut&#xa0;: %1&lt;/b&gt;&lt;hr&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/qprocessinfowindow.cpp" line="350"/>
+        <location filename="../../src/qprocessinfowindow.cpp" line="365"/>
         <source>&lt;b&gt;Memory: %1&lt;/b&gt;&lt;hr&gt;</source>
         <translation>&lt;b&gt;Mémoire&#xa0;: %1&lt;/b&gt;&lt;hr&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/qprocessinfowindow.cpp" line="347"/>
+        <location filename="../../src/qprocessinfowindow.cpp" line="362"/>
         <source>&lt;b&gt;Process ID: %1&lt;/b&gt;&lt;hr&gt;</source>
         <translation>&lt;b&gt;ID de processus&#xa0;: %1&lt;/b&gt;&lt;hr&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/qprocessinfowindow.cpp" line="348"/>
+        <location filename="../../src/qprocessinfowindow.cpp" line="363"/>
         <source>&lt;b&gt;User: %1&lt;/b&gt;&lt;hr&gt;</source>
         <translation>&lt;b&gt;Utilisateur&#xa0;: %1&lt;/b&gt;&lt;hr&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/qprocessinfowindow.cpp" line="351"/>
+        <location filename="../../src/qprocessinfowindow.cpp" line="366"/>
         <source>&lt;b&gt;Virtual Memory: %1&lt;/b&gt;&lt;hr&gt;</source>
         <translation>&lt;b&gt;Mémoire virtuelle&#xa0;: %1&lt;/b&gt;&lt;hr&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/qprocessinfowindow.cpp" line="352"/>
+        <location filename="../../src/qprocessinfowindow.cpp" line="367"/>
         <source>&lt;b&gt;Resident Memory: %1&lt;/b&gt;&lt;hr&gt;</source>
         <translation>&lt;b&gt;Mémoire résidente&#xa0;: %1&lt;/b&gt;&lt;hr&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/qprocessinfowindow.cpp" line="353"/>
+        <location filename="../../src/qprocessinfowindow.cpp" line="368"/>
         <source>&lt;b&gt;Writable Memory: %1&lt;/b&gt;&lt;hr&gt;</source>
         <translation>&lt;b&gt;Mémoire inscriptible&#xa0;: %1&lt;/b&gt;&lt;hr&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/qprocessinfowindow.cpp" line="354"/>
+        <location filename="../../src/qprocessinfowindow.cpp" line="369"/>
         <source>&lt;b&gt;Shared Memory: %1&lt;/b&gt;&lt;hr&gt;</source>
         <translation>&lt;b&gt;Mémoire partagée&#xa0;: %1&lt;/b&gt;&lt;hr&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/qprocessinfowindow.cpp" line="355"/>
+        <location filename="../../src/qprocessinfowindow.cpp" line="370"/>
         <source>&lt;b&gt;CPU: %1&lt;/b&gt;&lt;hr&gt;</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../src/qprocessinfowindow.cpp" line="356"/>
+        <location filename="../../src/qprocessinfowindow.cpp" line="371"/>
         <source>&lt;b&gt;Priority: %1&lt;/b&gt;&lt;hr&gt;</source>
         <translation>&lt;b&gt;Priorité&#xa0;: %1&lt;/b&gt;&lt;hr&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/qprocessinfowindow.cpp" line="357"/>
+        <location filename="../../src/qprocessinfowindow.cpp" line="372"/>
         <source>&lt;b&gt;Command Line: %1&lt;/b&gt;&lt;hr&gt;</source>
         <translation>&lt;b&gt;Ligne de commande&#xa0;: %1&lt;/b&gt;&lt;hr&gt;</translation>
     </message>
