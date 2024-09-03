@@ -17,7 +17,7 @@ jobs:
         run: >
           sudo apt-get  update -y &&
           sudo apt-get  install -y qtbase5-dev qtchooser qt5-qmake qtbase5-dev-tools g++  libqt5svg5-dev libqt5charts5  && 
-          sudo apt-get  install -y make  libglib2.0-dev  libgtop2-dev   pkg-config libsystemd-dev
+          sudo apt-get  install -y make  libglib2.0-dev  libgtop2-dev   pkg-config libsystemd-dev libudev-dev
       - name: Create build directory
         run:  mkdir ${{ env.SOURCE_DIR }}/build
       - name: Configure Qmake
