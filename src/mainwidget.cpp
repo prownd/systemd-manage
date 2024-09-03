@@ -156,6 +156,17 @@ MainWidget::MainWidget(QWidget *parent)
     btnProcess->setChecked(false);
     btnProcess->setAutoExclusive(true);
 
+    QPixmap pixmapUdevDevice(QString(":/icons/udev-device.svg"));
+    btnUdevDevice = new QToolButton;
+    btnUdevDevice->setText(addTextSpaceMargin(tr("Udev Device")));
+    btnUdevDevice->setToolTip(tr("Udev Device Manage"));
+    btnUdevDevice->setIcon(pixmapUdevDevice);
+    btnUdevDevice->setIconSize(toolBtnSize);
+    btnUdevDevice->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
+    btnUdevDevice->setCheckable(true);
+    btnUdevDevice->setChecked(false);
+    btnUdevDevice->setAutoExclusive(true);
+
     QPixmap pixmapSettings(QString(":/icons/system-setting.svg"));
     btnSettings = new QToolButton;
     btnSettings->setText(addTextSpaceMargin(tr("Setting")));
@@ -185,6 +196,7 @@ MainWidget::MainWidget(QWidget *parent)
     btnGroup->addButton(btnAnalyze, BM_Analyze);
     btnGroup->addButton(btnJournal, BM_Journal);
     btnGroup->addButton(btnProcess, BM_Process);
+    btnGroup->addButton(btnUdevDevice, BM_UdevDevice);
     btnGroup->addButton(btnSettings, BM_Setting);
     btnGroup->addButton(btnAbout, BM_About);
     btnGroup->setExclusive(true);
@@ -196,6 +208,7 @@ MainWidget::MainWidget(QWidget *parent)
     stackedWidget->addWidget(&analyzeWnd);
     stackedWidget->addWidget(&journalWnd);
     stackedWidget->addWidget(&processWnd);
+    stackedWidget->addWidget(&udevdeviceWnd);
     stackedWidget->addWidget(&settingsWnd);
     stackedWidget->addWidget(&aboutWnd);
 
@@ -217,6 +230,7 @@ MainWidget::MainWidget(QWidget *parent)
     sideBarLayout->addWidget(btnAnalyze);
     sideBarLayout->addWidget(btnJournal);
     sideBarLayout->addWidget(btnProcess);
+    sideBarLayout->addWidget(btnUdevDevice);
     sideBarLayout->addStretch(0);
     sideBarLayout->addWidget(btnSettings);
     sideBarLayout->addWidget(btnAbout);

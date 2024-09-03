@@ -20,6 +20,7 @@ CONFIG += link_pkgconfig
 PKGCONFIG += glib-2.0
 PKGCONFIG += libgtop-2.0
 PKGCONFIG += libsystemd
+PKGCONFIG += libudev
 
 #INCLUDEPATH += /usr/include/libgtop-2.0
 #INCLUDEPATH += /usr/include/glib-2.0
@@ -27,6 +28,7 @@ PKGCONFIG += libsystemd
 #LIBS += -lglib-2.0
 #LIBS += -lgtop-2.0
 #LIBS += -lsystemd
+#LIBS += -ludev
 
 INCLUDEPATH += src/
 
@@ -40,6 +42,8 @@ SOURCES += \
     src/customcantttimebaritem.cpp \
     src/customlistwidgetitem.cpp \
     src/customsortfilterproxymodel.cpp \
+    src/customsortfilterproxyudevmodel.cpp \
+    src/customsortfilterproxyudevrulefilemodel.cpp \
     src/customsvggraphicsview.cpp \
     src/highlighter.cpp \
     src/journalwindow.cpp \
@@ -49,9 +53,15 @@ SOURCES += \
     src/qprocessdetail.cpp \
     src/qprocessinfo.cpp \
     src/qprocessinfowindow.cpp \
+    src/qudev.cpp \
     src/settingswindow.cpp \
     src/systemdjournalinterface.cpp \
     src/systemdmanagerinterface.cpp \
+    src/udevdevicedetail.cpp \
+    src/udevdevicewindow.cpp \
+    src/udevmodel.cpp \
+    src/udevrulefileinformation.cpp \
+    src/udevrulemodel.cpp \
     src/unitinformation.cpp \
     src/unitwindow.cpp \
     src/usersessionwindow.cpp \
@@ -71,6 +81,8 @@ HEADERS += \
     src/customcantttimebaritem.h \
     src/customlistwidgetitem.h \
     src/customsortfilterproxymodel.h \
+    src/customsortfilterproxyudevmodel.h \
+    src/customsortfilterproxyudevrulefilemodel.h \
     src/customsvggraphicsview.h \
     src/globalvar.h \
     src/highlighter.h \
@@ -80,9 +92,16 @@ HEADERS += \
     src/qprocessdetail.h \
     src/qprocessinfo.h \
     src/qprocessinfowindow.h \
+    src/qudev.h \
     src/settingswindow.h \
     src/systemdjournalinterface.h \
     src/systemdmanagerinterface.h \
+    src/udevdevicedetail.h \
+    src/udevdevicewindow.h \
+    src/udevmodel.h \
+    src/udevrulefile.h \
+    src/udevrulefileinformation.h \
+    src/udevrulemodel.h \
     src/unitinformation.h \
     src/unitwindow.h \
     src/usersessionwindow.h \
@@ -91,7 +110,8 @@ HEADERS += \
     src/configfileinformation.h \
     src/usersessioninformation.h \
     src/analyzewindow.h \
-    src/version.h
+    src/version.h \
+    src/udevrulefile.h
 
 # Default rules for deployment.
 target.path = /usr/bin

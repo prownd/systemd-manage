@@ -19,28 +19,43 @@
  * with this program. If not, see <https://www.gnu.org/licenses/gpl-3.0.html>.  *
  ********************************************************************************/
 
-#ifndef VERSION_H
-#define VERSION_H
+#ifndef UDEVDEVICEDETAIL_H
+#define UDEVDEVICEDETAIL_H
 
-#include <QString>
-#include <QStringList>
-#include <QObject>
+#include <QHBoxLayout>
+#include <QStandardItemModel>
+#include <QTableView>
+#include <QHeaderView>
+#include <QWidget>
+#include <QLabel>
+#include <QListWidget>
+#include "qudev.h"
 
-QString APPLICATION_NAME = QObject::tr("Systemd Manage");
+class UdevDeviceDetail : public QWidget
+{
+    Q_OBJECT
 
-QString APPLICATION_VERSION = QObject::tr("1.2");
+public:
+    explicit UdevDeviceDetail(QWidget *parent = nullptr);
+    explicit UdevDeviceDetail(UdevDevice udevDevice, QWidget *parent = nullptr);
+    ~UdevDeviceDetail();
+    void init();
+    void createQProcessWidgetView();
+    void createQProcessDetailListWidgetViewData();
 
-QString EMAIL = QObject::tr("hanjinpeng127@gmail.com");
-QString AUTHOR = QObject::tr("Han Jinpeng");
-QStringList CREDITS={(QObject::tr("Han Jinpeng"))};
+private:
+    UdevDevice m_udevDevice;
+    QHBoxLayout *  m_udevDeviceDetaiLayout;
+    QWidget * m_udevDeviceDetailWidget;
 
-QString LICENSE = QObject::tr("GPLv3");
-QString DATE = QObject::tr("2024-07-28");
+    QListWidget * m_udevDeviceDetailListWidget;
 
-QString WEBSITE = QObject::tr("<a href=https://github.com/prownd/systemd-manage>https://github.com/prownd/systemd-manage</a>");
-QString LEGAL= QObject::tr("© 2024–2024 Han Jinpeng "
-                      "This application comes with absolutely no warranty.<br/>"
-                      "See the <a href=https://www.gnu.org/licenses/gpl-3.0.html>GNU General Public License, version 3 or later</a> for details."
-                      );
+    QLabel * m_udevDeviceDetaiFieldName1;
+    QLabel * m_udevDeviceDetaiFieldValue1;
 
-#endif // VERSION_H
+protected:
+    //auto adjust window size
+    virtual void resizeEvent(QResizeEvent *event) override;
+};
+
+#endif // UDEVDEVICEDETAIL_H

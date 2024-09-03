@@ -1,3 +1,9 @@
+systemd-manage 1.2 (2024-09-04)
+=========================
+release note:
+• Add udev device manage and show
+• Add udev rule manage
+
 systemd-manage 1.1 (2024-08-18)
 =========================
 release note:

@@ -19,28 +19,57 @@
  * with this program. If not, see <https://www.gnu.org/licenses/gpl-3.0.html>.  *
  ********************************************************************************/
 
-#ifndef VERSION_H
-#define VERSION_H
+#ifndef UDEVRULEFILEINFORMATION_H
+#define UDEVRULEFILEINFORMATION_H
 
-#include <QString>
-#include <QStringList>
-#include <QObject>
+#include <QWidget>
+#include <QHBoxLayout>
+#include <QTextEdit>
+#include <QPlainTextEdit>
+#include <QPushButton>
+#include <QLabel>
+#include "udevrulefile.h"
+#include "highlighter.h"
 
-QString APPLICATION_NAME = QObject::tr("Systemd Manage");
+class UdevRuleFileInformation : public QWidget
+{
+    Q_OBJECT
 
-QString APPLICATION_VERSION = QObject::tr("1.2");
+public:
+    explicit UdevRuleFileInformation(QWidget *parent = nullptr);
+    explicit UdevRuleFileInformation(QString udevRuleFilePath, QWidget *parent = nullptr);
+    ~UdevRuleFileInformation();
+    void init();
+    void createMainWindow();
+    void createUdevRuleFileView();
+    void createUdevRuleFileTextEdit();
 
-QString EMAIL = QObject::tr("hanjinpeng127@gmail.com");
-QString AUTHOR = QObject::tr("Han Jinpeng");
-QStringList CREDITS={(QObject::tr("Han Jinpeng"))};
+private:
+    QWidget * m_mainWindow ;
+    QVBoxLayout * m_mainVLayout ;
+    QHBoxLayout * m_mainHLayout ;
 
-QString LICENSE = QObject::tr("GPLv3");
-QString DATE = QObject::tr("2024-07-28");
+    QVector<UdevRuleFile> m_udevRuleFileList;
 
-QString WEBSITE = QObject::tr("<a href=https://github.com/prownd/systemd-manage>https://github.com/prownd/systemd-manage</a>");
-QString LEGAL= QObject::tr("© 2024–2024 Han Jinpeng "
-                      "This application comes with absolutely no warranty.<br/>"
-                      "See the <a href=https://www.gnu.org/licenses/gpl-3.0.html>GNU General Public License, version 3 or later</a> for details."
-                      );
+    QTextEdit *   m_udevRuleFileTextEdit;
+    Highlighter * highlighter;
+    QString m_udevRuleFile;
 
-#endif // VERSION_H
+    QHBoxLayout * m_btnHLayout;
+    QPushButton * m_editBtn;
+    QPushButton * m_resetBtn;
+    QPushButton * m_applyBtn;
+    QPushButton * m_cancelBtn;
+    QLabel * m_udevRuleFileLabel;
+
+    QByteArray m_contentByteArray;
+
+public Q_SLOTS:
+    void handleEditBtnClick();
+    void handleResetBtnClick();
+    void handleApplyBtnClick();
+    void handleCancelBtnClick();
+
+};
+
+#endif // UDEVRULEFILEINFORMATION_H

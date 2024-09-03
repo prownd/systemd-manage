@@ -36,6 +36,8 @@
 #include "analyzewindow.h"
 #include "journalwindow.h"
 #include "qprocessinfowindow.h"
+#include "udevdevicewindow.h"
+
 #include "aboutwindow.h"
 
 class MainWidget : public QWidget
@@ -53,6 +55,7 @@ public:
         BM_Analyze,
         BM_Journal,
         BM_Process,
+        BM_UdevDevice,
         BM_Setting,
         BM_About
     } btnMenuTypes;
@@ -73,6 +76,7 @@ private:
     AnalyzeWindow  analyzeWnd;
     JournalWindow  journalWnd;
     QProcessInfoWidget  processWnd;
+    UdevDeviceWindow  udevdeviceWnd;
     SettingsWindow settingsWnd;
     AboutWindow aboutWnd;
 
@@ -83,6 +87,7 @@ private:
     QToolButton * btnAnalyze;
     QToolButton * btnJournal;
     QToolButton * btnProcess;
+    QToolButton * btnUdevDevice;
     QToolButton * btnSettings;
     QToolButton * btnAbout;
 

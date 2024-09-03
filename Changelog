@@ -1,3 +1,8 @@
+systemd-manage version 1.2 (2024-09-04)
+=======================================
+* add udev device info manage and show
+* add udev rule file manage
+
 systemd-manage version 1.1 (2024-08-18)
 =======================================
 * fix display error in centos dist

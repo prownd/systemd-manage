@@ -1,5 +1,5 @@
 Name: systemd-manage           
-Version: 1.1       
+Version: 1.2       
 Release: 1%{?dist}
 Summary: A graphical manage tools of systemd   
 
@@ -77,6 +77,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/%{name}/translations/*
 
 %changelog
+* Wed Sep 04 2024 hanjinpeng <hanjinpeng127@gmail.com> - 1.2-1
+- Add udev device and rule manage
+
 * Sun Aug 18 2024 hanjinpeng <hanjinpeng127@gmail.com> - 1.1-1
 - Fix display error in centos dist
   Feature enhancement and optimization

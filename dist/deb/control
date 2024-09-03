@@ -1,5 +1,5 @@
 Package: systemd-manage
-Version: 1.1.0
+Version: 1.2.0
 Section: utils
 Priority: optional
 Depends: libc6, libstdc++6, libglib2.0-0t64, libgtop-2.0-11, systemd, libsystemd0, libsystemd-shared

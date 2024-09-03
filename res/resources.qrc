@@ -26,5 +26,6 @@
         <file>translators/app_ru_RU.qm</file>
         <file>translators/app_zh_CN.qm</file>
         <file>translators/app_zh_TW.qm</file>
+        <file>icons/udev-device.svg</file>
     </qresource>
 </RCC>

@@ -1,3 +1,9 @@
+ubuntu  (1.2.0-1) unstable; urgency=low
+
+  * Add udev device and rule manage
+
+  -- Han Jinpeng <hanjinpeng127@gmail.com>  Wed, 04 Sep 2024 03:11:52 +0100
+
 ubuntu  (1.1.0-1) unstable; urgency=low
 
   * Add support build in ubuntu/debain

@@ -375,21 +375,31 @@
     </message>
     <message>
         <location filename="../../src/mainwidget.cpp" line="161"/>
+        <source>Udev Device</source>
+        <translation>Udev设备</translation>
+    </message>
+    <message>
+        <location filename="../../src/mainwidget.cpp" line="162"/>
+        <source>Udev Device Manage</source>
+        <translation>Udev设备管理</translation>
+    </message>
+    <message>
+        <location filename="../../src/mainwidget.cpp" line="172"/>
         <source>Setting</source>
         <translation>设置</translation>
     </message>
     <message>
-        <location filename="../../src/mainwidget.cpp" line="162"/>
+        <location filename="../../src/mainwidget.cpp" line="173"/>
         <source>Setting and preference</source>
         <translation>设置和首选项</translation>
     </message>
     <message>
-        <location filename="../../src/mainwidget.cpp" line="172"/>
+        <location filename="../../src/mainwidget.cpp" line="183"/>
         <source>About</source>
         <translation>关于</translation>
     </message>
     <message>
-        <location filename="../../src/mainwidget.cpp" line="173"/>
+        <location filename="../../src/mainwidget.cpp" line="184"/>
         <source>About Application</source>
         <translation>关于应用程序</translation>
     </message>
@@ -425,12 +435,15 @@
     <name>QObject</name>
     <message>
         <location filename="../../src/configfileinformation.cpp" line="50"/>
+        <location filename="../../src/udevrulefileinformation.cpp" line="51"/>
         <source>model window</source>
         <translation>模态窗口</translation>
     </message>
     <message>
         <location filename="../../src/configfilewindow.cpp" line="161"/>
         <location filename="../../src/configfilewindow.cpp" line="203"/>
+        <location filename="../../src/udevdevicewindow.cpp" line="549"/>
+        <location filename="../../src/udevdevicewindow.cpp" line="592"/>
         <source>Show Config File Info</source>
         <translation>显示配置文件信息</translation>
     </message>
@@ -459,6 +472,7 @@
     </message>
     <message>
         <location filename="../../src/qprocessdetail.cpp" line="50"/>
+        <location filename="../../src/udevdevicedetail.cpp" line="49"/>
         <location filename="../../src/usersessioninformation.cpp" line="63"/>
         <location filename="../../src/usersessioninformation.cpp" line="343"/>
         <source>Hint Model Window</source>
@@ -616,6 +630,12 @@
         <location filename="../../src/qprocessinfowindow.cpp" line="218"/>
         <source>Process Properties Information</source>
         <translation>进程属性信息</translation>
+    </message>
+    <message>
+        <location filename="../../src/udevdevicewindow.cpp" line="217"/>
+        <location filename="../../src/udevdevicewindow.cpp" line="288"/>
+        <source>Udev Device Information</source>
+        <translation>Udev设备信息</translation>
     </message>
 </context>
 <context>
@@ -1032,6 +1052,388 @@
     <message>
         <source>Confirm</source>
         <translation type="vanished">确认</translation>
+    </message>
+</context>
+<context>
+    <name>UdevDeviceDetail</name>
+    <message>
+        <location filename="../../src/udevdevicedetail.cpp" line="74"/>
+        <source>Udev Device Path:</source>
+        <translation>Udev设备路径:</translation>
+    </message>
+    <message>
+        <location filename="../../src/udevdevicedetail.cpp" line="82"/>
+        <source>Udev Device Subsystem:</source>
+        <translation>Udev设备子系统:</translation>
+    </message>
+    <message>
+        <location filename="../../src/udevdevicedetail.cpp" line="90"/>
+        <source>Udev Device Type:</source>
+        <translation>Udev设备类型:</translation>
+    </message>
+    <message>
+        <location filename="../../src/udevdevicedetail.cpp" line="98"/>
+        <source>Udev Device Node:</source>
+        <translation>Udev设备节点:</translation>
+    </message>
+    <message>
+        <location filename="../../src/udevdevicedetail.cpp" line="106"/>
+        <source>Udev Device Action:</source>
+        <translation>Udev设备动作:</translation>
+    </message>
+</context>
+<context>
+    <name>UdevDeviceWindow</name>
+    <message>
+        <location filename="../../src/udevdevicewindow.cpp" line="83"/>
+        <source>Udev Device</source>
+        <translation>Udev设备</translation>
+    </message>
+    <message>
+        <location filename="../../src/udevdevicewindow.cpp" line="84"/>
+        <source>Udev Rule File</source>
+        <translation>Udev规则文件</translation>
+    </message>
+    <message>
+        <location filename="../../src/udevdevicewindow.cpp" line="91"/>
+        <source>All</source>
+        <translation>所有</translation>
+    </message>
+    <message>
+        <location filename="../../src/udevdevicewindow.cpp" line="91"/>
+        <source>disk</source>
+        <translation>磁盘</translation>
+    </message>
+    <message>
+        <location filename="../../src/udevdevicewindow.cpp" line="91"/>
+        <source>partition</source>
+        <translation>分区</translation>
+    </message>
+    <message>
+        <location filename="../../src/udevdevicewindow.cpp" line="92"/>
+        <source>usb_device</source>
+        <translation>usb设备</translation>
+    </message>
+    <message>
+        <location filename="../../src/udevdevicewindow.cpp" line="92"/>
+        <source>usb_interface</source>
+        <translation>usb接口</translation>
+    </message>
+    <message>
+        <location filename="../../src/udevdevicewindow.cpp" line="92"/>
+        <source>port</source>
+        <translation>端口</translation>
+    </message>
+    <message>
+        <location filename="../../src/udevdevicewindow.cpp" line="93"/>
+        <source>wlan</source>
+        <translation>wlan</translation>
+    </message>
+    <message>
+        <location filename="../../src/udevdevicewindow.cpp" line="154"/>
+        <source>total: 1 udev device, display: 1 udev device</source>
+        <translation>总计: 1 udev设备,  显示: 1 udev设备</translation>
+    </message>
+    <message>
+        <location filename="../../src/udevdevicewindow.cpp" line="225"/>
+        <location filename="../../src/udevdevicewindow.cpp" line="295"/>
+        <source>Warning</source>
+        <translation>警告</translation>
+    </message>
+    <message>
+        <location filename="../../src/udevdevicewindow.cpp" line="226"/>
+        <location filename="../../src/udevdevicewindow.cpp" line="296"/>
+        <source>Not found Udev Device, please refresh!</source>
+        <translation>没有发现Udev设备, 请刷新下</translation>
+    </message>
+    <message>
+        <location filename="../../src/udevdevicewindow.cpp" line="229"/>
+        <location filename="../../src/udevdevicewindow.cpp" line="299"/>
+        <source>Ok</source>
+        <translation>确定</translation>
+    </message>
+    <message>
+        <location filename="../../src/udevdevicewindow.cpp" line="246"/>
+        <source>Udev Device info</source>
+        <translation>Udev设备信息</translation>
+    </message>
+    <message>
+        <location filename="../../src/udevdevicewindow.cpp" line="251"/>
+        <source>Refresh</source>
+        <translation>刷新</translation>
+    </message>
+    <message>
+        <location filename="../../src/udevdevicewindow.cpp" line="339"/>
+        <source>Total: %1 udev device,</source>
+        <translation>总计: %1 udev设备,</translation>
+    </message>
+    <message>
+        <location filename="../../src/udevdevicewindow.cpp" line="340"/>
+        <source>Display: %1 udev device</source>
+        <translation>显示: %1 udev设备</translation>
+    </message>
+    <message>
+        <location filename="../../src/udevdevicewindow.cpp" line="431"/>
+        <source>total: 1 udev rule, display: 1 udev rule</source>
+        <translation>总计: 1 udev规则, 显示: 1 udev规则</translation>
+    </message>
+    <message>
+        <location filename="../../src/udevdevicewindow.cpp" line="602"/>
+        <source>Total: %1 udev rule,</source>
+        <translation>总计: %1 udev规则,</translation>
+    </message>
+    <message>
+        <location filename="../../src/udevdevicewindow.cpp" line="603"/>
+        <source>Display: %1 udev rule</source>
+        <translation>显示: %1 udev规则</translation>
+    </message>
+    <message>
+        <source>%1 display udev device</source>
+        <translation type="vanished">%1 显示的udev设备</translation>
+    </message>
+    <message>
+        <location filename="../../src/udevdevicewindow.cpp" line="341"/>
+        <location filename="../../src/udevdevicewindow.cpp" line="604"/>
+        <source>%1 %2</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../../src/udevdevicewindow.cpp" line="363"/>
+        <source>Search Udev Rule:</source>
+        <translation>搜索udev规则:</translation>
+    </message>
+    <message>
+        <location filename="../../src/udevdevicewindow.cpp" line="378"/>
+        <source>File Name</source>
+        <translation>文件名</translation>
+    </message>
+    <message>
+        <location filename="../../src/udevdevicewindow.cpp" line="379"/>
+        <source>File Path</source>
+        <translation>文件路径</translation>
+    </message>
+    <message>
+        <location filename="../../src/udevdevicewindow.cpp" line="380"/>
+        <source>Modified</source>
+        <translation>修改</translation>
+    </message>
+    <message>
+        <location filename="../../src/udevdevicewindow.cpp" line="381"/>
+        <source>Created Time</source>
+        <translation>创建时间</translation>
+    </message>
+    <message>
+        <location filename="../../src/udevdevicewindow.cpp" line="382"/>
+        <source>Size (Byte)</source>
+        <translation>大小(字节)</translation>
+    </message>
+    <message>
+        <location filename="../../src/udevdevicewindow.cpp" line="383"/>
+        <source>Description</source>
+        <translation>描述</translation>
+    </message>
+    <message>
+        <source>total: 1 udev rule files, display: 1 udev rule files</source>
+        <translation type="vanished">总计: 1 udev规则文件,  显示: 1 udev规则文件</translation>
+    </message>
+    <message>
+        <location filename="../../src/udevdevicewindow.cpp" line="526"/>
+        <source>&lt;b&gt;Config File Name: %1&lt;/b&gt;&lt;hr&gt;</source>
+        <translation>&lt;b&gt;配置文件名：%1&lt;/b&gt;&lt;hr&gt;</translation>
+    </message>
+    <message>
+        <location filename="../../src/udevdevicewindow.cpp" line="527"/>
+        <source>&lt;b&gt;Config File Path: %1&lt;/b&gt;&lt;hr&gt;</source>
+        <translation>&lt;b&gt;配置文件路径: %1&lt;/b&gt;&lt;hr&gt;</translation>
+    </message>
+    <message>
+        <location filename="../../src/udevdevicewindow.cpp" line="528"/>
+        <source>&lt;b&gt;Config File Create Time: %1&lt;/b&gt;&lt;hr&gt;</source>
+        <translation>&lt;b&gt;配置文件创建时间：%1&lt;/b&gt;&lt;hr&gt;</translation>
+    </message>
+    <message>
+        <location filename="../../src/udevdevicewindow.cpp" line="529"/>
+        <source>&lt;b&gt;Config File Size: %1&lt;/b&gt;&lt;hr&gt;</source>
+        <translation>&lt;b&gt;配置文件大小：%1&lt;/b&gt;&lt;hr&gt;</translation>
+    </message>
+    <message>
+        <location filename="../../src/udevdevicewindow.cpp" line="530"/>
+        <source>&lt;b&gt;Config File Description: %1&lt;/b&gt;&lt;hr&gt;</source>
+        <translation>&lt;b&gt;配置文件描述：%1&lt;/b&gt;&lt;hr&gt;</translation>
+    </message>
+    <message>
+        <location filename="../../src/udevdevicewindow.cpp" line="565"/>
+        <source>View Edit File</source>
+        <translation>查看编辑文件</translation>
+    </message>
+    <message>
+        <location filename="../../src/udevdevicewindow.cpp" line="570"/>
+        <source>Refresh File List</source>
+        <translation>刷新文件列表</translation>
+    </message>
+</context>
+<context>
+    <name>UdevModel</name>
+    <message>
+        <location filename="../../src/udevmodel.cpp" line="49"/>
+        <source>Device Node</source>
+        <translation>设备节点</translation>
+    </message>
+    <message>
+        <location filename="../../src/udevmodel.cpp" line="51"/>
+        <source>Device Subsystem</source>
+        <translation>设备子系统</translation>
+    </message>
+    <message>
+        <location filename="../../src/udevmodel.cpp" line="53"/>
+        <source>Device Type</source>
+        <translation>设备类型</translation>
+    </message>
+    <message>
+        <location filename="../../src/udevmodel.cpp" line="55"/>
+        <source>Device Path</source>
+        <translation>设备路径</translation>
+    </message>
+    <message>
+        <location filename="../../src/udevmodel.cpp" line="57"/>
+        <source>Device Action</source>
+        <translation>设备动作</translation>
+    </message>
+    <message>
+        <location filename="../../src/udevmodel.cpp" line="104"/>
+        <source>&lt;b&gt;Device Node: &lt;/b&gt;</source>
+        <translation>&lt;b&gt;设备节点: &lt;/b&gt;</translation>
+    </message>
+    <message>
+        <location filename="../../src/udevmodel.cpp" line="106"/>
+        <source>&lt;br&gt;&lt;b&gt;Device Subsystem: &lt;/b&gt;</source>
+        <translation>&lt;br&gt;&lt;b&gt;设备子系统: &lt;/b&gt;</translation>
+    </message>
+    <message>
+        <location filename="../../src/udevmodel.cpp" line="108"/>
+        <source>&lt;br&gt;&lt;b&gt;Device Type: &lt;/b&gt;</source>
+        <translation>&lt;br&gt;&lt;b&gt;设备类型: &lt;/b&gt;</translation>
+    </message>
+    <message>
+        <location filename="../../src/udevmodel.cpp" line="110"/>
+        <source>&lt;br&gt;&lt;b&gt;Device Path: &lt;/b&gt;</source>
+        <translation>&lt;br&gt;&lt;b&gt;设备路径: &lt;/b&gt;</translation>
+    </message>
+    <message>
+        <location filename="../../src/udevmodel.cpp" line="112"/>
+        <source>&lt;br&gt;&lt;b&gt;Device Action: &lt;/b&gt;</source>
+        <translation>&lt;br&gt;&lt;b&gt;设备动作: &lt;/b&gt;</translation>
+    </message>
+</context>
+<context>
+    <name>UdevRuleFileInformation</name>
+    <message>
+        <location filename="../../src/udevrulefileinformation.cpp" line="69"/>
+        <source>config file: %1</source>
+        <translation>配置文件: %1</translation>
+    </message>
+    <message>
+        <location filename="../../src/udevrulefileinformation.cpp" line="73"/>
+        <source>this is unit configure content item</source>
+        <translation>这是unit单元配置项</translation>
+    </message>
+    <message>
+        <location filename="../../src/udevrulefileinformation.cpp" line="74"/>
+        <source>unit config file detail</source>
+        <translation>单元配置文件详情</translation>
+    </message>
+    <message>
+        <location filename="../../src/udevrulefileinformation.cpp" line="84"/>
+        <source>Edit</source>
+        <translation>编辑</translation>
+    </message>
+    <message>
+        <location filename="../../src/udevrulefileinformation.cpp" line="88"/>
+        <source>Reset</source>
+        <translation>重置</translation>
+    </message>
+    <message>
+        <location filename="../../src/udevrulefileinformation.cpp" line="93"/>
+        <source>Apply</source>
+        <translation>应用</translation>
+    </message>
+    <message>
+        <location filename="../../src/udevrulefileinformation.cpp" line="97"/>
+        <source>Cancel</source>
+        <translation>取消</translation>
+    </message>
+    <message>
+        <location filename="../../src/udevrulefileinformation.cpp" line="157"/>
+        <source>Error</source>
+        <translation>错误</translation>
+    </message>
+    <message>
+        <location filename="../../src/udevrulefileinformation.cpp" line="157"/>
+        <source>Can not save file</source>
+        <translation>不能保存文件</translation>
+    </message>
+</context>
+<context>
+    <name>UdevRuleModel</name>
+    <message>
+        <location filename="../../src/udevrulemodel.cpp" line="49"/>
+        <source>File Name</source>
+        <translation>文件名</translation>
+    </message>
+    <message>
+        <location filename="../../src/udevrulemodel.cpp" line="51"/>
+        <source>File Path</source>
+        <translation>文件路径</translation>
+    </message>
+    <message>
+        <location filename="../../src/udevrulemodel.cpp" line="53"/>
+        <source>Modified</source>
+        <translation>修改</translation>
+    </message>
+    <message>
+        <location filename="../../src/udevrulemodel.cpp" line="55"/>
+        <source>Created Time</source>
+        <translation>创建时间</translation>
+    </message>
+    <message>
+        <location filename="../../src/udevrulemodel.cpp" line="57"/>
+        <source>Size (Byte)</source>
+        <translation>大小(字节)</translation>
+    </message>
+    <message>
+        <location filename="../../src/udevrulemodel.cpp" line="59"/>
+        <source>Description</source>
+        <translation>描述</translation>
+    </message>
+    <message>
+        <location filename="../../src/udevrulemodel.cpp" line="109"/>
+        <source>&lt;b&gt;File Name: &lt;/b&gt;</source>
+        <translation>&lt;b&gt;文件名: &lt;/b&gt;</translation>
+    </message>
+    <message>
+        <location filename="../../src/udevrulemodel.cpp" line="111"/>
+        <source>&lt;br&gt;&lt;b&gt;File Path: &lt;/b&gt;</source>
+        <translation>&lt;br&gt;&lt;b&gt;文件路径: &lt;/b&gt;</translation>
+    </message>
+    <message>
+        <location filename="../../src/udevrulemodel.cpp" line="113"/>
+        <source>&lt;br&gt;&lt;b&gt;Modified: &lt;/b&gt;</source>
+        <translation>&lt;br&gt;&lt;b&gt;修改: &lt;/b&gt;</translation>
+    </message>
+    <message>
+        <location filename="../../src/udevrulemodel.cpp" line="115"/>
+        <source>&lt;br&gt;&lt;b&gt;Created Time: &lt;/b&gt;</source>
+        <translation>&lt;br&gt;&lt;b&gt;创建时间: &lt;/b&gt;</translation>
+    </message>
+    <message>
+        <location filename="../../src/udevrulemodel.cpp" line="117"/>
+        <source>&lt;br&gt;&lt;b&gt;Size (Byte): &lt;/b&gt;</source>
+        <translation>&lt;br&gt;&lt;b&gt;大小 (字节): &lt;/b&gt;</translation>
+    </message>
+    <message>
+        <location filename="../../src/udevrulemodel.cpp" line="119"/>
+        <source>&lt;br&gt;&lt;b&gt;Description: &lt;/b&gt;</source>
+        <translation>&lt;br&gt;&lt;b&gt;描述: &lt;/b&gt;</translation>
     </message>
 </context>
 <context>

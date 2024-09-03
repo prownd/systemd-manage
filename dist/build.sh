@@ -7,7 +7,7 @@
 #########################################################################
 
 PKG_NAME="systemd-manage"
-PKG_VERSION="1.1"
+PKG_VERSION="1.2"
 PKG_VERSION_RELEASE="${PKG_VERSION}-1"
 BUILD_DIR="$( cd "$( dirname "$0" )" && pwd  )"
 TOP_DIR="$( cd "$( dirname "$0" )" && cd .. && pwd  )"
