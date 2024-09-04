@@ -52,6 +52,10 @@ Display session status information, such as ID, name, path, status, TTY, etc
 View and manage the configuration files of systemd, modify parameter values
 ![config file](images/en/config-file-view-1.png "config file info")
 
+### Configuration file detail:
+display  detail information for configuration files of systemd
+![config file detail](images/en/config-file-detail-1.png "config file detail")
+
 ### Journal log:
 View system logs, select time period and log level
 ![journal log](images/en/journal-log-view-1.png "show journal log")
@@ -67,6 +71,14 @@ Display the currently running process, filter process names, and users
 ### Process Details Information:
 Display process detail information, eg: name, id, state, memory, etc
 ![process detail](images/en/process-detail-view-1.png "process detail information")
+
+### Udev Device View:
+Display the all udev device event
+![udev device view](images/en/udev-device-view-1.png "udev device view")
+
+### Udev Device Details information:
+Display udev device detail information, eg: path,  subsystem, type,node,action etc
+![udev device detail](images/en/udev-device-detail-1.png "udev device detail information")
 
 ### Preferred settings:
 Setting system preferences, setting display language

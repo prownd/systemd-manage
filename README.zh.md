@@ -49,6 +49,9 @@ cd dist
 ### 配置文件：
 对systemd的配置文件进行查看管理，修改参数项值
 ![config file](images/zh/config-file-view-1.png "config file info")
+### 配置文件详情：
+显示systemd的配置文件信息，参数字段，参数值等
+![config file detail](images/en/config-file-detail-1.png "config file detail")
 
 ### journal日志：
 查看系统的日志，可以选择时间段，日志级别
@@ -65,6 +68,15 @@ cd dist
 ### 进程详细信息:
 显示进程详细信息，例如:进程名，id，状态，内存等
 ![process detail](images/zh/process-detail-view-1.png "process detail information")
+
+### Udev设备：
+显示系统所有的Udev设备项信息
+![udev device view](images/en/udev-device-view-1.png "udev device view")
+
+### Udev设备详情:
+显示Udev设备信息，例如:进程名，id，状态，内存等
+![udev device detail](images/en/udev-device-detail-1.png "udev device detail information")
+
 
 ### 首选项设置：
 系统首选项的设置，设置显示语言
