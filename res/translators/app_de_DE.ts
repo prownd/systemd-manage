@@ -352,12 +352,12 @@
     <message>
         <location filename="../../src/mainwidget.cpp" line="161"/>
         <source>Udev Device</source>
-        <translation type="unfinished"></translation>
+        <translation>Udev-Gerät</translation>
     </message>
     <message>
         <location filename="../../src/mainwidget.cpp" line="162"/>
         <source>Udev Device Manage</source>
-        <translation type="unfinished"></translation>
+        <translation> Udev-Geräteverwaltung</translation>
     </message>
     <message>
         <location filename="../../src/mainwidget.cpp" line="172"/>
@@ -582,7 +582,7 @@
         <location filename="../../src/udevdevicewindow.cpp" line="217"/>
         <location filename="../../src/udevdevicewindow.cpp" line="288"/>
         <source>Udev Device Information</source>
-        <translation type="unfinished"></translation>
+        <translation> Udev-Geräteinformationen</translation>
     </message>
 </context>
 <context>
@@ -980,27 +980,27 @@
     <message>
         <location filename="../../src/udevdevicedetail.cpp" line="74"/>
         <source>Udev Device Path:</source>
-        <translation type="unfinished"></translation>
+        <translation> Udev-Gerätepfad:</translation>
     </message>
     <message>
         <location filename="../../src/udevdevicedetail.cpp" line="82"/>
         <source>Udev Device Subsystem:</source>
-        <translation type="unfinished"></translation>
+        <translation> Udev-Gerätesubsystem:</translation>
     </message>
     <message>
         <location filename="../../src/udevdevicedetail.cpp" line="90"/>
         <source>Udev Device Type:</source>
-        <translation type="unfinished"></translation>
+        <translation> Udev-Gerätetyp:</translation>
     </message>
     <message>
         <location filename="../../src/udevdevicedetail.cpp" line="98"/>
         <source>Udev Device Node:</source>
-        <translation type="unfinished"></translation>
+        <translation> Udev-Geräteknoten:</translation>
     </message>
     <message>
         <location filename="../../src/udevdevicedetail.cpp" line="106"/>
         <source>Udev Device Action:</source>
-        <translation type="unfinished"></translation>
+        <translation> Udev-Geräteaktion:</translation>
     </message>
 </context>
 <context>
@@ -1008,181 +1008,181 @@
     <message>
         <location filename="../../src/udevdevicewindow.cpp" line="83"/>
         <source>Udev Device</source>
-        <translation type="unfinished"></translation>
+        <translation>Udev-Gerät</translation>
     </message>
     <message>
         <location filename="../../src/udevdevicewindow.cpp" line="84"/>
         <source>Udev Rule File</source>
-        <translation type="unfinished"></translation>
+        <translation> Udev-Regeldatei</translation>
     </message>
     <message>
         <location filename="../../src/udevdevicewindow.cpp" line="91"/>
         <source>All</source>
-        <translation type="unfinished">Alle</translation>
+        <translation>Alle</translation>
     </message>
     <message>
         <location filename="../../src/udevdevicewindow.cpp" line="91"/>
         <source>disk</source>
-        <translation type="unfinished"></translation>
+        <translation> Scheibe</translation>
     </message>
     <message>
         <location filename="../../src/udevdevicewindow.cpp" line="91"/>
         <source>partition</source>
-        <translation type="unfinished"></translation>
+        <translation> Partition</translation>
     </message>
     <message>
         <location filename="../../src/udevdevicewindow.cpp" line="92"/>
         <source>usb_device</source>
-        <translation type="unfinished"></translation>
+        <translation> USB-Gerät</translation>
     </message>
     <message>
         <location filename="../../src/udevdevicewindow.cpp" line="92"/>
         <source>usb_interface</source>
-        <translation type="unfinished"></translation>
+        <translation> USB-Schnittstelle</translation>
     </message>
     <message>
         <location filename="../../src/udevdevicewindow.cpp" line="92"/>
         <source>port</source>
-        <translation type="unfinished"></translation>
+        <translation> Hafen</translation>
     </message>
     <message>
         <location filename="../../src/udevdevicewindow.cpp" line="93"/>
         <source>wlan</source>
-        <translation type="unfinished"></translation>
+        <translation> WLAN</translation>
     </message>
     <message>
         <location filename="../../src/udevdevicewindow.cpp" line="154"/>
         <source>total: 1 udev device, display: 1 udev device</source>
-        <translation type="unfinished"></translation>
+        <translation> insgesamt: 1 udev-Gerät, Anzeige: 1 udev-Gerät</translation>
     </message>
     <message>
         <location filename="../../src/udevdevicewindow.cpp" line="225"/>
         <location filename="../../src/udevdevicewindow.cpp" line="295"/>
         <source>Warning</source>
-        <translation type="unfinished">Warnung</translation>
+        <translation>Warnung</translation>
     </message>
     <message>
         <location filename="../../src/udevdevicewindow.cpp" line="226"/>
         <location filename="../../src/udevdevicewindow.cpp" line="296"/>
         <source>Not found Udev Device, please refresh!</source>
-        <translation type="unfinished"></translation>
+        <translation> Udev-Gerät nicht gefunden, bitte aktualisieren!</translation>
     </message>
     <message>
         <location filename="../../src/udevdevicewindow.cpp" line="229"/>
         <location filename="../../src/udevdevicewindow.cpp" line="299"/>
         <source>Ok</source>
-        <translation type="unfinished">Ok</translation>
+        <translation>Ok</translation>
     </message>
     <message>
         <location filename="../../src/udevdevicewindow.cpp" line="246"/>
         <source>Udev Device info</source>
-        <translation type="unfinished"></translation>
+        <translation> Udev Geräteinfo</translation>
     </message>
     <message>
         <location filename="../../src/udevdevicewindow.cpp" line="251"/>
         <source>Refresh</source>
-        <translation type="unfinished">Aktualisieren</translation>
+        <translation>Aktualisieren</translation>
     </message>
     <message>
         <location filename="../../src/udevdevicewindow.cpp" line="339"/>
         <source>Total: %1 udev device,</source>
-        <translation type="unfinished"></translation>
+        <translation> Gesamt: %1 udev-Gerät,</translation>
     </message>
     <message>
         <location filename="../../src/udevdevicewindow.cpp" line="340"/>
         <source>Display: %1 udev device</source>
-        <translation type="unfinished"></translation>
+        <translation> Anzeige: %1 udev-Gerät</translation>
     </message>
     <message>
         <location filename="../../src/udevdevicewindow.cpp" line="431"/>
         <source>total: 1 udev rule, display: 1 udev rule</source>
-        <translation type="unfinished"></translation>
+        <translation> insgesamt: 1 udev-Regel, Anzeige: 1 udev-Regel</translation>
     </message>
     <message>
         <location filename="../../src/udevdevicewindow.cpp" line="602"/>
         <source>Total: %1 udev rule,</source>
-        <translation type="unfinished"></translation>
+        <translation> Gesamt: %1 udev-Regel,</translation>
     </message>
     <message>
         <location filename="../../src/udevdevicewindow.cpp" line="603"/>
         <source>Display: %1 udev rule</source>
-        <translation type="unfinished"></translation>
+        <translation> Anzeige: %1 udev-Regel</translation>
     </message>
     <message>
         <location filename="../../src/udevdevicewindow.cpp" line="341"/>
         <location filename="../../src/udevdevicewindow.cpp" line="604"/>
         <source>%1 %2</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 %2</translation>
     </message>
     <message>
         <location filename="../../src/udevdevicewindow.cpp" line="363"/>
         <source>Search Udev Rule:</source>
-        <translation type="unfinished"></translation>
+        <translation> Udev-Regel suchen:</translation>
     </message>
     <message>
         <location filename="../../src/udevdevicewindow.cpp" line="378"/>
         <source>File Name</source>
-        <translation type="unfinished"></translation>
+        <translation> Dateiname</translation>
     </message>
     <message>
         <location filename="../../src/udevdevicewindow.cpp" line="379"/>
         <source>File Path</source>
-        <translation type="unfinished"></translation>
+        <translation> Dateipfad</translation>
     </message>
     <message>
         <location filename="../../src/udevdevicewindow.cpp" line="380"/>
         <source>Modified</source>
-        <translation type="unfinished">Geändert</translation>
+        <translation>Geändert</translation>
     </message>
     <message>
         <location filename="../../src/udevdevicewindow.cpp" line="381"/>
         <source>Created Time</source>
-        <translation type="unfinished">Erstellungszeit</translation>
+        <translation>Erstellungszeit</translation>
     </message>
     <message>
         <location filename="../../src/udevdevicewindow.cpp" line="382"/>
         <source>Size (Byte)</source>
-        <translation type="unfinished">Größe (Byte)</translation>
+        <translation>Größe (Byte)</translation>
     </message>
     <message>
         <location filename="../../src/udevdevicewindow.cpp" line="383"/>
         <source>Description</source>
-        <translation type="unfinished">Beschreibung</translation>
+        <translation>Beschreibung</translation>
     </message>
     <message>
         <location filename="../../src/udevdevicewindow.cpp" line="526"/>
         <source>&lt;b&gt;Config File Name: %1&lt;/b&gt;&lt;hr&gt;</source>
-        <translation type="unfinished">&lt;b&gt;Konfigurationsdateiname: %1&lt;/b&gt;&lt;hr&gt;</translation>
+        <translation>&lt;b&gt;Konfigurationsdateiname: %1&lt;/b&gt;&lt;hr&gt;</translation>
     </message>
     <message>
         <location filename="../../src/udevdevicewindow.cpp" line="527"/>
         <source>&lt;b&gt;Config File Path: %1&lt;/b&gt;&lt;hr&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation> &lt;b&gt;Konfigurationsdateipfad: %1&lt;/b&gt;&lt;hr&gt;</translation>
     </message>
     <message>
         <location filename="../../src/udevdevicewindow.cpp" line="528"/>
         <source>&lt;b&gt;Config File Create Time: %1&lt;/b&gt;&lt;hr&gt;</source>
-        <translation type="unfinished">&lt;b&gt;Konfigurationsdatei-Erstellungszeit: %1&lt;/b&gt;&lt;hr&gt;</translation>
+        <translation>&lt;b&gt;Konfigurationsdatei-Erstellungszeit: %1&lt;/b&gt;&lt;hr&gt;</translation>
     </message>
     <message>
         <location filename="../../src/udevdevicewindow.cpp" line="529"/>
         <source>&lt;b&gt;Config File Size: %1&lt;/b&gt;&lt;hr&gt;</source>
-        <translation type="unfinished">&lt;b&gt;Konfigurationsdateigröße: %1&lt;/b&gt;&lt;hr&gt;</translation>
+        <translation>&lt;b&gt;Konfigurationsdateigröße: %1&lt;/b&gt;&lt;hr&gt;</translation>
     </message>
     <message>
         <location filename="../../src/udevdevicewindow.cpp" line="530"/>
         <source>&lt;b&gt;Config File Description: %1&lt;/b&gt;&lt;hr&gt;</source>
-        <translation type="unfinished">&lt;b&gt;Beschreibung der Konfigurationsdatei: %1&lt;/b&gt;&lt;hr&gt;</translation>
+        <translation>&lt;b&gt;Beschreibung der Konfigurationsdatei: %1&lt;/b&gt;&lt;hr&gt;</translation>
     </message>
     <message>
         <location filename="../../src/udevdevicewindow.cpp" line="565"/>
         <source>View Edit File</source>
-        <translation type="unfinished">Ansicht Datei bearbeiten</translation>
+        <translation>Ansicht Datei bearbeiten</translation>
     </message>
     <message>
         <location filename="../../src/udevdevicewindow.cpp" line="570"/>
         <source>Refresh File List</source>
-        <translation type="unfinished">Dateiliste aktualisieren</translation>
+        <translation>Dateiliste aktualisieren</translation>
     </message>
 </context>
 <context>
@@ -1190,52 +1190,52 @@
     <message>
         <location filename="../../src/udevmodel.cpp" line="49"/>
         <source>Device Node</source>
-        <translation type="unfinished"></translation>
+        <translation> Geräteknoten</translation>
     </message>
     <message>
         <location filename="../../src/udevmodel.cpp" line="51"/>
         <source>Device Subsystem</source>
-        <translation type="unfinished"></translation>
+        <translation> Gerätesubsystem</translation>
     </message>
     <message>
         <location filename="../../src/udevmodel.cpp" line="53"/>
         <source>Device Type</source>
-        <translation type="unfinished"></translation>
+        <translation> Gerätetyp</translation>
     </message>
     <message>
         <location filename="../../src/udevmodel.cpp" line="55"/>
         <source>Device Path</source>
-        <translation type="unfinished"></translation>
+        <translation> Gerätepfad</translation>
     </message>
     <message>
         <location filename="../../src/udevmodel.cpp" line="57"/>
         <source>Device Action</source>
-        <translation type="unfinished"></translation>
+        <translation> Geräteaktion</translation>
     </message>
     <message>
         <location filename="../../src/udevmodel.cpp" line="104"/>
         <source>&lt;b&gt;Device Node: &lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation> &lt;b&gt;Geräteknoten: &lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../../src/udevmodel.cpp" line="106"/>
         <source>&lt;br&gt;&lt;b&gt;Device Subsystem: &lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation> &lt;br&gt;&lt;b&gt;Gerätesubsystem: &lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../../src/udevmodel.cpp" line="108"/>
         <source>&lt;br&gt;&lt;b&gt;Device Type: &lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation> &lt;br&gt;&lt;b&gt;Gerätetyp: &lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../../src/udevmodel.cpp" line="110"/>
         <source>&lt;br&gt;&lt;b&gt;Device Path: &lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation> &lt;br&gt;&lt;b&gt;Gerätepfad: &lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../../src/udevmodel.cpp" line="112"/>
         <source>&lt;br&gt;&lt;b&gt;Device Action: &lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation> &lt;br&gt;&lt;b&gt;Geräteaktion: &lt;/b&gt;</translation>
     </message>
 </context>
 <context>
@@ -1243,47 +1243,47 @@
     <message>
         <location filename="../../src/udevrulefileinformation.cpp" line="69"/>
         <source>config file: %1</source>
-        <translation type="unfinished">Konfigurationsdatei:%1</translation>
+        <translation>Konfigurationsdatei:%1</translation>
     </message>
     <message>
         <location filename="../../src/udevrulefileinformation.cpp" line="73"/>
         <source>this is unit configure content item</source>
-        <translation type="unfinished">Dies ist Unit configure content item</translation>
+        <translation>Dies ist Unit configure content item</translation>
     </message>
     <message>
         <location filename="../../src/udevrulefileinformation.cpp" line="74"/>
         <source>unit config file detail</source>
-        <translation type="unfinished">Details der Unit-Konfigurationsdatei</translation>
+        <translation>Details der Unit-Konfigurationsdatei</translation>
     </message>
     <message>
         <location filename="../../src/udevrulefileinformation.cpp" line="84"/>
         <source>Edit</source>
-        <translation type="unfinished">Bearbeiten</translation>
+        <translation>Bearbeiten</translation>
     </message>
     <message>
         <location filename="../../src/udevrulefileinformation.cpp" line="88"/>
         <source>Reset</source>
-        <translation type="unfinished">Zurücksetzen</translation>
+        <translation>Zurücksetzen</translation>
     </message>
     <message>
         <location filename="../../src/udevrulefileinformation.cpp" line="93"/>
         <source>Apply</source>
-        <translation type="unfinished">Anwenden</translation>
+        <translation>Anwenden</translation>
     </message>
     <message>
         <location filename="../../src/udevrulefileinformation.cpp" line="97"/>
         <source>Cancel</source>
-        <translation type="unfinished">Abbrechen</translation>
+        <translation>Abbrechen</translation>
     </message>
     <message>
         <location filename="../../src/udevrulefileinformation.cpp" line="157"/>
         <source>Error</source>
-        <translation type="unfinished">Fehler</translation>
+        <translation>Fehler</translation>
     </message>
     <message>
         <location filename="../../src/udevrulefileinformation.cpp" line="157"/>
         <source>Can not save file</source>
-        <translation type="unfinished">Datei kann nicht gespeichert werden</translation>
+        <translation>Datei kann nicht gespeichert werden</translation>
     </message>
 </context>
 <context>
@@ -1291,62 +1291,62 @@
     <message>
         <location filename="../../src/udevrulemodel.cpp" line="49"/>
         <source>File Name</source>
-        <translation type="unfinished"></translation>
+        <translation> Dateiname</translation>
     </message>
     <message>
         <location filename="../../src/udevrulemodel.cpp" line="51"/>
         <source>File Path</source>
-        <translation type="unfinished"></translation>
+        <translation> Dateipfad</translation>
     </message>
     <message>
         <location filename="../../src/udevrulemodel.cpp" line="53"/>
         <source>Modified</source>
-        <translation type="unfinished">Geändert</translation>
+        <translation>Geändert</translation>
     </message>
     <message>
         <location filename="../../src/udevrulemodel.cpp" line="55"/>
         <source>Created Time</source>
-        <translation type="unfinished">Erstellungszeit</translation>
+        <translation>Erstellungszeit</translation>
     </message>
     <message>
         <location filename="../../src/udevrulemodel.cpp" line="57"/>
         <source>Size (Byte)</source>
-        <translation type="unfinished">Größe (Byte)</translation>
+        <translation>Größe (Byte)</translation>
     </message>
     <message>
         <location filename="../../src/udevrulemodel.cpp" line="59"/>
         <source>Description</source>
-        <translation type="unfinished">Beschreibung</translation>
+        <translation>Beschreibung</translation>
     </message>
     <message>
         <location filename="../../src/udevrulemodel.cpp" line="109"/>
         <source>&lt;b&gt;File Name: &lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation> &lt;b&gt;Dateiname: &lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../../src/udevrulemodel.cpp" line="111"/>
         <source>&lt;br&gt;&lt;b&gt;File Path: &lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation> &lt;br&gt;&lt;b&gt;Dateipfad: &lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../../src/udevrulemodel.cpp" line="113"/>
         <source>&lt;br&gt;&lt;b&gt;Modified: &lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation> &lt;br&gt;&lt;b&gt;Geändert: &lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../../src/udevrulemodel.cpp" line="115"/>
         <source>&lt;br&gt;&lt;b&gt;Created Time: &lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation> &lt;br&gt;&lt;b&gt;Erstellungszeit: &lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../../src/udevrulemodel.cpp" line="117"/>
         <source>&lt;br&gt;&lt;b&gt;Size (Byte): &lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation> &lt;br&gt;&lt;b&gt;Größe (Byte): &lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../../src/udevrulemodel.cpp" line="119"/>
         <source>&lt;br&gt;&lt;b&gt;Description: &lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation> &lt;br&gt;&lt;b&gt;Beschreibung: &lt;/b&gt;</translation>
     </message>
 </context>
 <context>
