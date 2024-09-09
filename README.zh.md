@@ -11,9 +11,9 @@ systemd-manage是一个基于systemd服务管理的图形化工具，使用qt图
 # 编译构建安装
 使用qmake进行编译和部署
 ```bash
-1. qmake
-2. make
-3. make install
+qmake
+make
+make install
 ```
 
 也可以编译成发行版格式的二进制软件包，比如编译生成rpm包, 或者deb包
@@ -27,6 +27,12 @@ cd dist
 ```bash
 cd dist
 ./build.sh deb
+```
+
+- 编译生成tar包
+```bash
+cd dist
+./build.sh tar
 ```
 
 # systemd-manage使用
