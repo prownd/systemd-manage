@@ -127,6 +127,10 @@ function build_tar_package()
     # license file
     install -d ${BUILD_DIR}/tarbuild/${BUILD_TAR_DIR}/data/license
     install -m644 -p -D ${TOP_DIR}/LICENSE ${BUILD_DIR}/tarbuild/${BUILD_TAR_DIR}/data/license
+
+    # install.sh file
+    install -d  ${BUILD_DIR}/tarbuild/${BUILD_TAR_DIR}
+    install -m755 -p -D ${TOP_DIR}/misc/install.sh  ${BUILD_DIR}/tarbuild/${BUILD_TAR_DIR}/
     
     #build tar
     cd  ${BUILD_DIR}/tarbuild/
