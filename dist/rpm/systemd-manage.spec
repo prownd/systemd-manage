@@ -1,5 +1,5 @@
 Name: systemd-manage           
-Version: 1.2       
+Version: 1.2
 Release: 1%{?dist}
 Summary: A graphical manage tools of systemd   
 

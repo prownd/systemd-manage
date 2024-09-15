@@ -17,7 +17,9 @@ run:
 
 generate package format
 ===========
-it can also be compiled into distribution software packages, such as rpm package format
+it can also be compiled into distribution software packages.
+such as rpm or deb package format, tar package.
+
   cd dist
-  ./build.sh
+  ./build.sh   rpm|deb|tar
 

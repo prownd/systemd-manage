@@ -133,7 +133,7 @@ DISTFILES +=
 
 TARGET=systemd-manage
 
-VERSION = 1.1
+VERSION = 1.2
 
 QMAKE_TARGET_COMPANY = "hanjinpeng <hanjinpeng127@gmail.com>"
 QMAKE_TARGET_PRODUCT = "systemd-manage"
