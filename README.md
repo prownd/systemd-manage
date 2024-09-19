@@ -4,7 +4,7 @@
 ![GitHub Release](https://img.shields.io/github/v/release/prownd/systemd-manage)
 
 # Systemd manage tool
-systemd-manage is a graphical systemd service manage tool, developed using the Qt graphics library.  
+systemd-manage is a graphical systemd service management tool, developed using the Qt graphics library.  
 It can be providing functions such as service management, user sessions, configuration file modification, log queries, performance analysis and process management, etc.  
 Graphic interface operation, simple and convenient systemd service manage.
 
